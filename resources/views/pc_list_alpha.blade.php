@@ -21,27 +21,32 @@
 
         <div class="row">
             <div class="col-sm-12 content-a">
-                <form>
+                <form type="POST" action="/save_list">
+                    <!--List Name-->
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" placeholder="Part List Name">
+                        <input class="form-control form-control-lg" type="text" placeholder="Part List Name" name="list_name">
                     </div>
 
+                    <!--CPU-->
                     <div class="form-group">
                         <label for="select_cpu">CPU</label>
-                        <select class="form-control" id="select_cpu">
+                        <select class="form-control" id="select_cpu" name="cpu_id">
                             @foreach($cpu_all as $cpu)
                                 <option value="{{ $cpu->id }}">{{ $cpu->name }}</option>
                             @endforeach
                         </select>
                     </div>
+
+                    <!--Motherboard-->
                     <div class="form-group">
-                            <label for="select_mobo">Motherboard</label>
-                            <select class="form-control" id="select_mobo">
-                                @foreach($motherboard_all as $mobo)
-                                    <option value="{{ $mobo->id }}">{{ $mobo->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <label for="select_mobo">Motherboard</label>
+                        <select class="form-control" id="select_mobo" name="mobo_id">
+                            @foreach($motherboard_all as $mobo)
+                                <option value="{{ $mobo->id }}">{{ $mobo->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
