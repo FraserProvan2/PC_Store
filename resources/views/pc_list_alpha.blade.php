@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+    
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,49 +10,95 @@
 .content-a{
     background-color:#f3f3f3;
     padding:20px;
-    border-radius: 3px;
-    border: solid 2px #ffb8a2;
+}
+.content-b{
+    background-color:#f3f3f3;
+    padding:20px;
 }
 </style>
   </head>
   <body>
-    <br>
     <div class="container">
         <h1 style="text-align:center;">PC<span style="color:#FF7043;">Store</span></h1>
-
         <div class="row">
-            <div class="col-sm-12 content-a">
-                <form type="POST" action="/save_list">
+
+            <div class="col-md-10 content-a">
+                <h5>Create a Part List</h5>
+                <form action="/save_list" type="post">
                     <!--List Name-->
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" placeholder="Part List Name" name="list_name">
+                        @if(isset($part_list))
+                            <input class="form-control form-control-lg" type="text" placeholder="Part List Name" name="list_name" value="<?php echo $part_list['name']; ?>" required>
+                        @else
+                            <input class="form-control form-control-lg" type="text" placeholder="Part List Name" name="list_name" required>
+                        @endif
                     </div>
 
                     <!--CPU-->
                     <div class="form-group">
                         <label for="select_cpu">CPU</label>
-                        <select class="form-control" id="select_cpu" name="cpu_id">
-                            @foreach($cpu_all as $cpu)
-                                <option value="{{ $cpu->id }}">{{ $cpu->name }}</option>
-                            @endforeach
+                        {{-- {{ $part_cpu['id'] }} --}}
+                        <select class="form-control" id="select_cpu" name="cpu_id" required>
+                            @if(isset($part_cpu))
+                                <option value="{{ $part_cpu['id'] }}">{{ $part_cpu['name'] }}</option>
+                                @foreach($cpu_all as $cpu)
+                                    @if($part_cpu['name'] != $cpu->name)
+                                        <option value="{{ $cpu->id }}">{{ $cpu->name }}</option>
+                                    @endif
+                                @endforeach
+                            @else
+                                <option disabled selected value>Select...</option>
+                                @foreach($cpu_all as $cpu)
+                                    <option value="{{ $cpu->id }}">{{ $cpu->name }}</option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
 
                     <!--Motherboard-->
                     <div class="form-group">
                         <label for="select_mobo">Motherboard</label>
-                        <select class="form-control" id="select_mobo" name="mobo_id">
-                            @foreach($motherboard_all as $mobo)
-                                <option value="{{ $mobo->id }}">{{ $mobo->name }}</option>
-                            @endforeach
+                        <select class="form-control" id="select_mobo" name="mobo_id" required>
+                            @if(isset($part_mobo))
+                                <option value="{{ $part_mobo['id'] }}">{{ $part_mobo['name'] }}</option>
+                                @foreach($motherboard_all as $mobo)
+                                    @if($part_mobo['name'] != $mobo->name)
+                                        <option value="{{ $mobo->id }}">{{ $mobo->name }}</option>
+                                    @endif
+                                @endforeach
+                            @else
+                                <option disabled selected value>Select...</option>
+                                @foreach($motherboard_all as $mobo)
+                                    <option value="{{ $mobo->id }}">{{ $mobo->name }}</option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
 
+                    <!--Buttons-->
                     <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-primary" style="color:white;" href="/">Create New</a>
+                    @if(isset($part_list))
+                        <a class="btn btn-danger" style="color:white;" href="/view_list/delete/{{ $part_list['id'] }}">Delete</a>
+                    @endif
                 </form>
             </div>
-        </div>
 
+            <!--Part List-->
+            <div class="col-md-2 content-b">
+                <h5>Part Lists</h5>
+                <ul>
+                    @foreach($part_list_data as $list) 
+                        <li>
+                            <small>
+                                <a href="/view_list/{{ $list->id }}/">{{ $list->name }}</a>
+                            </small>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
