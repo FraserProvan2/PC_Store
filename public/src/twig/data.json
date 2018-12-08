@@ -1,0 +1,92 @@
+{
+  "title":"Mimity",
+  "cart":[
+    {
+      "name":"Hanes Hooded Sweatshirt",
+      "img":"1_small.jpg",
+      "price":"$18.56",
+      "qty":"1",
+      "stock":"1",
+      "attr":[
+        {
+          "name":"Size",
+          "value":"small"
+        }
+      ]
+    },
+    {
+      "name":"The Flash Logo T-Shirt",
+      "img":"2_small.jpg",
+      "price":"$16.64",
+      "qty":"1",
+      "stock":"1",
+      "attr":[
+        {
+          "name":"Size",
+          "value":"medium"
+        },
+        {
+          "name":"Color",
+          "value":"yellow"
+        }
+      ]
+    },
+    {
+      "name":"Open Front Cropped Cardigans",
+      "img":"3_small.jpg",
+      "price":"$15.20",
+      "qty":"1",
+      "stock":"0",
+      "attr":[
+        {
+          "name":"Size",
+          "value":"large"
+        }
+      ]
+    },
+    {
+      "name":"Cotton Fleece Long Hoodie",
+      "img":"4_small.jpg",
+      "price":"$85.00",
+      "qty":"1",
+      "stock":"1",
+      "attr":[
+        {
+          "name":"Size",
+          "value":"small"
+        },
+        {
+          "name":"Color",
+          "value":"olive green"
+        }
+      ]
+    }
+  ],
+  "wishlist":[
+    {
+      "name":"Hanes Hooded Sweatshirt",
+      "img":"1_small.jpg",
+      "price":"$18.56",
+      "stock":"1"
+    },
+    {
+      "name":"Slim-Fit Short-Sleeve Printed Shirt",
+      "img":"8_small.jpg",
+      "price":"$25.00",
+      "stock":"0"
+    }
+  ],
+  "user": {
+    "firstName":"John",
+    "lastName":"Thor",
+    "email":"john.thor@example.com",
+    "phone":"1-787-376-1552",
+    "address":"2114  Jadewood Farms",
+    "country":"USA",
+    "city":"Piscataway, New Jersey",
+    "zip":"08854",
+    "avatar":"../img/user/user.svg",
+    "points":"1113",
+    "joined":"Dec 31, 2017"
+  }
+}

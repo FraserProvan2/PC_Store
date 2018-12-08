@@ -1,0 +1,58 @@
+.brands-list {
+  position: relative;
+  max-height: 250px;
+  overflow: auto;
+  padding-right: 15px;
+  .custom-checkbox:not(:first-child) {
+    margin-top: 5px;
+  }
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.list-tree {
+  margin-bottom: 0;
+  @include list-unstyled; // unstyled menu
+  a {
+    display: block; // make all links as blocks
+    padding: .25rem .75rem .25rem 1.5rem;
+    &:not(:hover) {
+      color: $body-color;
+    }
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  .has-arrow::after {
+    left: 0;
+    transform: rotate(135deg) translateY(-50%);
+  }
+  .mm-active > a {
+    color: $primary;
+    font-weight: bold;
+    &.has-arrow::after {
+      transform: rotate(225deg) translateY(0);
+    }
+  }
+  ul {
+    @include list-unstyled; // also unstyled all submenus
+    margin-left: 1.5rem;
+    box-shadow: 1px 0 0 0 $border-color inset;
+    > li > a {
+      position: relative;
+      padding-left: 1.25rem;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 1px;
+        background-color: $border-color;
+        left: 0;
+        top: 49%;
+      }
+    }
+  }
+}

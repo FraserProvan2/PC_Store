@@ -1,0 +1,17 @@
+// Alert variant, skip light (the color is not too contrast), skip brown and secondary (use alert-dark instead)
+@each $color, $value in $theme-colors {
+  @if $color != 'secondary' and $color != 'brown' and $color != 'light' {
+    .alert-#{$color} {
+      border-left-width: 3px;
+    }
+    .alert-#{$color} .alert-icon {
+      height: 21px;
+      margin-right: .5rem;
+      text-align: center;
+      color: theme-color-level($color, -9);
+      border-radius: 50%;
+      background-color: theme-color-level($color, 2);
+      flex: 0 0 21px;
+    }
+  }
+}

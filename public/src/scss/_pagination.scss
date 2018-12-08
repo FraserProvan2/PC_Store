@@ -1,0 +1,11 @@
+.card-pagination {
+  .card-body {
+    display: flex;
+    padding: .5rem 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn {
+    font-weight: bold;
+  }
+}

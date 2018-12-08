@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include '_required-css.twig' %}
+
+    {% include '_template-css.twig' %}
+
+    <title>My Profile - {{title}}</title>
+  </head>
+  <body>
+
+    {% include '_header.twig' with {'active':'account', 'sub':'account-profile'} %}
+
+    <!-- Main Content -->
+    <div class="container my-3">
+      <div class="row">
+
+        <div class="col-md-4 col-lg-3">
+          {% include '_card-user.twig' with {'active':'account', 'sub':'account-profile'} %}
+        </div>
+
+        <div class="col mt-3 mt-md-0">
+          <div class="card">
+            <div class="card-body">
+              <h3>My Profile</h3><hr>
+              <form class="form-style-1">
+                <div class="form-row">
+                  <div class="form-group col-sm-6">
+                    <label for="profileFirstName">First Name</label>
+                    <input type="text" class="form-control" id="profileFirstName" value="{{user.firstName}}">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="profileLastName">Last Name</label>
+                    <input type="text" class="form-control" id="profileLastName" value="{{user.lastName}}">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="profileEmail">Email address</label>
+                    <input type="email" class="form-control" id="profileEmail" value="{{user.email}}">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="profilePhone">Phone Number</label>
+                    <input type="text" class="form-control" id="profilePhone" value="{{user.phone}}">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="profileNewPassword">New Password</label>
+                    <input type="password" class="form-control" id="profileNewPassword">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="profileConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="profileConfirmPassword">
+                  </div>
+                  <div class="form-group col-12">
+                    <button type="button" class="btn btn-primary">UPDATE PROFILE</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    {% include '_footer.twig' %}
+
+    {% include '_modal-menu.twig' with {'active':'account', 'sub':'account-profile'} %}
+
+    {% include '_required-js.twig' %}
+
+    {% include '_template-js.twig' %}
+
+  </body>
+</html>

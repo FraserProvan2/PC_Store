@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include '_required-css.twig' %}
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <link rel="stylesheet" href="../plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../plugins/noty/noty.min.css">
+
+    {% include '_template-css.twig' %}
+
+    <title>Shop Grid - {{title}}</title>
+  </head>
+  <body>
+
+    {% include '_header.twig' with {'active':'shop', 'sub':'shop-grid'} %}
+
+    <!-- Main Content -->
+    <div class="container mt-3 mb-3">
+      <div class="row gutters-3">
+
+        <!-- Shop Filters -->
+        <div class="col-lg-3 col-md-4">
+          {% include '_shop-filters.twig' %}
+        </div>
+        <!-- /Shop Filters -->
+
+        <div class="col-lg-9 col-md-8">
+
+          <!-- Shop Toolbar -->
+          <div class="card mb-3">
+            <div class="card-body d-flex justify-content-end align-items-center py-2">
+              <button class="btn btn-sm btn-outline-primary rounded-pill d-block d-md-none mr-auto" data-toggle="modal" data-target="#filterModal"><i data-feather="filter"></i> Filter</button>
+              <ol class="breadcrumb d-none d-md-flex p-0 mb-0 mr-auto">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="shop-grid.html">Men's Fashion</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Clothing</li>
+              </ol>
+              <div class="dropdown dropdown-hover">
+                <button class="btn btn-light btn-sm border rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Popular <i data-feather="chevron-down"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                  <button class="dropdown-item" type="button">Popular</button>
+                  <button class="dropdown-item" type="button">Low - High Price</button>
+                  <button class="dropdown-item" type="button">High - Low Price</button>
+                  <button class="dropdown-item" type="button">Avarage Rating</button>
+                  <button class="dropdown-item" type="button">A - Z Order</button>
+                  <button class="dropdown-item" type="button">Z - A Order</button>
+                </div>
+              </div>
+              <a href="shop-grid.html" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
+              <a href="shop-list.html" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
+            </div>
+          </div>
+          <!-- /Shop Toolbar -->
+
+          <!-- Shop Grid -->
+          <div class="card-deck card-deck-product with-sidebar mt-3">
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/1_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Hanes Hooded Sweatshirt</a>
+                <span class="badge badge-success">New arrival</span>
+                <div class="price"><span class="h5">$18.56</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/2_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">The Flash Logo T-Shirt</a>
+                <div class="price">
+                  <span class="h5">$16.64</span>
+                </div>
+                <div class="color-options">
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small.jpg" checked>
+                    <span class="custom-control-label" style="background-color: #f2c43a"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small_black.jpg">
+                    <span class="custom-control-label" style="background-color: #23232b"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small_red.jpg">
+                    <span class="custom-control-label" style="background-color: #eb0015"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/5_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Men's Buck Camp Flannel Shirt</a>
+                <span class="badge badge-warning"><i data-feather="star"></i> 5</span>
+                <span class="badge badge-danger"><i data-feather="star"></i> Best Seller</span>
+                <div class="price"><span class="h5">$29.99</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/6_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Jurassic Park Logo Men's T-Shirt</a>
+                <span class="rating" data-value="4.5"></span>
+                <div class="price">
+                  <span class="h5 del">$12.99</span>
+                  <span class="h5">$10.99</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/7_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Short-Sleeve Crewneck T-Shirt</a>
+                <div class="price">
+                  <span class="h5">$14.00</span>
+                  <span class="h5 del">$15.00</span>
+                </div>
+                <div class="color-options">
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option2" class="custom-control-input" value="../img/products/7_small.jpg" checked>
+                    <span class="custom-control-label" style="background-color: #9fcbf2"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option2" class="custom-control-input" value="../img/products/7_small_grey.jpg">
+                    <span class="custom-control-label" style="background-color: #d2cfca"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/8_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Slim-Fit Short-Sleeve Printed Shirt</a>
+                <span class="badge badge-info"><i data-feather="truck"></i> Free shipping</span>
+                <div class="price"><span class="h5">$25.00</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- /Shop Grid -->
+
+          <div class="card card-pagination">
+            {% include '_card-pagination.twig' %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title">Shop Filters</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Filter Modal -->
+
+    {% include '_footer.twig' %}
+
+    {% include '_modal-menu.twig' with {'active':'shop', 'sub':'shop-grid'} %}
+
+    {% include '_modal-quickview.twig' %}
+
+    {% include '_required-js.twig' %}
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <script src="../plugins/swiper/swiper.min.js"></script>
+    <script src="../plugins/nouislider/nouislider.min.js"></script>
+    <script src="../plugins/noty/noty.min.js"></script>
+
+    {% include '_template-js.twig' %}
+
+    <script>
+    $(function () {
+
+      App.atcDemo()
+      App.atwDemo()
+      App.colorOption()
+      App.rating()
+      App.quickviewDemo()
+
+      var filter = {
+        categories: function () {
+          $('.list-tree').metisMenu()
+        },
+        price: function () {
+          var priceSlider = document.getElementById('price-slider')
+          noUiSlider.create(priceSlider, {
+            start: [25, 75],
+            connect: true,
+            range: {
+              'min': 0,
+              'max': 100
+            }
+          })
+          var prefix = '$'
+          var priceSliderValues = [
+            document.getElementById('price-slider-min'),
+            document.getElementById('price-slider-max')
+          ]
+          priceSlider.noUiSlider.on('update', function (values, handle) {
+            priceSliderValues[handle].value = prefix + values[handle]
+          })
+          priceSliderValues[0].addEventListener('change', function () {
+            priceSlider.noUiSlider.set([this.value.replace(prefix, ''), null])
+          })
+          priceSliderValues[1].addEventListener('change', function () {
+            priceSlider.noUiSlider.set([null, this.value.replace(prefix, '')])
+          })
+        },
+        brands: function () {
+          var psBrands = new PerfectScrollbar('.brands-list', { wheelPropagation: false })
+          $('#search-brands').on('keyup', function () {
+            var value = $(this).val().toLowerCase()
+            $('.brands-list .custom-control').filter(function () {
+              $(this).toggle($(this).find('label').contents().not($(this).find('label').children()).text().toLowerCase().indexOf(value) > -1)
+            })
+            psBrands.update()
+          })
+        }
+      }
+
+      setTimeout(function () {
+        filter.price()
+        filter.brands()
+        filter.categories()
+
+        // quickview
+        var quickviewSlider = new Swiper('#quickview-slider', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }
+        })
+        $('#quickviewModal').on('shown.bs.modal', function () {
+          quickviewSlider.update()
+        })
+      }, 100)
+
+      var sidebarContent = $('.accordion-sidebar').html()
+      $('#filterModal').on('show.bs.modal', function () {
+        // move filter contents to modal body
+        $(this).find('.modal-body').html('<div class="accordion accordion-caret accordion-sidebar accordion-modal">'+sidebarContent+'</div>')
+        // empty the sidebar filter contents
+        $('.accordion-sidebar:not(.accordion-modal)').html('')
+        // run filters
+        filter.categories()
+        filter.price()
+      })
+      $('#filterModal').on('shown.bs.modal', function () {
+        // PerfectScrollbar need to wait until all content appears to work, so we use 'shown.bs.modal' event
+        filter.brands()
+      })
+      $('#filterModal').on('hidden.bs.modal', function () {
+        $('.accordion-modal').remove() // remove modal filter contents
+        $('.accordion-sidebar').html(sidebarContent) // move filter contents back to the sidebar
+        // run filters
+        filter.categories()
+        filter.price()
+        filter.brands()
+      })
+
+    })
+    </script>
+
+  </body>
+</html>

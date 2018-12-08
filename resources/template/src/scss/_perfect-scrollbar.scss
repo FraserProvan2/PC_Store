@@ -1,0 +1,52 @@
+// container
+.ps__rail-x {
+  height: $ps-size + 4;
+}
+.ps__rail-y {
+  width: $ps-size + 4;
+}
+.ps__rail-x,
+.ps__rail-y {
+  z-index: 2;
+}
+// thumb
+.ps__thumb-x {
+  height: $ps-size;
+}
+.ps__thumb-y {
+  width: $ps-size;
+}
+.ps__thumb-x,
+.ps__thumb-y {
+  border-radius: 0;
+}
+// active container
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y:hover {
+  background: $ps-container-hover-focus-clicking-bg;
+}
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover {
+  height: $ps-hover-size + 4;
+}
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y:hover {
+  width: $ps-hover-size + 4;
+}
+// active thumb
+.ps__rail-x.ps--clicking .ps__thumb-x,
+.ps__rail-x:focus>.ps__thumb-x,
+.ps__rail-x:hover>.ps__thumb-x {
+  height: $ps-hover-size;
+}
+.ps__rail-y.ps--clicking .ps__thumb-y,
+.ps__rail-y:focus>.ps__thumb-y,
+.ps__rail-y:hover>.ps__thumb-y {
+  width: $ps-hover-size;
+}

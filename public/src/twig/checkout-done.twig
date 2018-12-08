@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include '_required-css.twig' %}
+
+    {% include '_template-css.twig' %}
+
+    <title>Checkout Done - {{title}}</title>
+  </head>
+  <body>
+
+    {% include '_header.twig' with {'active':'shop', 'sub':'checkout'} %}
+
+    <!-- Main Content -->
+    <div class="container my-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center py-3">
+            <i data-feather="check-circle" class="text-success" width="48" height="48"></i>
+            <h1>Thank you.</h1>
+            <p>Your order has been placed and will be processed as soon as possible.</p>
+            <p class="mb-0">
+              <span class="text-muted">Order ID: </span>
+              <span class="text-info">#ORD456789</span>
+            </p>
+            <p>
+              <span class="text-muted">Amount: </span>
+              <span class="text-info">$1,297.48</span>
+            </p>
+            <p>A confirmation email has been sent to <u>user@example.com</u></p>
+            <a href="shop-grid.html" class="btn btn-secondary rounded mb-3">CONTINUE SHOPPING</a>
+            <a href="account-orders.html" class="btn btn-primary rounded mb-3">VIEW ORDER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    {% include '_footer.twig' %}
+
+    {% include '_modal-menu.twig' with {'active':'shop', 'sub':'checkout'} %}
+
+    {% include '_required-js.twig' %}
+
+    {% include '_template-js.twig' %}
+
+  </body>
+</html>

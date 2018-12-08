@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include '_required-css.twig' %}
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <link rel="stylesheet" href="../plugins/noty/noty.min.css">
+
+    {% include '_template-css.twig' %}
+
+    <title>Product Comparison - {{title}}</title>
+  </head>
+  <body>
+
+    {% include '_header.twig' with {'active':'pages', 'sub':'compare'} %}
+
+    <!-- Main Content -->
+    <div class="container my-3">
+      <div class="card">
+        <div class="card-body">
+
+          <h3>Product Comparison</h3>
+          <hr>
+
+          <div class="table-responsive">
+            <table class="table table-bordered text-center table-wishlist" data-addclass-on-smdown="table-sm">
+              <thead>
+                <tr>
+                  <th>
+                    <p><a href="shop-single.html"><img src="../img/products/2_small.jpg" width="75" height="75" alt="The Flash Logo T-Shirt"></a></p>
+                    <p><a href="shop-single.html" class="text-body">The Flash Logo T-Shirt</a></p>
+                    <button type="button" class="d-inline-block btn btn-link btn-icon text-danger" data-addclass-on-smdown="btn-sm" data-toggle="tooltip" title="Remove item"><i data-feather='x-circle'></i></button>
+                    <button type="button" class="d-inline-block btn btn-primary rounded-pill atc-demo" data-title="The Flash Logo T-Shirt" data-addclass-on-smdown="btn-sm">Add to cart</button>
+                  </th>
+                  <th>
+                    <p><a href="shop-single.html"><img src="../img/products/6_small.jpg" width="75" height="75" alt="Jurassic Park Logo Men's T-Shirt"></a></p>
+                    <p><a href="shop-single.html" class="text-body">Jurassic Park Logo Men's T-Shirt</a></p>
+                    <button type="button" class="d-inline-block btn btn-link btn-icon text-danger" data-addclass-on-smdown="btn-sm" data-toggle="tooltip" title="Remove item"><i data-feather='x-circle'></i></button>
+                    <button type="button" class="d-inline-block btn btn-primary rounded-pill atc-demo" data-title="Jurassic Park Logo Men's T-Shirt" data-addclass-on-smdown="btn-sm">Add to cart</button>
+                  </th>
+                  <th>
+                    <p><a href="shop-single.html"><img src="../img/products/7_small.jpg" width="75" height="75" alt="Short-Sleeve Crewneck T-Shirt"></a></p>
+                    <p><a href="shop-single.html" class="text-body">Short-Sleeve Crewneck T-Shirt</a></p>
+                    <button type="button" class="d-inline-block btn btn-link btn-icon text-danger" data-addclass-on-smdown="btn-sm" data-toggle="tooltip" title="Remove item"><i data-feather='x-circle'></i></button>
+                    <button type="button" class="d-inline-block btn btn-primary rounded-pill atc-demo" data-title="Short-Sleeve Crewneck T-Shirt" data-addclass-on-smdown="btn-sm">Add to cart</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Price:</strong>
+                    <div class="price"><span>$16.64</span></div>
+                  </td>
+                  <td>
+                    <strong>Price:</strong>
+                    <div class="price"><span>$10.99</span></div>
+                  </td>
+                  <td>
+                    <strong>Price:</strong>
+                    <div class="price"><span>$14.00</span></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Model:</strong>
+                    <div>Model 1</div>
+                  </td>
+                  <td>
+                    <strong>Model:</strong>
+                    <div>Model 2</div>
+                  </td>
+                  <td>
+                    <strong>Model:</strong>
+                    <div>Model 3</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Brand:</strong>
+                    <div>Brand 1</div>
+                  </td>
+                  <td>
+                    <strong>Brand:</strong>
+                    <div>Brand 2</div>
+                  </td>
+                  <td>
+                    <strong>Brand:</strong>
+                    <div>Brand 3</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Availability:</strong>
+                    <div>Availabel 1</div>
+                  </td>
+                  <td>
+                    <strong>Availability:</strong>
+                    <div>Availabel 2</div>
+                  </td>
+                  <td>
+                    <strong>Availability:</strong>
+                    <div>Availabel 3</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Rating:</strong>
+                    <div><div class="rating" data-value="2"></div></div>
+                    <a href="javascript:void(0)" class="text-muted small">(2 reviews)</a>
+                  </td>
+                  <td>
+                    <strong>Rating:</strong>
+                    <div><div class="rating" data-value="3"></div></div>
+                    <a href="javascript:void(0)" class="text-muted small">(3 reviews)</a>
+                  </td>
+                  <td>
+                    <strong>Rating:</strong>
+                    <div><div class="rating" data-value="4"></div></div>
+                    <a href="javascript:void(0)" class="text-muted small">(4 reviews)</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    {% include '_footer.twig' %}
+
+    {% include '_modal-menu.twig' with {'active':'pages', 'sub':'compare'} %}
+
+    {% include '_required-js.twig' %}
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <script src="../plugins/noty/noty.min.js"></script>
+
+    {% include '_template-js.twig' %}
+
+    <script>
+    $(function () {
+
+      App.atcDemo()
+      App.rating()
+
+    })
+    </script>
+
+  </body>
+</html>

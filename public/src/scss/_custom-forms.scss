@@ -1,0 +1,70 @@
+// Custom Checkboxes and radios
+.custom-control-label {
+  &::before {
+    transition: none;
+    border: 1px solid $input-border-color;
+    background-color: #fff;
+  }
+  @supports (-webkit-appearance:none) { // fix a different top (webkit), http://browserhacks.com/
+    &::before,
+    &::after {
+      top: ((($font-size-base * $line-height-base - $custom-control-indicator-size) / 2) - .01rem);
+    }
+  }
+}
+.custom-checkbox .custom-control-label::before {
+  border-radius: 4px;
+}
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    border: 0;
+  }
+  &:not(:disabled):not(:checked) {
+    &:active ~ .custom-control-label::before {
+      background-color: $primary;
+    }
+    @include hover-focus {
+      ~ .custom-control-label::before {
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+// Custom Checkboxes and radios without label
+.custom-control-nolabel {
+  display: inline-block;
+  width: 16px;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  > .custom-control-label {
+    float: left;
+    &::before,
+    &::after {
+      left: 0;
+    }
+  }
+}
+
+// Radio color picker
+.custom-radio-color {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  overflow: hidden;
+  .custom-control-label {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom: 0;
+    &::before {
+      display: none;
+    }
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+    left: 2px;
+    top: 2px;
+  }
+}

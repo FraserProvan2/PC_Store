@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- REQUIRED CSS: FONT, BOOTSTRAP, METISMENU, PERFECT-SCROLLBAR  -->
+    <link rel="stylesheet" href="../dist/css/vendor.min.css">
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <link rel="stylesheet" href="../plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../plugins/noty/noty.min.css">
+
+    <!-- Mimity CSS  -->
+    <link rel="stylesheet" href="../dist/css/style.min.css">
+
+    <title>Shop Grid - Mimity</title>
+  </head>
+  <body>
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="container d-flex">
+
+        <!-- service contact -->
+        <nav class="nav d-none d-md-flex"> <!-- hidden on xs -->
+          <a class="nav-link pl-0" href="javascript:void(0)"><i data-feather="phone"></i> 212 123 456 789</a>
+          <a class="nav-link" href="javascript:void(0)"><i data-feather="mail"></i> support@mimity.com</a>
+        </nav>
+
+        <!-- social media -->
+        <nav class="nav">
+          <a class="nav-link pr-2 pl-0" href="javascript:void(0)"><i data-feather="facebook"></i></a>
+          <a class="nav-link px-2" href="javascript:void(0)"><i data-feather="twitter"></i></a>
+          <a class="nav-link px-2" href="javascript:void(0)"><i data-feather="instagram"></i></a>
+        </nav>
+
+        <!-- language -->
+        <nav class="nav nav-lang ml-auto"> <!-- push it to the right -->
+          <a class="nav-link active" href="javascript:void(0)">EN</a>
+          <a class="nav-link pipe">|</a>
+          <a class="nav-link" href="javascript:void(0)">RU</a>
+        </nav>
+
+        <!-- User dropdown -->
+        <ul class="nav">
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle pr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <i data-feather="user"></i> Hi, John <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="media p-1 align-items-center mb-2">
+                <img src="../img/user/user.svg" alt="user" class="img-thumbnail rounded-circle mr-2 size50x50">
+                <div class="media-body">
+                  <strong>John Thor</strong>
+                  <div class="small counter">1113 points</div>
+                </div>
+              </div>
+              <a href="account-orders.html" class="dropdown-item has-icon"><i data-feather="shopping-cart"></i>My Orders</a>
+              <a href="account-wishlist.html" class="dropdown-item has-icon has-badge"><i data-feather="heart"></i>Wishlist <span class="badge rounded badge-primary">2</span></a>
+              <a href="account-profile.html" class="dropdown-item has-icon"><i data-feather="settings"></i>Account Setting</a>
+              <div class="dropdown-divider"></div>
+              <a href="account-login.html" class="dropdown-item has-icon text-danger"><i data-feather="log-out"></i>Logout</a>
+            </div>
+          </li>
+        </ul>
+        <!-- /User dropdown -->
+
+      </div><!-- /.container -->
+    </div>
+    <!-- /Top bar -->
+
+
+    <!--Header -->
+    <header>
+      <div class="container">
+
+        <!-- Sidebar toggler -->
+        <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
+
+        <!-- Logo -->
+        <a class="nav-link nav-logo" href="index.html"><img src="../img/logo.svg" alt="Mimity"> <strong>Mimity</strong></a>
+
+        <!-- Main navigation -->
+        <ul class="nav nav-main ml-auto d-none d-lg-flex"> <!-- hidden on md -->
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle forwardable active" data-toggle="dropdown" href="shop-categories.html" role="button" aria-haspopup="true" aria-expanded="false">
+              Shop <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="shop-categories.html">Shop Categories</a>
+              <a class="dropdown-item active" href="shop-grid.html">Shop Grid</a>
+              <a class="dropdown-item" href="shop-list.html">Shop List</a>
+              <a class="dropdown-item" href="shop-single.html">Single Product</a>
+              <a class="dropdown-item" href="shop-single2.html">Single Product v2</a>
+              <a class="dropdown-item" href="cart.html">Cart</a>
+              <a class="dropdown-item" href="shipping.html">Checkout</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown dropdown-hover dropdown-mega">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Mega Menu <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>CLOTHING</strong></a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Polos &amp; Tees</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Casual Shirts</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Jeans</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Casual Trousers</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Formal Shirts</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Formal Trousers</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Suits &amp; Blazers</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Shorts &amp; 3/4ths</a>
+                  </div>
+                </div>
+                <div class="col-lg-3 border-left">
+                  <div class="list-group list-group-flush list-group-no-border list-group-sm">
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action"><strong>FOOTWEAR</strong></a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Sports Shoes</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Sneakers</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Casual Shoes</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Loafers</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Formal Shoes</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Boots</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Outdoor &amp; Hiking</a>
+                    <a href="shop-grid.html" class="list-group-item list-group-item-action">Floaters</a>
+                  </div>
+                </div>
+                <div class="col-lg-3 border-left roboto-condensed">
+                  <div class="card text-white zoom-hover">
+                    <div data-cover="../img/categories/1.jpeg" data-height="260px"></div>
+                    <div class="card-img-overlay card-img-overlay-transparent d-flex justify-content-center align-items-center flex-column">
+                      <h2 class="card-title text-center">New Men's Fashion</h2>
+                      <h5>See what's new</h5>
+                      <a href="shop-grid.html" class="btn btn-primary rounded-pill">Shop Now</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 border-left roboto-condensed">
+                  <div class="card text-white zoom-hover">
+                    <div data-cover="../img/categories/6.jpeg" data-height="260px"></div>
+                    <div class="card-img-overlay card-img-overlay-transparent d-flex justify-content-center align-items-center flex-column">
+                      <h2 class="card-title text-center">New Women's Fashion</h2>
+                      <h5>See what's new</h5>
+                      <a href="shop-grid.html" class="btn btn-danger rounded-pill">Shop Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle forwardable" data-toggle="dropdown" href="account-profile.html" role="button" aria-haspopup="true" aria-expanded="false">
+              Account <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="account-login.html">Login / Register</a>
+              <a class="dropdown-item" href="account-profile.html">Profile Page</a>
+              <a class="dropdown-item" href="account-orders.html">Orders List</a>
+              <a class="dropdown-item" href="account-wishlist.html">Wishlist</a>
+              <a class="dropdown-item" href="account-address.html">Address</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle forwardable" data-toggle="dropdown" href="blog-grid.html" role="button" aria-haspopup="true" aria-expanded="false">
+              Blog <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="blog-grid.html">Post Grid</a>
+              <a class="dropdown-item" href="blog-list.html">Post List</a>
+              <a class="dropdown-item" href="blog-single.html">Single Post</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Pages <i data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="about.html">About Us</a>
+              <a class="dropdown-item" href="contact.html">Contact Us</a>
+              <a class="dropdown-item" href="compare.html">Compare</a>
+              <a class="dropdown-item" href="faq.html">Help / FAQ</a>
+              <a class="dropdown-item" href="404.html">404 Not Found</a>
+            </div>
+          </li>
+        </ul>
+        <!-- /Main navigation -->
+
+        <!-- Search form -->
+        <form class="form-inline form-search ml-auto mr-0 mr-sm-1 d-none d-sm-flex">
+          <div class="input-group input-group-search">
+            <div class="input-group-prepend">
+              <button class="btn btn-light d-flex d-sm-none search-toggle" type="button"><i data-feather="chevron-left"></i></button>
+            </div>
+            <input type="text" class="form-control border-0 bg-light input-search" placeholder="Search...">
+            <div class="input-group-append">
+              <button class="btn btn-light" type="submit"><i data-feather="search"></i></button>
+            </div>
+          </div>
+        </form>
+        <!-- /Search form -->
+
+        <ul class="nav ml-auto ml-sm-0">
+          <!-- Search form toggler -->
+          <li class="nav-item d-block d-sm-none ml-2 ml-lg-0"><a class="nav-link nav-icon search-toggle" href="#"><i data-feather="search"></i></a></li>
+
+          <!-- Cart dropdown -->
+          <li class="nav-item dropdown dropdown-hover dropdown-cart">
+            <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart.html" role="button" aria-haspopup="true" aria-expanded="false">
+              <i data-feather="shopping-cart"></i>
+              <span class="badge badge-primary">4</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              
+              <div class="media">
+                <a href="shop-single.html"><img src="../img/products/1_small.jpg" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
+                <div class="media-body">
+                  <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
+                  <span class="qty">1</span> x <span class="price">$18.56</span>
+                  <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                </div>
+              </div>
+              
+              <div class="media">
+                <a href="shop-single.html"><img src="../img/products/2_small.jpg" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
+                <div class="media-body">
+                  <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
+                  <span class="qty">1</span> x <span class="price">$16.64</span>
+                  <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                </div>
+              </div>
+              
+              <div class="media">
+                <a href="shop-single.html"><img src="../img/products/3_small.jpg" width="50" height="50" alt="Open Front Cropped Cardigans"></a>
+                <div class="media-body">
+                  <a href="shop-single.html" title="Open Front Cropped Cardigans">Open Front Cropped Cardigans</a>
+                  <span class="qty">1</span> x <span class="price">$15.20</span>
+                  <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                </div>
+              </div>
+              
+              <div class="media">
+                <a href="shop-single.html"><img src="../img/products/4_small.jpg" width="50" height="50" alt="Cotton Fleece Long Hoodie"></a>
+                <div class="media-body">
+                  <a href="shop-single.html" title="Cotton Fleece Long Hoodie">Cotton Fleece Long Hoodie</a>
+                  <span class="qty">1</span> x <span class="price">$85.00</span>
+                  <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
+                </div>
+              </div>
+              
+              <div class="d-flex justify-content-between pb-3 pt-2">
+                <span>Total</span>
+                <strong>$135.40</strong>
+              </div>
+              <div class="d-flex justify-content-between pb-2">
+                <div class="w-100 mr-1">
+                  <a href="cart.html" class="btn btn-block rounded-pill btn-secondary">View Cart</a>
+                </div>
+                <div class="w-100 ml-1">
+                  <a href="shipping.html" class="btn btn-block rounded-pill btn-primary">Checkout</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- /Cart dropdown -->
+        </ul>
+
+      </div><!-- /.container -->
+    </header>
+    <!-- /Header -->
+
+    <!-- Main Content -->
+    <div class="container mt-3 mb-3">
+      <div class="row gutters-3">
+
+        <!-- Shop Filters -->
+        <div class="col-lg-3 col-md-4">
+          <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
+            <div class="card">
+              <div class="card-header">
+                <a href="#filter-categories" data-toggle="collapse" aria-expanded="true" aria-controls="filter-categories" role="button" class="h6">
+                  CATEGORIES
+                </a>
+              </div>
+              <div id="filter-categories" class="collapse show">
+                <div class="card-body">
+                  <ul class="list-tree">
+                    <li>
+                      <a href="#" class="has-arrow">Men's Fashion <small class="counter">(120)</small></a>
+                      <ul>
+                        <li class="mm-active"><a href="javascript:void(0)">Clothing <small class="counter">(40)</small></a></li>
+                        <li><a href="javascript:void(0)">Shoes <small class="counter">(20)</small></a></li>
+                        <li><a href="javascript:void(0)">Watches <small class="counter">(35)</small></a></li>
+                        <li><a href="javascript:void(0)">Accessories <small class="counter">(25)</small></a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="has-arrow">Women's Fashion <small class="counter">(140)</small></a>
+                      <ul>
+                        <li><a href="javascript:void(0)">Clothing <small class="counter">(40)</small></a></li>
+                        <li><a href="javascript:void(0)">Shoes <small class="counter">(30)</small></a></li>
+                        <li><a href="javascript:void(0)">Jewelry <small class="counter">(25)</small></a></li>
+                        <li><a href="javascript:void(0)">Handbags <small class="counter">(45)</small></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="javascript:void(0)">Girls' Fashion <small class="counter">(95)</small></a></li>
+                    <li><a href="javascript:void(0)">Boys' Fashion <small class="counter">(97)</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a href="#filter-price" data-toggle="collapse" aria-expanded="true" aria-controls="filter-price" role="button" class="h6">
+                  PRICE
+                </a>
+              </div>
+              <div id="filter-price" class="collapse show">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between mb-3">
+                    <input type="text" class="form-control form-control-sm rounded-pill text-center bold roboto-condensed bg-light mr-2 minw-0" id="price-slider-min">
+                    <input type="text" class="form-control form-control-sm rounded-pill text-center bold roboto-condensed bg-light ml-2 minw-0" id="price-slider-max">
+                  </div>
+                  <div id="price-slider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a href="#filter-size" data-toggle="collapse" aria-expanded="true" aria-controls="filter-size" role="button" class="h6">
+                  SIZE
+                </a>
+              </div>
+              <div id="filter-size" class="collapse show">
+                <div class="card-body">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="size-small">
+                    <label class="custom-control-label" for="size-small">Small</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="size-medium" checked>
+                    <label class="custom-control-label" for="size-medium">Medium</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="size-large" checked>
+                    <label class="custom-control-label" for="size-large">Large</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="size-extra-large">
+                    <label class="custom-control-label" for="size-extra-large">Extra Large</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a href="#filter-colors" data-toggle="collapse" aria-expanded="true" aria-controls="filter-colors" role="button" class="h6">
+                  COLORS
+                </a>
+              </div>
+              <div id="filter-colors" class="collapse show">
+                <div class="card-body">
+                  <div class="color-options">
+                    <label class="custom-control custom-checkbox custom-radio-color custom-control-inline">
+                      <input type="checkbox" class="custom-control-input" checked>
+                      <span class="custom-control-label" style="background-color: #606ddd"></span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-radio-color custom-control-inline">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-label" style="background-color: #4caf50"></span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-radio-color custom-control-inline">
+                      <input type="checkbox" class="custom-control-input" checked>
+                      <span class="custom-control-label" style="background-color: #17a2b8"></span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-radio-color custom-control-inline">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-label" style="background-color: #ffc107"></span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-radio-color custom-control-inline">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-label" style="background-color: #f44336"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a href="#filter-brands" data-toggle="collapse" aria-expanded="true" aria-controls="filter-brands" role="button" class="h6">
+                  BRANDS
+                </a>
+              </div>
+              <div id="filter-brands" class="collapse show">
+                <div class="card-body">
+                  <div class="input-group input-group-sm input-group-search mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-light" type="button"><i data-feather="search"></i></button>
+                    </div>
+                    <input type="text" class="form-control border-0 bg-light" id="search-brands" placeholder="Search...">
+                  </div>
+                  <div class="brands-list">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-tommy-hilfiger">
+                      <label class="custom-control-label" for="brand-tommy-hilfiger">Tommy Hilfiger <small class="counter">43</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-nike">
+                      <label class="custom-control-label" for="brand-nike">Nike <small class="counter">245</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-hugo-boss">
+                      <label class="custom-control-label" for="brand-hugo-boss">Hugo Boss <small class="counter">221</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-burberry">
+                      <label class="custom-control-label" for="brand-burberry">Burberry <small class="counter">157</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-levi's">
+                      <label class="custom-control-label" for="brand-levi's">Levi's <small class="counter">272</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-gucci">
+                      <label class="custom-control-label" for="brand-gucci">Gucci <small class="counter">218</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-lacoste">
+                      <label class="custom-control-label" for="brand-lacoste">Lacoste <small class="counter">166</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-adidas">
+                      <label class="custom-control-label" for="brand-adidas">Adidas <small class="counter">244</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-the-north-face">
+                      <label class="custom-control-label" for="brand-the-north-face">The North Face <small class="counter">10</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-versace">
+                      <label class="custom-control-label" for="brand-versace">Versace <small class="counter">205</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-rolex">
+                      <label class="custom-control-label" for="brand-rolex">Rolex <small class="counter">203</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-diesel">
+                      <label class="custom-control-label" for="brand-diesel">Diesel <small class="counter">132</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-calvin-klein">
+                      <label class="custom-control-label" for="brand-calvin-klein">Calvin Klein <small class="counter">55</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-armani-exchange">
+                      <label class="custom-control-label" for="brand-armani-exchange">Armani Exchange <small class="counter">207</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-prada">
+                      <label class="custom-control-label" for="brand-prada">Prada <small class="counter">42</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-zara">
+                      <label class="custom-control-label" for="brand-zara">Zara <small class="counter">112</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-vans">
+                      <label class="custom-control-label" for="brand-vans">Vans <small class="counter">192</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-hermès">
+                      <label class="custom-control-label" for="brand-hermès">Hermès <small class="counter">88</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-supreme">
+                      <label class="custom-control-label" for="brand-supreme">Supreme <small class="counter">186</small></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="brand-converse">
+                      <label class="custom-control-label" for="brand-converse">Converse <small class="counter">107</small></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header px-5 py-2 text-center"><button class="btn btn-primary rounded-pill btn-sm btn-block" data-dismiss="modal">APPLY</button></div>
+            </div>
+          </div>
+        </div>
+        <!-- /Shop Filters -->
+
+        <div class="col-lg-9 col-md-8">
+
+          <!-- Shop Toolbar -->
+          <div class="card mb-3">
+            <div class="card-body d-flex justify-content-end align-items-center py-2">
+              <button class="btn btn-sm btn-outline-primary rounded-pill d-block d-md-none mr-auto" data-toggle="modal" data-target="#filterModal"><i data-feather="filter"></i> Filter</button>
+              <ol class="breadcrumb d-none d-md-flex p-0 mb-0 mr-auto">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="shop-grid.html">Men's Fashion</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Clothing</li>
+              </ol>
+              <div class="dropdown dropdown-hover">
+                <button class="btn btn-light btn-sm border rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Popular <i data-feather="chevron-down"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                  <button class="dropdown-item" type="button">Popular</button>
+                  <button class="dropdown-item" type="button">Low - High Price</button>
+                  <button class="dropdown-item" type="button">High - Low Price</button>
+                  <button class="dropdown-item" type="button">Avarage Rating</button>
+                  <button class="dropdown-item" type="button">A - Z Order</button>
+                  <button class="dropdown-item" type="button">Z - A Order</button>
+                </div>
+              </div>
+              <a href="shop-grid.html" class="btn btn-icon rounded-pill btn-sm btn-primary ml-3" data-toggle="tooltip" title="Show Grid"><i data-feather="grid"></i></a>
+              <a href="shop-list.html" class="btn btn-icon rounded-pill btn-sm btn-outline-primary ml-1" data-toggle="tooltip" title="Show List"><i data-feather="list"></i></a>
+            </div>
+          </div>
+          <!-- /Shop Toolbar -->
+
+          <!-- Shop Grid -->
+          <div class="card-deck card-deck-product with-sidebar mt-3">
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                <button class="quickview quickview-demo" title="Quick view"><i data-feather="zoom-in"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/1_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Hanes Hooded Sweatshirt</a>
+                <span class="badge badge-success">New arrival</span>
+                <div class="price"><span class="h5">$18.56</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/2_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">The Flash Logo T-Shirt</a>
+                <div class="price">
+                  <span class="h5">$16.64</span>
+                </div>
+                <div class="color-options">
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small.jpg" checked>
+                    <span class="custom-control-label" style="background-color: #f2c43a"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small_black.jpg">
+                    <span class="custom-control-label" style="background-color: #23232b"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option1" class="custom-control-input" value="../img/products/2_small_red.jpg">
+                    <span class="custom-control-label" style="background-color: #eb0015"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/5_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Men's Buck Camp Flannel Shirt</a>
+                <span class="badge badge-warning"><i data-feather="star"></i> 5</span>
+                <span class="badge badge-danger"><i data-feather="star"></i> Best Seller</span>
+                <div class="price"><span class="h5">$29.99</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/6_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Jurassic Park Logo Men's T-Shirt</a>
+                <span class="rating" data-value="4.5"></span>
+                <div class="price">
+                  <span class="h5 del">$12.99</span>
+                  <span class="h5">$10.99</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo" title="Add to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/7_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Short-Sleeve Crewneck T-Shirt</a>
+                <div class="price">
+                  <span class="h5">$14.00</span>
+                  <span class="h5 del">$15.00</span>
+                </div>
+                <div class="color-options">
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option2" class="custom-control-input" value="../img/products/7_small.jpg" checked>
+                    <span class="custom-control-label" style="background-color: #9fcbf2"></span>
+                  </label>
+                  <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                    <input type="radio" name="color-option2" class="custom-control-input" value="../img/products/7_small_grey.jpg">
+                    <span class="custom-control-label" style="background-color: #d2cfca"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card card-product">
+              <div class="card-body">
+                <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                <a href="shop-single.html"><img class="card-img-top" src="../img/products/8_small.jpg" alt="Card image cap"></a>
+                <a href="shop-single.html" class="card-title">Slim-Fit Short-Sleeve Printed Shirt</a>
+                <span class="badge badge-info"><i data-feather="truck"></i> Free shipping</span>
+                <div class="price"><span class="h5">$25.00</span></div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm rounded-pill btn-outline-primary btn-block atc-demo">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- /Shop Grid -->
+
+          <div class="card card-pagination">
+            <div class="card-body">
+              <a href="javascript:void(0)" class="btn btn-link btn-icon"><i data-feather="chevron-left"></i></a>
+              <div class="d-inline-flex">
+                <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">1</a>
+                <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-primary">2</a>
+                <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">3</a>
+                <button type="button" class="btn btn-icon rounded-pill bg-white">...</button>
+                <a href="javascript:void(0)" class="btn btn-icon rounded-pill btn-light">10</a>
+              </div>
+              <a href="javascript:void(0)" class="btn btn-link btn-icon"><i data-feather="chevron-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title">Shop Filters</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Filter Modal -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-sm-6 col-lg-3 text-center px-3">
+            <h5 class="bold">SUBSCRIBE</h5>
+            <p>and get <strong class="text-primary">10% discount</strong></p>
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control rounded-pill text-center" placeholder="Enter your email">
+              </div>
+              <button type="button" class="btn btn-primary btn-block rounded-pill">SUBSCRIBE</button>
+            </form>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h6 class="bold">Customer Service</h6>
+            <div class="list-group list-group-flush list-group-no-border list-group-sm">
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Help Center</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">How to buy</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Delivery</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">How to return</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Payment Method</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Shipping Method</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h6 class="bold">Mimity</h6>
+            <div class="list-group list-group-flush list-group-no-border list-group-sm">
+              <a href="about.html" class="list-group-item list-group-item-action">About Us</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Terms and Conditions</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Privacy Policy</a>
+              <a href="faq.html" class="list-group-item list-group-item-action">FAQs</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Our Story</a>
+              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Services</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <h6 class="bold">Download The App</h6>
+            <a href="javascript:void(0)" class="download-app">
+              <div class="media">
+                <img src="../img/app/google-play.svg" alt="Google Play Logo" height="30">
+                <div class="media-body">
+                  <small>Get it on</small>
+                  <h5>Google Play</h5>
+                </div>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="download-app">
+              <div class="media">
+                <img src="../img/app/apple.svg" alt="Apple Logo" height="30">
+                <div class="media-body">
+                  <small>Download on the</small>
+                  <h5>App Store</h5>
+                </div>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="download-app">
+              <div class="media">
+                <img src="../img/app/windows.svg" alt="Windows Logo" height="30">
+                <div class="media-body">
+                  <small>Get it from</small>
+                  <h5>Microsoft Store</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">Copyright © 2018 Mimity All right reserved</div>
+    <!-- /Footer -->
+
+    <!--Menu Modal -->
+    <div class="modal modal-left modal-menu" id="menuModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header shadow">
+            <a class="h5 mb-0 d-flex align-items-center" href="index.html">
+              <img src="../img/logo.svg" alt="Mimity" class="mr-3">
+              <strong>Mimity</strong>
+            </a>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body shadow">
+            <ul class="menu" id="menu">
+              <li class="no-sub"><a href="index.html"><i data-feather="home"></i> Home</a></li>
+              <li>
+                <a href="#" class="has-arrow"><i data-feather="shopping-bag"></i> Shop</a>
+                <ul>
+                  <li><a href="shop-categories.html">Shop Categories</a></li>
+                  <li class="mm-active"><a href="shop-grid.html">Shop Grid</a></li>
+                  <li><a href="shop-list.html">Shop List</a></li>
+                  <li><a href="shop-single.html">Single Product</a></li>
+                  <li><a href="shop-single2.html">Single Product v2</a></li>
+                  <li><a href="cart.html">Cart</a></li>
+                  <li><a href="shipping.html">Checkout</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="has-arrow"><i data-feather="rss"></i> Blog</a>
+                <ul>
+                  <li><a href="blog-grid.html">Post Grid</a></li>
+                  <li><a href="blog-list.html">Post List</a></li>
+                  <li><a href="blog-single.html">Single Post</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="has-arrow"><i data-feather="user"></i> Account</a>
+                <ul>
+                  <li><a href="account-login.html">Login / Register</a></li>
+                  <li><a href="account-profile.html">Profile Page</a></li>
+                  <li><a href="account-orders.html">Orders List</a></li>
+                  <li><a href="account-wishlist.html" class="has-badge">Wishlist <span class="badge rounded badge-primary">2</span></a></li>
+                  <li><a href="account-address.html">Address</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="has-arrow"><i data-feather="file"></i> Pages</a>
+                <ul>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="compare.html">Compare</a></li>
+                  <li><a href="faq.html">Help / FAQ</a></li>
+                  <li><a href="404.html">404 Not Found</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Menu Modal -->
+
+    <!-- Quick view modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="quickviewModal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="swiper-container" id="quickview-slider">
+                  <div class="swiper-wrapper">
+                    <img src="../img/products/1_medium.jpg" data-large="../img/products/1_large.jpg" alt="Product" class="swiper-slide">
+                    <img src="../img/products/1_medium_yellow.jpg" data-large="../img/products/1_large_yellow.jpg" alt="Product" class="swiper-slide">
+                    <img src="../img/products/1_medium_red.jpg" data-large="../img/products/1_large_red.jpg" alt="Product" class="swiper-slide">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev autohide"><i data-feather="chevron-left"></i></div>
+                  <div class="swiper-button-next autohide"><i data-feather="chevron-right"></i></div>
+                  <button class="wishlist atw-demo active" title="Added to wishlist"><i data-feather="heart"></i></button>
+                </div>
+              </div>
+              <div class="col-lg-6 mt-3 mt-lg-0">
+                <h3 class="card-title">Hanes Men's Pullover EcoSmart Fleece Hooded Sweatshirt</h3>
+                <h6><span class="rating" data-value="4.5"></span> <a href="javascript:void(0)">2 reviews</a></h6>
+                <h3 class="price">
+                  <span class="del">$140.00</span>
+                  <span >$120.00</span>
+                </h3>
+                <form>
+                  <div class="form-group">
+                    <label class="bold">Size</label>
+                    <div class="w-100 btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-outline-info active">
+                        <input type="radio" name="size" checked> Small
+                      </label>
+                      <label class="btn btn-outline-info">
+                        <input type="radio" name="size"> Medium
+                      </label>
+                      <label class="btn btn-outline-info">
+                        <input type="radio" name="size"> Large
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="bold">Color</label>
+                    <div class="color-options justify-content-start">
+                      <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                        <input type="radio" name="color-option1" class="custom-control-input" checked>
+                        <span class="custom-control-label" style="background-color: #314e76"></span>
+                      </label>
+                      <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                        <input type="radio" name="color-option1" class="custom-control-input">
+                        <span class="custom-control-label" style="background-color: #fcab28"></span>
+                      </label>
+                      <label class="custom-control custom-radio custom-radio-color custom-control-inline">
+                        <input type="radio" name="color-option1" class="custom-control-input">
+                        <span class="custom-control-label" style="background-color: #db4524"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-6">
+                      <label class="bold">Quantity</label>
+                      <div class="w-100 spinner">
+                        <button type="button" class="btn btn-icon rounded-circle"><i data-feather="minus"></i></button>
+                        <input type="number" class="form-control" value="1" min="1" max="999">
+                        <button type="button" class="btn btn-icon rounded-circle"><i data-feather="plus"></i></button>
+                      </div>
+                    </div>
+                    <div class="form-group col-6 d-flex align-items-end">
+                      <button type="button" class="btn btn-primary btn-block rounded-pill atc-demo" data-title="Hanes Men's Pullover EcoSmart Fleece Hooded Sweatshirt">Add to Cart</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Quick view modal -->
+
+    <!-- REQUIRED JS  -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../plugins/feather-icons/feather.min.js"></script>
+    <script src="../plugins/metismenu/metisMenu.min.js"></script>
+    <script src="../plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <script src="../plugins/swiper/swiper.min.js"></script>
+    <script src="../plugins/nouislider/nouislider.min.js"></script>
+    <script src="../plugins/noty/noty.min.js"></script>
+
+    <!-- Mimity JS  -->
+    <script src="../dist/js/script.min.js"></script>
+
+    <script>
+    $(function () {
+
+      App.atcDemo()
+      App.atwDemo()
+      App.colorOption()
+      App.rating()
+      App.quickviewDemo()
+
+      var filter = {
+        categories: function () {
+          $('.list-tree').metisMenu()
+        },
+        price: function () {
+          var priceSlider = document.getElementById('price-slider')
+          noUiSlider.create(priceSlider, {
+            start: [25, 75],
+            connect: true,
+            range: {
+              'min': 0,
+              'max': 100
+            }
+          })
+          var prefix = '$'
+          var priceSliderValues = [
+            document.getElementById('price-slider-min'),
+            document.getElementById('price-slider-max')
+          ]
+          priceSlider.noUiSlider.on('update', function (values, handle) {
+            priceSliderValues[handle].value = prefix + values[handle]
+          })
+          priceSliderValues[0].addEventListener('change', function () {
+            priceSlider.noUiSlider.set([this.value.replace(prefix, ''), null])
+          })
+          priceSliderValues[1].addEventListener('change', function () {
+            priceSlider.noUiSlider.set([null, this.value.replace(prefix, '')])
+          })
+        },
+        brands: function () {
+          var psBrands = new PerfectScrollbar('.brands-list', { wheelPropagation: false })
+          $('#search-brands').on('keyup', function () {
+            var value = $(this).val().toLowerCase()
+            $('.brands-list .custom-control').filter(function () {
+              $(this).toggle($(this).find('label').contents().not($(this).find('label').children()).text().toLowerCase().indexOf(value) > -1)
+            })
+            psBrands.update()
+          })
+        }
+      }
+
+      setTimeout(function () {
+        filter.price()
+        filter.brands()
+        filter.categories()
+
+        // quickview
+        var quickviewSlider = new Swiper('#quickview-slider', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }
+        })
+        $('#quickviewModal').on('shown.bs.modal', function () {
+          quickviewSlider.update()
+        })
+      }, 100)
+
+      var sidebarContent = $('.accordion-sidebar').html()
+      $('#filterModal').on('show.bs.modal', function () {
+        // move filter contents to modal body
+        $(this).find('.modal-body').html('<div class="accordion accordion-caret accordion-sidebar accordion-modal">'+sidebarContent+'</div>')
+        // empty the sidebar filter contents
+        $('.accordion-sidebar:not(.accordion-modal)').html('')
+        // run filters
+        filter.categories()
+        filter.price()
+      })
+      $('#filterModal').on('shown.bs.modal', function () {
+        // PerfectScrollbar need to wait until all content appears to work, so we use 'shown.bs.modal' event
+        filter.brands()
+      })
+      $('#filterModal').on('hidden.bs.modal', function () {
+        $('.accordion-modal').remove() // remove modal filter contents
+        $('.accordion-sidebar').html(sidebarContent) // move filter contents back to the sidebar
+        // run filters
+        filter.categories()
+        filter.price()
+        filter.brands()
+      })
+
+    })
+    </script>
+
+  </body>
+</html>

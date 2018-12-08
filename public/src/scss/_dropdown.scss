@@ -1,0 +1,38 @@
+// Dropdown menu
+.dropdown-menu {
+  box-shadow: $box-shadow;
+  .show & {
+    animation-name: dropdownAnimate;
+    animation-duration: .25s;
+  }
+}
+@keyframes dropdownAnimate {
+  from {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+// Dropdown hover (lg & xl only)
+.dropdown-hover {
+  @include media-breakpoint-up('lg') {
+    .dropdown-menu {
+      margin: 0; // remove the gap so it doesn't close
+    }
+    &:hover > .dropdown-menu {
+      display: block;
+    }
+    > .dropdown-toggle:not(.forwardable):active {
+      pointer-events: none;
+    }
+  }
+}
+
+// Dropdown icon
+.dropdown-item.has-icon > .feather {
+  margin-right: .75rem;
+}

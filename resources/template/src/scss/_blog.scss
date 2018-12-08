@@ -1,0 +1,31 @@
+.card-blog {
+  img {
+    width: 100%;
+  }
+  .title {
+    display: block;
+    margin-bottom: .75rem;
+    font-weight: bold;
+    &:not(:hover) {
+      color: $body-color;
+    }
+  }
+  .card-footer {
+    background-color: #fff;
+    border-top: 1px solid $border-color;
+    justify-content: space-between;
+  }
+}
+.card-blog-list {
+  flex-direction: row;
+  > a {
+    @include media-breakpoint-down('md') { width: 45% }
+    @include media-breakpoint-only('lg') { width: 35% }
+    @include media-breakpoint-up('xl')   { width: 25% }
+  }
+  .card-body {
+    @include media-breakpoint-down('md') { width: 55% }
+    @include media-breakpoint-only('lg') { width: 65% }
+    @include media-breakpoint-up('xl')   { width: 75% }
+  }
+}

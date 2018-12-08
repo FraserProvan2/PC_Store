@@ -1,0 +1,96 @@
+// Perfect centering with flexbox
+.flex-center {
+  @include flex-center;
+}
+
+// Margin gutter size
+.mt-gutter {
+  margin-top: $grid-gutter-width;
+}
+.mb-gutter {
+  margin-bottom: $grid-gutter-width;
+}
+
+// Negative margin for nav-icon
+.ml-ni {
+  margin-left: -.657rem;
+}
+.mr-ni {
+  margin-right: -.657rem;
+}
+
+.rounded-pill {
+  border-radius: $badge-pill-border-radius !important;
+}
+
+.roboto-condensed {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.top-0 {
+  top: 0 !important;
+}
+.right-0 {
+  right: 0 !important;
+}
+.bottom-0 {
+  bottom: 0 !important;
+}
+.left-0 {
+  left: 0 !important;
+}
+
+.price {
+  @extend .roboto-condensed;
+  span {
+    @extend .roboto-condensed;
+    font-weight: bold;
+    color: $price-color;
+    &.del {
+      position: relative;
+      margin: 0 .5rem;
+      color: $gray-500;
+      &::after {
+        position: absolute;
+        top: calc(50% - 2px);
+        left: -5px;
+        width: calc(100% + 10px);
+        height: 4px;
+        content: '';
+        border-top: 1px solid $gray-500;
+        border-bottom: 1px solid $gray-500;
+      }
+    }
+  }
+}
+
+.counter {
+  @extend .roboto-condensed;
+  color: $text-muted;
+}
+
+.nostretch {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.rating {
+  > svg {
+    margin-bottom: 3px;
+    fill: $yellow;
+  }
+}
+
+.minw-0 { min-width: 0 !important; }
+.minh-0 { min-height: 0 !important; }
+
+.size50x50 {
+  width: 50px;
+  height: 50px;
+}
+
+.input-group-search {
+  border: 1px solid $border-color;
+  border-radius: 2rem;
+  overflow: hidden;
+}

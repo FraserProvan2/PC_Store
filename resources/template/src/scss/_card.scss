@@ -1,0 +1,160 @@
+// Card
+.card {
+  box-shadow: 0 .0625rem .25rem rgba($black, .075);
+}
+.card-img-overlay-transparent {
+  background-color: rgba(#000, .5);
+}
+
+// Category Card 2 Columns
+.card-2col .card-title {
+  font-weight: bold;
+  text-align: center;
+  @include media-breakpoint-down('md') { font-size: $h4-font-size }
+  @include media-breakpoint-down('xs') { font-size: $h5-font-size }
+}
+.card-2col-body {
+  @include flex-center;
+  flex-direction: column;
+  padding: 1rem;
+  @include media-breakpoint-up('md') { width: 50% }
+  @include media-breakpoint-down('xs') { padding: .5rem }
+}
+.card-2col-img {
+  @include media-breakpoint-up('md') { width: 50% }
+}
+
+// Product Card
+.card-product {
+  text-align: center;
+  &:not(.card-product-list) {
+    .card-img-top {
+      margin-bottom: 1rem;
+    }
+    .color-options {
+      margin-top: .5rem;
+    }
+    .rating {
+      display: block;
+      margin-bottom: .5rem;
+    }
+    .badge {
+      margin-bottom: .5rem;
+    }
+  }
+  .card-title {
+    font-weight: bold;
+    display: block;
+    &:not(:hover) {
+      color: $body-color;
+    }
+  }
+  .badge {
+    border-radius: .5rem;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    @include media-breakpoint-up('sm') {
+      font-size: 90%;
+    }
+  }
+  .card-footer {
+    padding: 0 $card-spacer-x $card-spacer-x;
+    background-color: transparent;
+  }
+  @include media-breakpoint-down('xs') {
+    .card-body {
+      padding: .5rem;
+    }
+  }
+  .price span {
+    @include media-breakpoint-only('md') {
+      font-size: $h6-font-size;
+    }
+    @include media-breakpoint-down('xs') {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+// Product List Card
+.card-product-list {
+  flex-direction: row;
+  > a {
+    padding: $card-spacer-x;
+    @include media-breakpoint-down('md') { width: 40% }
+    @include media-breakpoint-only('lg') { width: 35% }
+    @include media-breakpoint-up('xl')   { width: 25% }
+  }
+  .card-title {
+    font-size: $h5-font-size;
+  }
+  .card-body {
+    text-align: left;
+    @include media-breakpoint-down('md') { width: 60% }
+    @include media-breakpoint-only('lg') { width: 65% }
+    @include media-breakpoint-up('xl')   { width: 75% }
+  }
+  .badge,
+  .rating {
+    margin-left: .5rem;
+  }
+  .color-options {
+    justify-content: start;
+    margin-bottom: .5rem;
+  }
+  .attr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: .5rem;
+  }
+}
+
+// Card deck 2 columns
+.card-deck-2-columns {
+  @include media-breakpoint-up(sm) {
+    margin-right: -.5rem;
+    margin-left: -.5rem;
+    .card {
+      flex: 1 0 40%;
+      margin-right: .5rem;
+      margin-bottom: $card-deck-margin;
+      margin-left: .5rem;
+    }
+  }
+}
+
+// Card deck product
+.card-deck-product {
+  margin-right: -.5rem;
+  margin-left: -.5rem;
+  flex-flow: row wrap;
+  @include media-breakpoint-down(xs) {
+    margin-right: -.25rem;
+    margin-left: -.25rem;
+  }
+  .card {
+    margin-right: .5rem;
+    margin-left: .5rem;
+    display: flex;
+    flex: 1 0 20%; // 4 columns
+    flex-direction: column;
+    margin-bottom: 1rem;
+    @include media-breakpoint-down(xs) {
+      margin-right: .25rem;
+      margin-left: .25rem;
+      margin-bottom: .5rem;
+    }
+    @include media-breakpoint-down(sm) {
+      flex: 1 0 40%; // 2 columns
+    }
+  }
+  &.with-sidebar {
+    .card {
+      flex: 1 0 25%; // 3 columns
+      @include media-breakpoint-down(md) {
+        flex: 1 0 40%; // 2 columns
+      }
+    }
+  }
+}

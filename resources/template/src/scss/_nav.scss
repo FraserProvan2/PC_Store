@@ -1,0 +1,40 @@
+.nav-link:not(:hover) {
+  color: $body-color;
+}
+.nav-icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border-radius: 50%;
+  @include flex-center;
+  &:hover {
+    background-color: #e9ecef;
+  }
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+  }
+}
+.show > .nav-icon {
+  color: $link-hover-color;
+  background-color: #e9ecef;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  box-shadow: 0 1px 0 0 $primary;
+}
+
+.main-nav-pills {
+  @extend .roboto-condensed;
+  font-weight: bold;
+  .nav-link:not(.disabled) {
+    padding: 1rem;
+  }
+  .disabled {
+    padding: 1rem 0;
+  }
+}

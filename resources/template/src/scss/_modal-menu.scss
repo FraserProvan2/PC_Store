@@ -1,0 +1,76 @@
+.modal-menu {
+  .modal-dialog {
+    width: $sidebar-width;
+    transition: transform .45s ease;
+    transform: translateX(-100%);
+  }
+  .modal-body {
+    padding: 0;
+    background-color: $sidebar-bg;
+  }
+}
+body.transparent-backdrop .modal-backdrop {
+  opacity: 0;
+}
+
+.menu {
+  margin-bottom: 0;
+  @include list-unstyled; // unstyled menu
+  ul {
+    @include list-unstyled; // also unstyled all submenus
+  }
+  a {
+    display: block; // make all links as blocks
+  }
+  .feather { // feather icons
+    width: 17px;
+    height: 17px;
+    margin-right: .5rem;
+  }
+  // first level menu
+  > li {
+    > a {
+      font-weight: bold;
+      padding: .75rem 1rem;
+      color: $sidebar-link-color;
+      &:hover {
+        color: $sidebar-link-hover-color;
+        background-color: $sidebar-link-hover-bg;
+      }
+    }
+    &.mm-active {
+      background-color: $sidebar-link-active-bg;
+      box-shadow: 4px 0px 0px 0px $primary inset;
+      > a {
+        color: $sidebar-link-active-color;
+        background-color: $sidebar-link-active-bg;
+        box-shadow: 4px 0px 0px 0px $primary inset;
+      }
+    }
+    // second level menu
+    > ul > li {
+      > a {
+        padding: .5rem 1rem .5rem 45px;
+        color: $sidebar-link-active-color;
+        &:hover {
+          color: $primary;
+        }
+      }
+      &.mm-active > a {
+        position: relative;
+        color: $primary;
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 21px;
+          width: 7px;
+          height: 7px;
+          margin-top: -3.5px;
+          content: '';
+          border-radius: 50%;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}

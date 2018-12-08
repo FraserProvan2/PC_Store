@@ -1,0 +1,10 @@
+.badge {
+  line-height: 1.1;
+}
+.has-badge {
+  display: flex !important;
+  align-items: center;
+  .badge {
+    margin-left: auto;
+  }
+}

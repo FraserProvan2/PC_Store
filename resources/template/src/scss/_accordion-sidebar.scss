@@ -1,0 +1,28 @@
+.accordion-sidebar {
+  box-shadow: $box-shadow-sm;
+  .card {
+    border-left: 0;
+    border-right: 0;
+    @include media-breakpoint-up('md') {
+      &:first-of-type {
+        border-top: 0;
+      }
+    }
+  }
+  .card-header > a {
+    &[aria-expanded="true"],
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  .card-body {
+    padding-top: 0;
+  }
+  .color-options {
+    justify-content: start;
+  }
+  .collapse.show,
+  .collapsing {
+    box-shadow: none;
+  }
+}

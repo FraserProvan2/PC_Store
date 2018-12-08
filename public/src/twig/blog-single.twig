@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include '_required-css.twig' %}
+
+    {% include '_template-css.twig' %}
+
+    <title>Single Post - {{title}}</title>
+  </head>
+  <body>
+
+    {% include '_header.twig' with {'active':'blog', 'sub':'blog-single'} %}
+
+    <!-- Main Content -->
+    <div class="container my-3">
+      <div class="row">
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body" lang="zxx"> <!-- because 'lorem ipsum' is not english language, so we add lang="zxx" attribute, remove it on production environment -->
+
+              <!-- Blog Info -->
+              <ul class="list-inline">
+                <li class="list-inline-item"><small><i data-feather="clock"></i> Jan 01, 18</small></li>
+                <li class="list-inline-item"><small><i data-feather="user"></i> <a href="javascript:void(0)" class="text-muted">Admin</a></small></li>
+                <li class="list-inline-item"><small><i data-feather="tag"></i> <a href="javascript:void(0)" class="text-muted">Fashion</a></small></li>
+              </ul>
+
+              <!-- Blog Content -->
+              <h2 class="bold">5 Coolest Winter Outfits You Can Steal</h2>
+              <img src="../img/blog/blog-single.jpeg" alt="Blog" class="img-fluid my-3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ipsa fuga et tenetur dolore, maxime consequuntur! Adipisci sed eligendi reprehenderit alias, beatae perspiciatis, id dolore laborum aliquam praesentium excepturi odio quas aut enim, libero sit minus blanditiis veritatis repellat cum suscipit non obcaecati qui iure? Voluptates a perspiciatis sunt quaerat.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas asperiores rem dolorem vitae reiciendis rerum, id a dicta labore ea, est sed odio animi nostrum veniam, inventore vel. Delectus, ex, qui. Quidem ea, natus aut nihil quaerat suscipit vel fuga numquam excepturi nemo minus quae at, ab qui rerum cum!</p>
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipiscing elit</li>
+                <li>Integer molestie lorem at massa</li>
+                <li>Facilisis in pretium nisl aliquet</li>
+                <li>Nulla volutpat aliquam velit
+                  <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                  </ul>
+                </li>
+                <li>Faucibus porta lacus fringilla vel</li>
+                <li>Aenean sit amet erat nunc</li>
+                <li>Eget porttitor lorem</li>
+              </ul>
+              <!-- /Blog Content -->
+
+              <!-- Share Button -->
+              <div class="d-flex align-items-center">
+                <span class="text-muted">Share post: </span>
+                <a href="javascript:void(0)" class="btn btn-light btn-icon rounded-circle border ml-2" data-toggle="tooltip" title="Facebook"><i data-feather="facebook"></i></a>
+                <a href="javascript:void(0)" class="btn btn-light btn-icon rounded-circle border ml-2" data-toggle="tooltip" title="Twitter"><i data-feather="twitter"></i></a>
+                <a href="javascript:void(0)" class="btn btn-light btn-icon rounded-circle border ml-2" data-toggle="tooltip" title="Instagram"><i data-feather="instagram"></i></a>
+              </div>
+              <!-- /Share Button -->
+
+              <hr>
+
+              <!-- Blog Comments -->
+              <h3>Comments</h3>
+              <div class="media my-4">
+                <a href="javascript:void(0)"><img src="../img/user/user.svg" alt="User" width="45" height="45" class="rounded-circle"></a>
+                <div class="media-body ml-2 ml-sm-3">
+                  <textarea rows="2" placeholder="Leave a comment" class="form-control border autosize"></textarea>
+                  <button class="btn btn-sm btn-light border border-top-0 btn-block">Post</button>
+                </div>
+              </div>
+              <div class="media">
+                <a href="javascript:void(0)"><img src="../img/user/user1.svg" alt="User" width="45" height="45" class="rounded-circle"></a>
+                <div class="media-body ml-2 ml-sm-3">
+                  <div class="d-flex flex-wrap">
+                    <a href="javascript:void(0)" class="mr-2">Alex</a>
+                    <span class="text-muted">17 minutes ago</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et suscipit vitae eius incidunt odit nulla, repellat harum, repudiandae doloremque expedita.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote up">5 <i data-feather="chevron-up"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote down"><i data-feather="chevron-down"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted">Reply</a></li>
+                  </ul>
+                  <hr>
+                  <div class="media">
+                    <a href="javascript:void(0)"><img src="../img/user/user2.svg" alt="User" width="45" height="45" class="rounded-circle"></a>
+                    <div class="media-body ml-2 ml-sm-3">
+                      <div class="d-flex flex-wrap">
+                        <a href="javascript:void(0)" class="mr-2">Twink</a>
+                        <span class="text-muted">5 minutes ago</span>
+                      </div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et suscipit vitae eius incidunt odit nulla, repellat harum, repudiandae doloremque expedita.</p>
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote up"><i data-feather="chevron-up"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote down"><i data-feather="chevron-down"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted">Reply</a></li>
+                      </ul>
+                      <hr>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <a href="javascript:void(0)"><img src="../img/user/user3.svg" alt="User" width="45" height="45" class="rounded-circle"></a>
+                <div class="media-body ml-2 ml-sm-3">
+                  <div class="d-flex flex-wrap">
+                    <a href="javascript:void(0)" class="mr-2">Steve</a>
+                    <span class="text-muted">an hour ago</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et suscipit vitae eius incidunt odit nulla, repellat harum, repudiandae doloremque expedita.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote up"><i data-feather="chevron-up"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="vote down"><i data-feather="chevron-down"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted">Reply</a></li>
+                  </ul>
+                  <hr>
+                </div>
+              </div>
+              <!-- /Blog Comments -->
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Sidebar -->
+        <div class="col-md-4 col-lg-4 mt-3 mt-md-0">
+          {% include '_blog-sidebar.twig' %}
+        </div>
+        <!-- /Blog Sidebar -->
+
+      </div>
+    </div>
+    <!-- /Main Content -->
+
+    {% include '_footer.twig' %}
+
+    {% include '_modal-menu.twig' with {'active':'blog', 'sub':'blog-single'} %}
+
+    {% include '_required-js.twig' %}
+
+    <!-- PLUGINS FOR CURRENT PAGE -->
+    <script src="../plugins/autosize/autosize.min.js"></script>
+
+    {% include '_template-js.twig' %}
+
+    <script>
+    $(function () {
+
+      // Autosize textarea
+      autosize($('textarea.autosize'))
+
+    })
+    </script>
+
+  </body>
+</html>

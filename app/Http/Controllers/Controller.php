@@ -26,4 +26,9 @@ class Controller extends BaseController
 
         return view('index');
     }
+
+    public function home2(){
+
+        return view('test');
+    }
 }

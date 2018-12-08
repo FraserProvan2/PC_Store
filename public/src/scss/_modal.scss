@@ -1,0 +1,50 @@
+// Scale transform for show modal
+.modal.fade .modal-dialog {
+  transform: scale(1.1);
+}
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+// Stretch height for right & left modal
+.modal-right,
+.modal-left {
+  .modal-dialog {
+    margin: 0;
+  }
+  .modal-dialog,
+  .modal-content {
+    height: 100%;
+  }
+  .modal-content {
+    border: 0;
+  }
+  .modal-header,
+  .modal-footer {
+    flex-shrink: 0;
+  }
+}
+
+// Right modal
+.modal-right {
+  padding-right: 0 !important;
+  .modal-dialog {
+    margin-left: auto;
+  }
+  &.fade .modal-dialog {
+    transform: translateX(100%);
+  }
+  &.show .modal-dialog {
+    transform: translateX(0);
+  }
+}
+
+// Left modal
+.modal-left {
+  &.fade .modal-dialog {
+    transform: translateX(-100%);
+  }
+  &.show .modal-dialog {
+    transform: translateX(0);
+  }
+}

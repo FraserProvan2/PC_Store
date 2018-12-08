@@ -1,0 +1,29 @@
+.categories-grid {
+  @extend .roboto-condensed;
+  position: relative;
+  .card-title {
+    text-align: center;
+    color: #fff;
+  }
+  .sa-btn { // 'See All' button
+    position: absolute;
+    left: 50%;
+    display: flex;
+    width: 90px;
+    height: 36px;
+    margin-left: -45px;
+    border: 0;
+    border-radius: 2rem;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    @include media-breakpoint-down('xs') { bottom: 90px }
+    @include media-breakpoint-only('sm') { bottom: 118px }
+    @include media-breakpoint-only('md') { bottom: 105px; left: 494px }
+    @include media-breakpoint-only('lg') { bottom: 144px; left: 641px }
+    @include media-breakpoint-up('xl')   { bottom: 182px; left: 783px }
+  }
+  .card-img-overlay {
+    @include flex-center;
+  }
+}
