@@ -145,15 +145,9 @@
             </div>
             <div class="modal-body shadow">
                 <ul class="menu" id="menu">
-                <li>
-                    <a href="#" class="has-arrow"><i data-feather="user"></i> Account</a>
-                    <ul>
-                    <li><a href="/">My Orders</a></li>
-                    <li><a href="/">My Account</a></li>
-                    </ul>
-                </li>
-                <li class="no-sub mm-active"><a href="/"><i data-feather="home"></i> Build a PC</a></li>
-                <li class="no-sub mm-active"><a href="/"><i data-feather="home"></i> LAN Rental</a></li>
+                    <li class="no-sub "><a href="/"><i data-feather="home"></i> Home</a></li>
+                    <li class="no-sub "><a href="/"><i data-feather="home"></i> Build a PC</a></li>
+                    <li class="no-sub "><a href="/"><i data-feather="home"></i> LAN Rental</a></li>
                 </ul>
             </div>
             </div>
