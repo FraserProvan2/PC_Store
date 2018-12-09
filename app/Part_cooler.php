@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Part_list extends Model
+class Part_cooler extends Model
 {
-    protected $table = 'part_list';
+    //
 }

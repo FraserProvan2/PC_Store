@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMotherboardsTable extends Migration
+class CreatePartCasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMotherboardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('motherboards', function (Blueprint $table) {
+        Schema::create('part_cases', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateMotherboardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('motherboards');
+        Schema::dropIfExists('part_cases');
     }
 }

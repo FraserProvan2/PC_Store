@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCpuModelsTable extends Migration
+class CreatePartRamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCpuModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cpu_models', function (Blueprint $table) {
+        Schema::create('part_rams', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateCpuModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cpu_models');
+        Schema::dropIfExists('part_rams');
     }
 }
