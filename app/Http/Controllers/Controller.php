@@ -12,6 +12,15 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     /**
+     * Homepage main method
+     * @return view index
+     */
+    public function index(){
+
+        return view('public.index');
+    }
+
+    /**
      * Changes object into array
      * @param  object 
      * @return array
@@ -20,15 +29,5 @@ class Controller extends BaseController
 
         $array = json_decode(json_encode($object, true), true);
         return $array;
-    }
-
-    public function home(){
-
-        return view('index');
-    }
-
-    public function home2(){
-
-        return view('test');
     }
 }

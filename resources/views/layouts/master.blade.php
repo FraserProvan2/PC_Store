@@ -14,6 +14,9 @@
         <!-- Mimity CSS  -->
         <link rel="stylesheet" href="../dist/css/style.min.css">
 
+        <!-- Font Awesome 4  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <!-- Custom Styles  -->
         <link rel="stylesheet" href="../css/custom.css">
 
@@ -32,23 +35,9 @@
     
         <!-- Main navigation -->
         <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
-            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/build">Build a PC</a></li>
-            <li class="nav-item"><a class="nav-link" href="/lan-rental">LAN Rental</a></li>
-            {{-- <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link dropdown-toggle forwardable" data-toggle="dropdown" href="shop-categories.html" role="button" aria-haspopup="true" aria-expanded="false">
-                Shop <i data-feather="chevron-down"></i>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="shop-categories.html">Shop Categories</a>
-                <a class="dropdown-item" href="shop-grid.html">Shop Grid</a>
-                <a class="dropdown-item" href="shop-list.html">Shop List</a>
-                <a class="dropdown-item" href="shop-single.html">Single Product</a>
-                <a class="dropdown-item" href="shop-single2.html">Single Product v2</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="shipping.html">Checkout</a>
-            </div>
-            </li> --}}
+            <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="/build">Build a PC</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($page == "lan"){ echo "active"; }?>" href="/lan-rental">LAN Rental</a></li>
         </ul>
         <!-- /Main navigation -->
         <ul class="nav mr-auto mr-sm-0">
@@ -145,9 +134,9 @@
             </div>
             <div class="modal-body shadow">
                 <ul class="menu" id="menu">
-                    <li class="no-sub "><a href="/"><i data-feather="home"></i> Home</a></li>
-                    <li class="no-sub "><a href="/"><i data-feather="home"></i> Build a PC</a></li>
-                    <li class="no-sub "><a href="/"><i data-feather="home"></i> LAN Rental</a></li>
+                    <li class="no-sub"><a href="/"><i data-feather="home"></i> Home</a></li>
+                    <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
+                    <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> LAN Rental</a></li>
                 </ul>
             </div>
             </div>
