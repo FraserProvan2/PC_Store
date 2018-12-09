@@ -15,6 +15,11 @@ class CreatePartCoolersTable extends Migration
     {
         Schema::create('part_coolers', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('name', 100);
+
+            //part data
+
+            $table->integer('stock');
             $table->timestamps();
         });
     }

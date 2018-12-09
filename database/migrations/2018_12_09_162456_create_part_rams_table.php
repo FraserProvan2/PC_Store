@@ -15,6 +15,11 @@ class CreatePartRamsTable extends Migration
     {
         Schema::create('part_rams', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('name', 100);
+
+            //part data
+
+            $table->integer('stock');
             $table->timestamps();
         });
     }

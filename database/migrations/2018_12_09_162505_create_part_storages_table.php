@@ -15,6 +15,11 @@ class CreatePartStoragesTable extends Migration
     {
         Schema::create('part_storages', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('name', 100);
+
+            //part data
+
+            $table->integer('stock');
             $table->timestamps();
         });
     }

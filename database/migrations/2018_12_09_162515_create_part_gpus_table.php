@@ -15,6 +15,11 @@ class CreatePartGpusTable extends Migration
     {
         Schema::create('part_gpus', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('name', 100);
+
+            //part data
+
+            $table->integer('stock');
             $table->timestamps();
         });
     }
