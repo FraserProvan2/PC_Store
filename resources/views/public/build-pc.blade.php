@@ -17,11 +17,10 @@
               <td class="cart-title">
                 <a href="shop-single.html" class="h6 bold d-inline-block" title="Hanes Hooded Sweatshirt">CPU</a>
                 <br> 
+                <a href="/select-cpu" class="btn-sm btn-primary">Add <i class="fa fa-plus" aria-hidden="true"></i></a>
                 <small class=""><b>£</b>18.56</small>
               </td>
-              <td class="cart-price text-right">
-                
-                <a href="shipping.html" class="btn-sm btn-primary">Add <i class="fa fa-plus" aria-hidden="true"></i></a>
+              <td class="cart-price text-right">       
                 <a href="shipping.html" class="btn-sm btn-secondary"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
                 <a href="shipping.html" class="btn-sm btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 <span class="roboto-condensed bold"></span>
