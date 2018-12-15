@@ -9,10 +9,12 @@
 <div class="container my-3">
     <div class="card">
       <div class="card-body px-1 px-md-5 pt-5">
+        <h3 class="bold">{{ $list_data->name }}</h3>
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
           <tbody>
             
-            
+
+
             <tr>
               <td class="cart-title">
                 <a href="shop-single.html" class="h6 bold d-inline-block" title="Hanes Hooded Sweatshirt">CPU</a>
@@ -28,12 +30,14 @@
             </tr>
             
             
+            
           </tbody>
         </table>
         <div class="text-center">
           <small class="counter">SUBTOTAL</small>
           <h3 class="roboto-condensed bold">$120.00</h3>
-          <a href="shipping.html" class="btn btn-primary">Add to Cart <i data-feather="arrow-right"></i></a>
+          <a href="" class="btn btn-secondary">Save List<i data-feather="plus"></i></a>
+          <a href="" class="btn btn-primary">Add to Cart <i data-feather="arrow-right"></i></a>
         </div>
       </div>
     </div>

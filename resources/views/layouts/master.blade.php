@@ -19,6 +19,7 @@
 
         <!-- Custom Styles  -->
         <link rel="stylesheet" href="../css/custom.css">
+        <link rel="stylesheet" href="../css/build.css">
 
         <title>PC Store - @yield('title')</title>
     </head>
