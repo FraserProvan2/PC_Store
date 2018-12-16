@@ -8,6 +8,10 @@
 
 //Auth
 Auth::routes();
+Route::get('register', [
+    'as' => 'register',
+    'uses' => 'Auth\RegisterController@showRegistrationForm'
+]);
 
 // Home
 Route::get('/', [ 
@@ -15,11 +19,8 @@ Route::get('/', [
     'uses' => 'controller@index'
 ]);
 
-//Accounts
-// Route::get('account', 'AccountProfileController@index', function () {
-    Route::get('/account', 'AccountProfileController@index');
-// })->middleware('auth');
 
+Route::get('/account', 'AccountProfileController@index');
 Route::get('/account/orders', 'AccountOrdersController@index');
 
 /*------------------------------------------------------------------------
