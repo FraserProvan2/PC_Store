@@ -22,6 +22,8 @@ class AccountProfileController extends Controller
      */
     public function index(){
 
-        return view('public.account.profile');
+        echo $data['token'] = session('_token');
+
+        return view('public.account.profile', $data);
     }
 }

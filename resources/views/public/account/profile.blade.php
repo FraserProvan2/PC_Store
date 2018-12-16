@@ -50,7 +50,7 @@
                 <div class="form-row">
                     @csrf
 
-                    {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
+                    <input type="hidden" name="token" value="{{ $token }}">
 
                     <div class="form-group col-sm-6">
                         <label for="password">{{ __('Password') }}</label>
