@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+use App\User;
+
 class AccountOrdersController extends Controller
 {
     /**
@@ -22,6 +25,15 @@ class AccountOrdersController extends Controller
      */
     public function index(){
 
-        return view('public.account.orders');
+        //current user
+        $user_id = Auth::user()->id;
+
+        //checks user id agaisnt users table
+        $user_info_preconvert = User::where('id', $user_id)->first();
+        $user_info = $this->convert_object($user_info_preconvert);
+
+        $data['user_data'] = $user_info;
+
+        return view('public.account.orders', $data);
     }
 }

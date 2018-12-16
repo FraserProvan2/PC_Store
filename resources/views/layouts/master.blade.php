@@ -148,7 +148,7 @@
             <div class="dropdown-menu dropdown-menu-right">
                 
                 <div class="media">
-                <a href="shop-single.html"><img src="../img/products/1_small.jpg" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
+                <a href="shop-single.html"><img src="{{ asset('/img/products/1_small.jpg') }}" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
                 <div class="media-body">
                     <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
                     <span class="qty">1</span> x <span class="price">$18.56</span>
@@ -157,7 +157,7 @@
                 </div>
                 
                 <div class="media">
-                <a href="shop-single.html"><img src="../img/products/2_small.jpg" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
+                <a href="shop-single.html"><img src="{{ asset('/img/products/2_small.jpg') }}" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
                 <div class="media-body">
                     <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
                     <span class="qty">1</span> x <span class="price">$16.64</span>
@@ -209,7 +209,7 @@
             <div class="modal-content">
             <div class="modal-header shadow">
                 <a class="h5 mb-0 d-flex align-items-center" href="index.html">
-                <img src="../img/logo.svg" alt="Mimity" class="mr-3">
+                <img src="{{ asset('/img/logo.svg') }}" alt="Mimity" class="mr-3">
                 <strong>PC Store</strong>
                 </a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -229,19 +229,19 @@
         <!-- /Menu Modal -->
 
         <!-- REQUIRED JS  -->
-        <script src="../plugins/jquery/jquery.min.js"></script>
-        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="../plugins/feather-icons/feather.min.js"></script>
-        <script src="../plugins/metismenu/metisMenu.min.js"></script>
-        <script src="../plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('/plugins/feather-icons/feather.min.js') }}"></script>
+        <script src="{{ asset('/plugins/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 
         <!-- PLUGINS FOR CURRENT PAGE -->
-        <script src="../plugins/swiper/swiper.min.js"></script>
-        <script src="../plugins/noty/noty.min.js"></script>
-        <script src="../plugins/jquery-countdown/jquery.countdown.min.js"></script>
+        <script src="{{ asset('/plugins/swiper/swiper.min.js') }}"></script>
+        <script src="{{ asset('/plugins/noty/noty.min.js') }}"></script>
+        <script src="{{ asset('/plugins/jquery-countdown/jquery.countdown.min.js') }}"></script>
 
         <!-- Mimity JS  -->
-        <script src="../dist/js/script.min.js"></script>
+        <script src="{{ asset('/dist/js/script.min.js') }}"></script>
 
         <script>
         $(function () {

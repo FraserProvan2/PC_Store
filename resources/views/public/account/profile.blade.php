@@ -6,24 +6,8 @@
 
 <div class="row">
 
-    <div class="col-md-4 col-lg-3">
-        <div class="card">
-        <div class="card-body text-center">
-            <h5 class="bold mb-0">John Thor</h5>
-            <small class="counter">Joined Dec 31, 2017</small>
-        </div>
-        <div class="list-group list-group-flush">
-            <a href="/account" class="list-group-item list-group-item-action active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Profile</a>
-            <a href="/account/orders" class="list-group-item list-group-item-action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag mr-3"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Orders</a>
-            <a class="list-group-item list-group-item-action text-danger" href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">
-                <i data-feather="log-out"></i>    
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Logout') }}
-            </a>
-        </div>
-        </div>
-    </div>
+    <?php $sidebar_page = "profile"; ?>
+    @include('layouts.account-sidebar') 
 
     <div class="col mt-3 mt-md-0">
         <div class="card">
@@ -31,29 +15,29 @@
             <h3>My Profile</h3><hr>
             
             <!--Success Message-->
-            <?php if(isset($message)){ ?>
+            <?php if(isset($message_details)){ ?>
                 <div class="alert alert-success">
-                    <strong>Success!</strong> <?php echo $message; ?>
+                    <strong>Success!</strong> <?php echo $message_details; ?>
                 </div>
             <?php } ?>
 
             <!--Error Message-->
-            <?php if(isset($error)){ ?>
+            <?php if(isset($error_details)){ ?>
                 <div class="alert alert-danger">
-                    <strong>Error!</strong> <?php echo $error; ?>
+                    <strong>Error!</strong> <?php echo $error_details; ?>
                 </div>
             <?php } ?>
-            
+
             <form method="POST" action="/account/update/details">
                 <div class="form-row">
                     @csrf
                     <div class="form-group col-sm-6">
                         <label for="profileFirstName">Name</label>
-                        <input type="text" class="form-control" id="profileFirstName" value="" name="name" required>
+                        <input type="text" class="form-control" id="profileFirstName" value="{{ $user_data['name'] }}" name="name" required>
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="profileEmail">Email address</label>
-                        <input type="email" class="form-control" id="profileEmail" value="" name="email" required>
+                        <input type="email" class="form-control" id="profileEmail" value="{{ $user_data['email'] }}" name="email" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">
@@ -63,11 +47,22 @@
         </div>
 
         <div class="card-body">
+            <!--Success Message-->
+            <?php if(isset($message_password)){ ?>
+                <div class="alert alert-success">
+                    <strong>Success!</strong> <?php echo $message_password; ?>
+                </div>
+            <?php } ?>
+
+            <!--Error Message-->
+            <?php if(isset($error_password)){ ?>
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> <?php echo $error_password; ?>
+                </div>
+            <?php } ?>
             <form method="POST" action="/account/update/password">
                 <div class="form-row">
                     @csrf
-
-                    {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
 
                     <div class="form-group col-sm-6">
                         <label for="password">{{ __('Password') }}</label>
