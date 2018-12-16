@@ -125,7 +125,7 @@
                                         </a>
                                         
                                         @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            <a class="btn btn-link pl-none" href="{{ route('password.request') }}">
                                             Forgot Your Password?
                                             </a>
                                         @endif
@@ -220,9 +220,6 @@
                 <ul class="menu" id="menu">
                     
                     <li class="no-sub"><a href="/"><i data-feather="home"></i> Home</a></li>
-                    
-
-                    
                     <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
                     <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> LAN Rental</a></li>
 
@@ -236,7 +233,8 @@
                             Logout
                         </li>
                     @else
-                        <li class="no-sub"><a href="/register"><i data-feather="user"></i> Sign In</a></li>
+                        <li class="no-sub"><a href="/login"><i data-feather="user"></i> Sign In</a></li>
+                        <li class="no-sub"><a href="/register"><i data-feather="user"></i> Register</a></li>
                     @endif
 
 

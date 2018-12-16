@@ -5,3 +5,7 @@
 .side-m{
     margin-right: .8rem
 }
+
+.pl-none{
+    padding-left:0px!important;
+}
