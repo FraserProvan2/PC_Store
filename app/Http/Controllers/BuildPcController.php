@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\BuildList;
+use App\Part_cpu as Cpu;
 
 class BuildPcController extends Controller
 {
-
-    public function __construct()
-    {
-       
-    }
     
     /**
      * Build a PC main method
@@ -20,7 +16,12 @@ class BuildPcController extends Controller
      */
     public function index(){
 
-        return view('public.build.build-index');
+        //gets current list data
+        $current_list_id = session('current_part_list');
+        $data['list_data'] = BuildList::where('id', $current_list_id)->first();
+
+
+        return view('public.build.build-index', $data);
     }
 
     /**
@@ -35,6 +36,9 @@ class BuildPcController extends Controller
         //gets part list data using id
         $list_data = BuildList::where('id', $list_id)->first();     
         $data['list_data'] = $list_data;
+
+        //part information
+        $data['cpu_data'] = Cpu::where('id', $list_data['cpu_id'])->first();
 
         return view('public.build.part-list', $data);
     }
@@ -69,10 +73,51 @@ class BuildPcController extends Controller
      * select CPU for part list
      * @return view cpu list
      */
-    public function select_cpu(){
+    public function view_cpu(){
 
-        $data['part_title'] = 'Central Processing Unit';
+        //gets all cpu data
+        $data['cpu_data'] = $cpu = Cpu::all();
 
-        return view('public.build.choose-part', $data);
+        return view('public.build.select-cpu', $data);
+    }
+
+    /**
+     * adds CPU to part list
+     * @return function index w/ message
+     */
+    public function add_cpu(Request $request){
+    
+        //gets current list data
+        $current_list_id = session('current_part_list');
+
+        //updates CPU
+        BuildList::where('id', $current_list_id)->update([
+                'cpu_id' => $request['cpu_id'],
+        ]);
+
+        //success message
+        $data['message'] = "CPU Added!";
+
+        return $this->load()->with($data); 
+    }
+
+    /**
+     * removes CPU from part list
+     * @return function index w/ message
+     */
+    public function remove_cpu(Request $request){
+
+        //gets current list data
+        $current_list_id = session('current_part_list');
+
+        //removes cpu id from current part list
+        BuildList::where('id', $current_list_id)->update([
+            'cpu_id' => NULL,
+        ]);
+
+        //success message
+        $data['message'] = "CPU Removed!";
+
+        return $this->load()->with($data);
     }
 }

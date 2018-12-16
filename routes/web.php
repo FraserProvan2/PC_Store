@@ -35,7 +35,9 @@ Route::post('/build/create', 'BuildPcController@create');
 Route::get('/build/load', 'BuildPcController@load');
 
 //choose part
-Route::get('/select-cpu', 'BuildPcController@select_cpu');
+Route::get('/build/view-cpu', 'BuildPcController@view_cpu');
+Route::post('/build/add-cpu', 'BuildPcController@add_cpu');
+Route::get('/build/remove-cpu', 'BuildPcController@remove_cpu');
 
 // LAN Rental
 Route::get('/lan-rental', 'LanRentalController@index');
