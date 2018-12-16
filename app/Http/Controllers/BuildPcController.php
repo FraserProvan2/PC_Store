@@ -8,6 +8,12 @@ use App\BuildList;
 
 class BuildPcController extends Controller
 {
+
+    public function __construct()
+    {
+       
+    }
+    
     /**
      * Build a PC main method
      * @return view index

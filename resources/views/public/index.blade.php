@@ -39,6 +39,4 @@
     </div>
     <!-- /Top Categories 1 -->
 
-<br>
-
 @endsection

@@ -36,24 +36,114 @@
     
         <!-- Main navigation -->
         <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
+            
+            <?php if(empty($page)){ $page = ""; } ?>
             <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="/build">Build a PC</a></li>
             <li class="nav-item"><a class="nav-link <?php if($page == "lan"){ echo "active"; }?>" href="/lan-rental">LAN Rental</a></li>
         </ul>
         <!-- /Main navigation -->
         <ul class="nav mr-auto mr-sm-0">
-    
-            <!-- My Account -->
+
             <li class="nav-item dropdown dropdown-hover dropdown-cart">
-            <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart.html" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="/account" role="button" aria-haspopup="true" aria-expanded="false">
                 <i data-feather="user"></i>
             </a>   
                 <div class="dropdown-menu dropdown-menu-right">
-                <a href="/" class="dropdown-item has-icon"><i data-feather="shopping-cart"></i>My Orders</a>
-                {{-- <a href="account-wishlist.html" class="dropdown-item has-icon has-badge"><i data-feather="heart"></i>Wishlist <span class="badge rounded badge-primary">2</span></a> --}}
-                <a href="/" class="dropdown-item has-icon"><i data-feather="settings"></i>My Account</a>
-                <div class="dropdown-divider"></div>
-                <a href="/" class="dropdown-item has-icon text-danger"><i data-feather="log-out"></i>Logout</a>
+                       
+                        @if(Auth::check())
+                            <!-- My Account -->
+                            <a href="/account/orders" class="dropdown-item has-icon"><i data-feather="shopping-cart"></i>My Orders</a>
+                            <a href="/account" class="dropdown-item has-icon"><i data-feather="settings"></i>My Account</a>
+                            <div class="dropdown-divider"></div>
+
+                            <!-- Log Out -->
+                            <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                <i data-feather="log-out"></i>
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
+                        @else
+                            <!-- Log In Form -->
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+        
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12 col-form-label">{{ __('E-Mail Address') }}</label>
+        
+                                    <div class="col-md-12">
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+        
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-12 col-form-label">{{ __('Password') }}</label>
+        
+                                    <div class="col-md-12">
+                                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+        
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row">
+                                    <div class="col-md-12 offset-md-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        
+                                            <label class="form-check-label" for="remember">
+                                                {{ __('Remember Me') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-12 offset-md-12">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Login') }}
+                                        </button>
+
+                                        <a href="/register" class="btn btn-secondary">
+                                            Register
+                                        </a>
+                                        
+                                        @if (Route::has('password.request'))
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            Forgot Your Password?
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </form>
+            
+                        @endif
+
+
+               
+                
+    
+                    
+
+
+               
+
                 </div>
             </li>
             <!-- /My Account -->
@@ -115,6 +205,8 @@
     </div>
     <!-- /Main Content -->
 
+    <br>
+    
     <footer>
         <!-- Footer -->
         <div class="copyright">Fraser Provan 2019</div>

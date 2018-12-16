@@ -2,7 +2,7 @@
 
 @extends('layouts.master')
 
-@section('title', 'Home')
+@section('title', 'LAN Rental')
 
 @section('content')
 
