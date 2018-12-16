@@ -29,28 +29,30 @@
         <div class="card">
         <div class="card-body">
             <h3>My Profile</h3><hr>
-            <form>
+            <form method="POST" action="/account/update/details">
                 <div class="form-row">
+                    @csrf
                     <div class="form-group col-sm-6">
                         <label for="profileFirstName">Name</label>
-                        <input type="text" class="form-control" id="profileFirstName" value="John">
+                        <input type="text" class="form-control" id="profileFirstName" value="" required>
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="profileEmail">Email address</label>
-                        <input type="email" class="form-control" id="profileEmail" value="john.thor@example.com">
+                        <input type="email" class="form-control" id="profileEmail" value="" required>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary">Update Details</button>
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Update Details') }}
+                </button>
             </form>
         </div>
 
         <div class="card-body">
-                
-            <form method="POST" action="{{ route('password.update') }}">
+            <form method="POST" action="/account/update/password">
                 <div class="form-row">
                     @csrf
 
-                    <input type="hidden" name="token" value="{{ $token }}">
+                    {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
 
                     <div class="form-group col-sm-6">
                         <label for="password">{{ __('Password') }}</label>
