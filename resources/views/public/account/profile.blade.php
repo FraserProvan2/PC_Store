@@ -29,16 +29,31 @@
         <div class="card">
         <div class="card-body">
             <h3>My Profile</h3><hr>
+            
+            <!--Success Message-->
+            <?php if(isset($message)){ ?>
+                <div class="alert alert-success">
+                    <strong>Success!</strong> <?php echo $message; ?>
+                </div>
+            <?php } ?>
+
+            <!--Error Message-->
+            <?php if(isset($error)){ ?>
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> <?php echo $error; ?>
+                </div>
+            <?php } ?>
+            
             <form method="POST" action="/account/update/details">
                 <div class="form-row">
                     @csrf
                     <div class="form-group col-sm-6">
                         <label for="profileFirstName">Name</label>
-                        <input type="text" class="form-control" id="profileFirstName" value="" required>
+                        <input type="text" class="form-control" id="profileFirstName" value="" name="name" required>
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="profileEmail">Email address</label>
-                        <input type="email" class="form-control" id="profileEmail" value="" required>
+                        <input type="email" class="form-control" id="profileEmail" value="" name="email" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">

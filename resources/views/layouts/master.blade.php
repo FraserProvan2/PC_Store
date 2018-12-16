@@ -5,21 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- REQUIRED CSS: FONT, BOOTSTRAP, METISMENU, PERFECT-SCROLLBAR  -->
-        <link rel="stylesheet" href="../dist/css/vendor.min.css">
+        <link rel="stylesheet" href="{{ asset('/dist/css/vendor.min.css') }}">
 
         <!-- PLUGINS FOR CURRENT PAGE -->
-        <link rel="stylesheet" href="../plugins/swiper/swiper.min.css">
-        <link rel="stylesheet" href="../plugins/noty/noty.min.css">
+        <link rel="stylesheet" href="{{ asset('/plugins/swiper/swiper.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/plugins/noty/noty.min.css') }}">
 
         <!-- Mimity CSS  -->
-        <link rel="stylesheet" href="../dist/css/style.min.css">
+        <link rel="stylesheet" href="{{ asset('/dist/css/style.min.css') }}">
 
         <!-- Font Awesome 4  -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Custom Styles  -->
-        <link rel="stylesheet" href="../css/custom.css">
-        <link rel="stylesheet" href="../css/build.css">
+        <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/build.css') }}">
 
         <title>PC Store - @yield('title')</title>
     </head>
@@ -32,7 +32,7 @@
         <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
     
         <!-- Logo -->
-        <a class="nav-link nav-logo" href="/"><img src="../img/logo.svg" alt="Mimity"> <strong>PC Store</strong></a>
+        <a class="nav-link nav-logo" href="/"><img src="{{ asset('/img/logo.svg') }}" alt="Mimity"> <strong>PC Store</strong></a>
     
         <!-- Main navigation -->
         <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
@@ -134,15 +134,6 @@
                             </form>
             
                         @endif
-
-
-               
-                
-    
-                    
-
-
-               
 
                 </div>
             </li>
