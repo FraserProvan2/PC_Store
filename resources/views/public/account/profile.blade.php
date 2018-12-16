@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group col-sm-6">
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Update Password') }}
+                            {{ __('Change Password') }}
                         </button>
                     </div>
                 </div>
