@@ -12,6 +12,6 @@ class LanRentalController extends Controller
      */
     public function index(){
 
-        return view('public.lan-rent');
+        return view('public.rental.lan-rent');
     }
 }

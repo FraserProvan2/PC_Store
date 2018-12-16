@@ -20,7 +20,7 @@ class BuildPcController extends Controller
      */
     public function index(){
 
-        return view('public.build-pc-index');
+        return view('public.build.build-index');
     }
 
     /**
@@ -36,7 +36,7 @@ class BuildPcController extends Controller
         $list_data = BuildList::where('id', $list_id)->first();     
         $data['list_data'] = $list_data;
 
-        return view('public.part-list', $data);
+        return view('public.build.part-list', $data);
     }
 
     /**
@@ -73,6 +73,6 @@ class BuildPcController extends Controller
 
         $data['part_title'] = 'Central Processing Unit';
 
-        return view('public.choose-part', $data);
+        return view('public.build.choose-part', $data);
     }
 }
