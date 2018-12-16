@@ -65,7 +65,7 @@
                     @csrf
 
                     <div class="form-group col-sm-6">
-                        <label for="password">{{ __('Password') }}</label>
+                        <label for="password">{{ __('New Password') }}</label>
 
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group col-sm-6">
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Reset Password') }}
+                            {{ __('Update Password') }}
                         </button>
                     </div>
                 </div>
