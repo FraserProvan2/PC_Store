@@ -9,10 +9,17 @@
 //Auth
 Auth::routes();
 
-Route::get('/', 'controller@index'); // Home
+// Home
+Route::get('/', [ 
+    'as' => 'home', 
+    'uses' => 'controller@index'
+]);
 
 //Accounts
-Route::get('/account', 'AccountProfileController@index');
+// Route::get('account', 'AccountProfileController@index', function () {
+    Route::get('/account', 'AccountProfileController@index');
+// })->middleware('auth');
+
 Route::get('/account/orders', 'AccountOrdersController@index');
 
 /*------------------------------------------------------------------------
