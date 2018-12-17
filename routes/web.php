@@ -38,6 +38,3 @@ Route::get('/build/load', 'BuildPcController@load');
 Route::get('/build/view-cpu', 'BuildPcController@view_cpu');
 Route::post('/build/add-cpu', 'BuildPcController@add_cpu');
 Route::get('/build/remove-cpu', 'BuildPcController@remove_cpu');
-
-// LAN Rental
-Route::get('/lan-rental', 'LanRentalController@index');

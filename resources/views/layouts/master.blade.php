@@ -40,10 +40,9 @@
             <?php if(empty($page)){ $page = ""; } ?>
             <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="/build">Build a PC</a></li>
-            <li class="nav-item"><a class="nav-link <?php if($page == "lan"){ echo "active"; }?>" href="/lan-rental">LAN Rental</a></li>
         </ul>
         <!-- /Main navigation -->
-        <ul class="nav ml-auto mr-sm-0">
+        <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
 
             <li class="nav-item dropdown dropdown-hover dropdown-cart">
             <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="/account" role="button" aria-haspopup="true" aria-expanded="false">
@@ -160,7 +159,6 @@
                     
                     <li class="no-sub"><a href="/"><i data-feather="home"></i> Home</a></li>
                     <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
-                    <li class="no-sub"><a href="/"><i class="fa fa-wrench side-m" aria-hidden="true"></i> LAN Rental</a></li>
 
                     <hr>
 
