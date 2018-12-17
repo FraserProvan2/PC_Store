@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\BuildList;
 use App\Part_cpu as Cpu;
 
@@ -54,9 +55,20 @@ class BuildPcController extends Controller
         $build_name = $request['build-name'];
 
         //if user signed in add user_id to list
+        if(Auth::user()){
+            $user = Auth::user('id');
+            $user_id = $user['id'];
+        }
+        //else add NULL instead
+        else {
+            $user_id = NULL;
+        }
 
         //saves new build list
-        $newbuild = new BuildList(['name'=>$build_name]);
+        $newbuild = new BuildList([
+            'name'=>$build_name,
+            'user_id'=>$user_id
+        ]);
         $newbuild->save();
 
         //gets newly created part list
