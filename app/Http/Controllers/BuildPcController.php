@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
-use App\BuildList;
-use App\Part_cpu as Cpu;
+use App\Part_lists as Build;
+use App\Parts;
 
 class BuildPcController extends Controller
 {
@@ -19,8 +19,7 @@ class BuildPcController extends Controller
 
         //gets current list data
         $current_list_id = session('current_part_list');
-        $data['list_data'] = BuildList::where('id', $current_list_id)->first();
-
+        $data['list_data'] = Build::where('id', $current_list_id)->first();
 
         return view('public.build.build-index', $data);
     }
@@ -35,11 +34,11 @@ class BuildPcController extends Controller
         $list_id = session('current_part_list');
 
         //gets part list data using id
-        $list_data = BuildList::where('id', $list_id)->first();     
+        $list_data = Build::where('id', $list_id)->first();     
         $data['list_data'] = $list_data;
 
         //part information
-        $data['cpu_data'] = Cpu::where('id', $list_data['cpu_id'])->first();
+        $data['cpu_data'] = Parts::where('id', $data['list_data']['cpu_id'])->first();
 
         return view('public.build.part-list', $data);
     }
@@ -65,14 +64,14 @@ class BuildPcController extends Controller
         }
 
         //saves new build list
-        $newbuild = new BuildList([
+        $newbuild = new Build([
             'name'=>$build_name,
             'user_id'=>$user_id
         ]);
         $newbuild->save();
 
         //gets newly created part list
-        $newbuild_list = BuildList::orderBy('id', 'DESC')->first();
+        $newbuild_list = Build::orderBy('id', 'DESC')->first();
         $data['list_data'] = $newbuild_list;
 
         //adds part list to session
@@ -82,54 +81,67 @@ class BuildPcController extends Controller
     }
 
     /**
-     * select CPU for part list
-     * @return view cpu list
+     * Lists parts
+     * @param part part type
+     * @return function load list of parts
      */
-    public function view_cpu(){
+    public function list_part($part){
 
-        //gets all cpu data
-        $data['cpu_data'] = $cpu = Cpu::all();
+        //gets part data for selected part
+        $part_data_object = Parts::where('type', $part)
+                                  ->where('stock', ">", 0)
+                                  ->get();
 
-        return view('public.build.select-cpu', $data);
+        $data['part_data'] = $this->convert_object($part_data_object);
+
+        return view('public.build.list-part', $data);
     }
 
     /**
-     * adds CPU to part list
-     * @return function index w/ message
+     * Adds part to build
+     * @param id part id
+     * @return function loads part list
      */
-    public function add_cpu(Request $request){
-    
+    public function add_part($id){
+
         //gets current list data
         $current_list_id = session('current_part_list');
+        
+        //gets data for part using ID
+        $part_data_object = Parts::where('id', $id)->first();
+        $part_data = $this->convert_object($part_data_object);
 
-        //updates CPU
-        BuildList::where('id', $current_list_id)->update([
-                'cpu_id' => $request['cpu_id'],
+        //finds type
+        $type = $part_data['type'];
+
+        //adds part to part list using part ID and type
+        Build::where('id', $current_list_id)->update([
+            $type.'_id' => $id,
         ]);
 
-        //success message
-        $data['message'] = "CPU Added!";
-
-        return $this->load()->with($data); 
+        return $this->load();               
     }
 
     /**
-     * removes CPU from part list
-     * @return function index w/ message
+     * Remove part from build
+     * @param id part id
+     * @return function loads part list
      */
-    public function remove_cpu(Request $request){
+    public function remove_part($id){
 
         //gets current list data
         $current_list_id = session('current_part_list');
 
-        //removes cpu id from current part list
-        BuildList::where('id', $current_list_id)->update([
-            'cpu_id' => NULL,
+        //gets part type using ID
+        $part_data_object = Parts::where('id', $id)->first();
+        $part_type = $part_data_object['type'];
+
+        //updates part type to NULL using type and id
+        Build::where('id', $current_list_id)->update([
+            $part_type.'_id' => NULL,
         ]);
 
-        //success message
-        $data['message'] = "CPU Removed!";
-
-        return $this->load()->with($data);
+        return $this->load();  
     }
+
 }

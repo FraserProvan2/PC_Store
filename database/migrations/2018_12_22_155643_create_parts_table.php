@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePartMotherboardsTable extends Migration
+class CreatePartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePartMotherboardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('part_motherboards', function (Blueprint $table) {
+        Schema::create('parts', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('name', 100);
-
-            //part data
-
+            $table->char('name', 100)->nullable();
+            $table->enum('type', array('case', 'cooler', 'cpu', 'gpu', 'motherboard', 'powersupply', 'ram', 'storage'));
+            $table->longText('specs');
+            $table->integer('price');
             $table->integer('stock');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreatePartMotherboardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('part_motherboards');
+        Schema::dropIfExists('parts');
     }
 }

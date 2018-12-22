@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Part_cooler extends Model
+class Parts extends Model
 {
     //
+    
 }

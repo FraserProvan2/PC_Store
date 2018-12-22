@@ -1,7 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Account;
-
 /*------------------------------------------------------------------------
 | Main
 |------------------------------------------------------------------------*/
@@ -35,6 +33,6 @@ Route::post('/build/create', 'BuildPcController@create');
 Route::get('/build/load', 'BuildPcController@load');
 
 //choose part
-Route::get('/build/view-cpu', 'BuildPcController@view_cpu');
-Route::post('/build/add-cpu', 'BuildPcController@add_cpu');
-Route::get('/build/remove-cpu', 'BuildPcController@remove_cpu');
+Route::get('/list/{part}', 'BuildPcController@list_part');
+Route::get('/add/{id}', 'BuildPcController@add_part');
+Route::get('/remove/{id}', 'BuildPcController@remove_part');
