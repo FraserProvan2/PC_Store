@@ -11,7 +11,7 @@
     @foreach($part_data as $part)
     <div class="col-12 mt-2">
         <div class="card card-product card-product-list">
-            <a href="shop-single.html"><img class="card-img-top" src="../img/products/5_small.jpg" alt="Card image cap"></a>
+            <a><img class="card-img-top part-img-" src="../img/GX34SMS_197401_750x750.jpg"></a>
             <div class="card-body">
             <a href="shop-single.html" class="card-title">{{ $part['name'] }}</a>
             <div class="attr">
@@ -22,9 +22,12 @@
             <p class="d-none d-sm-block">specs</p>
 
             <a href="/add/{{ $part['id'] }}" class="btn btn-sm btn-primary">Add to Build <i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="/build/load" class="btn btn-secondary btn-sm">Return <i class="fa fa-undo" aria-hidden="true"></i></a>
+
             </div>
         </div>
     </div>
+
     @endforeach
 
 </div>

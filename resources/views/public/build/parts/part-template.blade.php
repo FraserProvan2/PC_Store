@@ -49,10 +49,9 @@ switch($part) {
 
 ?>
 
-
 <tr>
     <td class="cart-title">
-        <a class="h6 bold d-inline-block" title="Hanes Hooded Sweatshirt"><span class="text-primary"> {{ $part_title }} </span>
+        <a class="h6 bold d-inline-block"><span class="text-primary"> {{ $part_title }} </span>
 
             @if($part_id != 0)
                 - {{ $part_data->name }}

@@ -12,7 +12,7 @@
             <div class="col-md-6">
 
                 @if(Session::has('current_part_list'))
-                    <a href="/build/load" class="btn btn-primary btn-lg">Resume "{{ $list_data->name }}"</a>
+                    <a href="/build/load" class="btn btn-primary btn-lg" style="width: 100%">Resume "{{ $list_data->name }}"</a>
                     <br>
                     <hr>
                 @endif

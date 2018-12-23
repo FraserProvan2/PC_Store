@@ -18,8 +18,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Custom Styles  -->
-        <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/build.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
 
         <title>PC Store - @yield('title')</title>
     </head>
