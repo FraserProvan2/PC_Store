@@ -20,6 +20,7 @@ class CreatePartsTable extends Migration
             $table->longText('specs');
             $table->integer('price');
             $table->integer('stock');
+            $table->char('image', 100)->nullable();
             $table->timestamps();
         });
     }

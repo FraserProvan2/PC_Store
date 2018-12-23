@@ -9,15 +9,16 @@
 <div class="container my-3">
     <div class="card">
       <div class="card-body px-1 px-md-5 pt-5">
-        
-        <?php if(isset($message)){ ?>
-            <div class="alert alert-success">
-                {{ $message }}
-            </div>
-        <?php } ?>
 
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
           <h3 class="bold text-center">{{ $list_data->name }}</h3>
+
+            @if (Session::has('message'))
+                <div class="alert alert-success" role="alert">
+                    <strong>Success!</strong> {!! Session::get('message') !!}
+                </div>
+            @endif
+
           <tbody>
 
             <?php $total_price = 00.00; ?>
@@ -48,12 +49,26 @@
           
           </tbody>
         </table>
+
+        @if (1 + 1 == 3)
+            <div class="alert alert-danger" role="alert">
+                <strong>Compatibility Error! Fix the errors add to Cart</strong>
+                <br><br>
+                <p>{!! Session::get('error') !!}</p> 
+            </div>
+        @endif
+
         <div class="text-center">
-          <small class="counter">SUBTOTAL</small>
-          <h3 class="roboto-condensed bold">£ {{ number_format($total_price, 2) }}</h3>
-          
-          <a href="" class="btn btn-outline-primary">Save List <i data-feather="plus"></i></a>
-          <a href="" class="btn btn-primary">Add to Cart <i data-feather="arrow-right"></i></a>
+            <small class="counter">SUBTOTAL</small>
+            <h3 class="roboto-condensed bold">£ {{ number_format($total_price, 2) }}</h3>
+            <a href="" class="btn btn-outline-primary">Save List <i data-feather="plus"></i></a>
+
+        @if (1 + 1 == 3)
+            <button href="" class="btn btn-primary disabled">Add to Cart <i data-feather="arrow-right"></i></button>
+        @else
+            <a href="" class="btn btn-primary">Add to Cart <i data-feather="arrow-right"></i></a>
+        @endif
+        
         </div>
       </div>
     </div>

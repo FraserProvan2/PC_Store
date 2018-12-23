@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use Session;
+
 use App\Part_lists as Build;
 use App\Parts;
 
@@ -46,6 +48,9 @@ class BuildPcController extends Controller
         $data['powersupply_data'] = Parts::where('id', $data['list_data']['powersupply_id'])->first();
         $data['ram_data'] = Parts::where('id', $data['list_data']['ram_id'])->first();
         $data['storage_data'] = Parts::where('id', $data['list_data']['storage_id'])->first();
+
+        //checks compatability here
+        Session::flash('error', 'see below');
 
         return view('public.build.part-list', $data);
     }
@@ -130,6 +135,8 @@ class BuildPcController extends Controller
             $type.'_id' => $id,
         ]);
 
+        Session::flash('message', 'Part List Updated!');
+
         return $this->load();               
     }
 
@@ -156,6 +163,8 @@ class BuildPcController extends Controller
         Build::where('id', $current_list_id)->update([
             $part_type.'_id' => NULL,
         ]);
+
+        Session::flash('message', 'Part Removed!');
 
         return $this->load();  
     }

@@ -2,3 +2,7 @@
     padding-left:10px;
     padding-right:10px;
 }
+
+.table-cart td {
+    vertical-align: inherit!important;
+}
