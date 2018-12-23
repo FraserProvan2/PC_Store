@@ -36,3 +36,9 @@ Route::get('/build/load', 'BuildPcController@load');
 Route::get('/list/{part}', 'BuildPcController@list_part');
 Route::get('/add/{id}', 'BuildPcController@add_part');
 Route::get('/remove/{id}', 'BuildPcController@remove_part');
+
+/*------------------------------------------------------------------------
+| Cart
+|------------------------------------------------------------------------*/
+
+Route::post('/cart/add/part_list', 'CartController@add_partlist');

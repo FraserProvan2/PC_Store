@@ -81,7 +81,14 @@
             <li class="nav-item dropdown dropdown-hover dropdown-cart">
             <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart" role="button" aria-haspopup="true" aria-expanded="false">
                 <i data-feather="shopping-cart"></i>
-                <span class="badge badge-primary">4</span>
+
+                <?php
+                    //counts amount of cart items
+                    $cart_items = Session::get('cart');
+                ?>
+                @if($cart_items > 0)
+                    <span class="badge badge-primary">{{ count($cart_items) }}</span>
+                @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 

@@ -61,13 +61,23 @@
         <div class="text-center">
             <small class="counter">SUBTOTAL</small>
             <h3 class="roboto-condensed bold">£ {{ number_format($total_price, 2) }}</h3>
-            <a href="" class="btn btn-outline-primary">Save List <i data-feather="plus"></i></a>
+            
+            <form action="/cart/add/part_list" method="POST">
+                @csrf
 
-        @if (1 + 1 == 3)
-            <button href="" class="btn btn-primary disabled">Add to Cart <i data-feather="arrow-right"></i></button>
-        @else
-            <a href="" class="btn btn-primary">Add to Cart <i data-feather="arrow-right"></i></a>
-        @endif
+                <input type="hidden" name="price" value="{{ $total_price }}">
+                <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
+
+                <a href="" class="btn btn-outline-primary" >Save List <i data-feather="plus"></i></a>
+
+                @if (1 + 1 == 3)
+                    <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
+                @else
+                    <button type="submit" class="btn btn-primary">
+                        Add to Cart <i data-feather="arrow-right"></i>
+                    </button>
+                @endif
+            </form>
         
         </div>
       </div>
