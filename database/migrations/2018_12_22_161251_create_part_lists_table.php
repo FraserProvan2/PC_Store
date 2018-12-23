@@ -18,7 +18,7 @@ class CreatePartListsTable extends Migration
             $table->char('name', 100);
             $table->integer('user_id')->nullable();
             $table->integer('case_id')->default(0)->nullable();
-            $table->integer('coolder_id')->default(0)->nullable();
+            $table->integer('cooler_id')->default(0)->nullable();
             $table->integer('cpu_id')->default(0)->nullable();
             $table->integer('gpu_id')->default(0)->nullable();
             $table->boolean('add_card')->default(0)->nullable();

@@ -17,8 +17,22 @@
         <h3 class="bold">{{ $list_data->name }}</h3>
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
           <tbody>
-            
-            @include('public.build.parts.cpu')
+
+            @include('public.build.parts.part-template', $part_type = ["case"])
+
+            @include('public.build.parts.part-template', $part_type = ["cpu"])
+
+            @include('public.build.parts.part-template', $part_type = ["cooler"])
+
+            @include('public.build.parts.part-template', $part_type = ["gpu"])
+
+            @include('public.build.parts.part-template', $part_type = ["motherboard"])
+
+            @include('public.build.parts.part-template', $part_type = ["ram"])
+
+            @include('public.build.parts.part-template', $part_type = ["storage"])
+
+            @include('public.build.parts.part-template', $part_type = ["powersupply"])
 
           </tbody>
         </table>

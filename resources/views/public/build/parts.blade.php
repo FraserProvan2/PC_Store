@@ -22,13 +22,11 @@
             <p class="d-none d-sm-block">specs</p>
 
             <a href="/add/{{ $part['id'] }}" class="btn btn-sm btn-primary">Add to Build <i class="fa fa-plus" aria-hidden="true"></i></a>
-            {{-- <a href="/list/cpu" class="btn-sm btn-primary">Add </a> --}}
             </div>
         </div>
     </div>
     @endforeach
 
 </div>
-
 
 @endsection

@@ -38,7 +38,14 @@ class BuildPcController extends Controller
         $data['list_data'] = $list_data;
 
         //part information
+        $data['case_data'] = Parts::where('id', $data['list_data']['case_id'])->first();
+        $data['cooler_data'] = Parts::where('id', $data['list_data']['cooler_id'])->first();
         $data['cpu_data'] = Parts::where('id', $data['list_data']['cpu_id'])->first();
+        $data['gpu_data'] = Parts::where('id', $data['list_data']['gpu_id'])->first();
+        $data['mobo_data'] = Parts::where('id', $data['list_data']['mobo_id'])->first();
+        $data['powersupply_data'] = Parts::where('id', $data['list_data']['powersupply_id'])->first();
+        $data['ram_data'] = Parts::where('id', $data['list_data']['ram_id'])->first();
+        $data['storage_data'] = Parts::where('id', $data['list_data']['storage_id'])->first();
 
         return view('public.build.part-list', $data);
     }
@@ -94,7 +101,7 @@ class BuildPcController extends Controller
 
         $data['part_data'] = $this->convert_object($part_data_object);
 
-        return view('public.build.list-part', $data);
+        return view('public.build.parts', $data);
     }
 
     /**
@@ -112,7 +119,11 @@ class BuildPcController extends Controller
         $part_data = $this->convert_object($part_data_object);
 
         //finds type
-        $type = $part_data['type'];
+        if($part_data['type'] == "motherboard"){
+            $type = "mobo";
+        } else {
+            $type = $part_data['type'];
+        }
 
         //adds part to part list using part ID and type
         Build::where('id', $current_list_id)->update([
@@ -135,6 +146,11 @@ class BuildPcController extends Controller
         //gets part type using ID
         $part_data_object = Parts::where('id', $id)->first();
         $part_type = $part_data_object['type'];
+
+        //clarfies type
+        if($part_type == "motherboard"){
+            $part_type = "mobo";
+        } 
 
         //updates part type to NULL using type and id
         Build::where('id', $current_list_id)->update([
