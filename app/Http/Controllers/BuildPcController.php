@@ -23,6 +23,12 @@ class BuildPcController extends Controller
         $current_list_id = session('current_part_list');
         $data['list_data'] = Build::where('id', $current_list_id)->first();
 
+        if(Auth::user()){
+            $user_id = Auth::user()->id;
+            $users_lists_object = Build::where('user_id', $user_id)->get();
+            $data['users_lists']  = $this->convert_object($users_lists_object);
+        }
+        
         return view('public.build.build-index', $data);
     }
 
@@ -48,7 +54,7 @@ class BuildPcController extends Controller
         $data['powersupply_data'] = Parts::where('id', $data['list_data']['powersupply_id'])->first();
         $data['ram_data'] = Parts::where('id', $data['list_data']['ram_id'])->first();
         $data['storage_data'] = Parts::where('id', $data['list_data']['storage_id'])->first();
-
+ 
         //checks compatability here
         Session::flash('error', 'see below');
 

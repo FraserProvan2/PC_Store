@@ -42,3 +42,6 @@ Route::get('/remove/{id}', 'BuildPcController@remove_part');
 |------------------------------------------------------------------------*/
 
 Route::post('/cart/add/part_list', 'CartController@add_partlist');
+Route::get('/cart/view', 'CartController@view');
+Route::get('/cart/remove/{id}', 'CartController@remove');
+

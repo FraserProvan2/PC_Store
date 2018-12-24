@@ -12,6 +12,16 @@ use App\Part_lists as Build;
 class CartController extends Controller
 {
     /**
+     * View cart
+     * @return view cart 
+     */
+    public function view(){
+
+        return view('public/cart');
+
+    }
+
+    /**
      * Adds part list to cart
      * @param request cart item details
      * @return redirect to build list
@@ -20,11 +30,14 @@ class CartController extends Controller
 
         //hidden inputs of list data
         $partlist_id = $request['partlist_id'];
+        $partlist_name = $request['partlist_name'];
         $price = $request['price'];
-
+        
         //prepare cart item
         $cart_item = [
-            'price' => $price,'partlist_id' => $partlist_id
+            'price' => $price,
+            'partlist_id' => $partlist_id, 
+            'partlist_name' => $partlist_name
         ];
 
         //push to session array
@@ -34,4 +47,37 @@ class CartController extends Controller
 
         return redirect('/build/load');
     }
+
+    /**
+     * Removes items from cart
+     * @param Request,id for session specified key
+     * @return redirect back
+     */
+    public function remove(Request $request, $id){
+
+        //cart items array
+        $cart_items = $request->session()->get('cart');
+
+        //if cart exists
+        if(isset($cart_items)){
+            
+            //unset specified id
+            unset($cart_items[$id]);
+            
+            $updated_cart = [];
+            foreach($cart_items as $item){
+                //updates cart array
+                array_push($updated_cart, $item);
+            }
+
+            //forgets cart session
+            $request->session()->forget("cart");
+
+            //puts updated cart array into session
+            Session::put('cart', $updated_cart);
+            
+            return back();
+        }
+    }
+
 }

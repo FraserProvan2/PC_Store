@@ -13,3 +13,9 @@
 .part-img{
     padding:5px;
 }
+
+.price-cartitem{
+    margin-left: 0rem!important;
+    color: #adb5bd;
+    font-family: 'Roboto Condensed',sans-serif;
+}

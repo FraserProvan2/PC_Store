@@ -59,14 +59,15 @@
         @endif
 
         <div class="text-center">
-            <small class="counter">SUBTOTAL</small>
-            <h3 class="roboto-condensed bold">£ {{ number_format($total_price, 2) }}</h3>
+            <small class="counter">TOTAL</small>
+            <h3 class="roboto-condensed bold">£{{ number_format($total_price, 2) }}</h3>
             
             <form action="/cart/add/part_list" method="POST">
                 @csrf
 
                 <input type="hidden" name="price" value="{{ $total_price }}">
                 <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
+                <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
                 <a href="" class="btn btn-outline-primary" >Save List <i data-feather="plus"></i></a>
 

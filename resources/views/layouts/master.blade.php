@@ -79,7 +79,7 @@
     
             <!-- Cart dropdown -->
             <li class="nav-item dropdown dropdown-hover dropdown-cart">
-            <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="cart" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="/cart/view" role="button" aria-haspopup="true" aria-expanded="false">
                 <i data-feather="shopping-cart"></i>
 
                 <?php
@@ -91,37 +91,49 @@
                 @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right">
+
+                <?php 
+                    //defines cart total
+                    $cart_total = 0; 
+                    
+                    //cart counter
+                    $cart_count = -1;
+                ?>
+            @if(isset($cart_items))
+                @foreach($cart_items as $item)
+                    <?php
+                        //Increase cart count
+                        $cart_count++;
+                    ?>
+
+                    <div class="media">
+                        <div class="media-body">
+
+                            <a>{{ $item['partlist_name'] }}</a>
+                            <span class="price" style="margin:0px;">£{{ number_format($item['price']) }}</span>
+                            <a href="/cart/remove/{{ $cart_count }}" class="close" aria-label="Close"><i data-feather="x-circle"></i></a>
+                        </div>
+                    </div>
+
+                    <?php 
+                        //adds cart item price to total
+                        $cart_total += $item['price'];
+                    ?>
+               
                 
-                <div class="media">
-                <a href="shop-single.html"><img src="{{ asset('/img/products/1_small.jpg') }}" width="50" height="50" alt="Hanes Hooded Sweatshirt"></a>
-                <div class="media-body">
-                    <a href="shop-single.html" title="Hanes Hooded Sweatshirt">Hanes Hooded Sweatshirt</a>
-                    <span class="qty">1</span> x <span class="price">$18.56</span>
-                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                </div>
-                </div>
-                
-                <div class="media">
-                <a href="shop-single.html"><img src="{{ asset('/img/products/2_small.jpg') }}" width="50" height="50" alt="The Flash Logo T-Shirt"></a>
-                <div class="media-body">
-                    <a href="shop-single.html" title="The Flash Logo T-Shirt">The Flash Logo T-Shirt</a>
-                    <span class="qty">1</span> x <span class="price">$16.64</span>
-                    <button type="button" class="close" aria-label="Close"><i data-feather="x-circle"></i></button>
-                </div>
-                </div>
-                
+                @endforeach
+            @else
+
                 <div class="d-flex justify-content-between pb-3 pt-2">
                 <span>Total</span>
-                <strong>$135.40</strong>
+                <strong>£{{ number_format($cart_total) }}</strong>
                 </div>
                 <div class="d-flex justify-content-between pb-2">
-                <div class="w-100 mr-1">
-                    <a href="/cart" class="btn btn-block rounded-pill btn-secondary">View Cart</a>
-                </div>
                 <div class="w-100 ml-1">
-                    <a href="shipping.html" class="btn btn-block rounded-pill btn-primary">Checkout</a>
+                    <a href="/cart/view" class="btn btn-block btn-primary">Cart / Pay</a>
                 </div>
                 </div>
+                @endif
             </div>
             </li>
             <!-- /Cart dropdown -->
