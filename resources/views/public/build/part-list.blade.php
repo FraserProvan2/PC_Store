@@ -69,8 +69,6 @@
                 <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
                 <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
-                <a href="" class="btn btn-outline-primary" >Save List <i data-feather="plus"></i></a>
-
                 @if (1 + 1 == 3)
                     <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
                 @else

@@ -175,8 +175,32 @@ class BuildPcController extends Controller
         return $this->load();  
     }
 
+    /**
+     * view part list
+     * @param id build id
+     * @return function build index or list 
+     */
     public function view($id){
-        echo $id;
+
+        //gets build data
+        $build_data = Build::where('id', $id)->first();
+
+        //if the signed in users id matches the list id
+
+        //if user id owns the part list
+        if(Auth::user()->id == $build_data['user_id']){
+
+            //put build id to session
+            session(['current_part_list' => $id]);
+
+            //return part list
+            return $this->load(); 
+
+        } else {
+
+            //return build index
+            return $this->index(); 
+        }
     }
 
     /**

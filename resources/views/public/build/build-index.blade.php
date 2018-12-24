@@ -14,7 +14,7 @@
                 <strong>Success!</strong> {!! Session::get('message') !!}
             </div>
         @endif
-        
+
         <div class="row">
             <div class="col-md-6">
 
@@ -30,6 +30,7 @@
                     <input class="form-control form-control" type="text" placeholder="Name your build" name="build-name" required><br>
                     <button type="submit" class="btn btn-primary">Create New</button>
                 <form>
+                <br><br>
             </div>
 
             <div class="col-md-6">
@@ -38,7 +39,7 @@
 
                 <table class="table table-hover">
                     <tbody>
-                        @if(isset($users_lists))
+                        @if($users_lists)
                             @foreach($users_lists as $list)
                             <tr>
                                 <th scope="row">{{ $list['name'] }}</th>
@@ -49,7 +50,7 @@
                             </tr>
                             @endforeach
                         @else
-
+                            <p>Save Builds and Checkout later!</p>
                         @endif
                     </tbody>
                 </table>

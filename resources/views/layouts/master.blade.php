@@ -86,7 +86,8 @@
                     //counts amount of cart items
                     $cart_items = Session::get('cart');
                 ?>
-                @if($cart_items > 0)
+
+                @if(count($cart_items) > 0)
                     <span class="badge badge-primary">{{ count($cart_items) }}</span>
                 @endif
             </a>
@@ -120,8 +121,8 @@
                         $cart_total += $item['price'];
                     ?>
                
-                @endforeach
-            @else
+                    @endforeach
+                @endif
 
                 <div class="d-flex justify-content-between pb-3 pt-2">
                 <span>Total</span>
@@ -132,7 +133,7 @@
                     <a href="/cart/view" class="btn btn-block btn-primary">Cart / Pay</a>
                 </div>
                 </div>
-                @endif
+            
             </div>
             </li>
             <!-- /Cart dropdown -->
