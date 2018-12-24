@@ -120,7 +120,6 @@
                         $cart_total += $item['price'];
                     ?>
                
-                
                 @endforeach
             @else
 

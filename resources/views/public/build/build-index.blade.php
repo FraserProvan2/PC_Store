@@ -7,7 +7,14 @@
 @section('content')
 
 <div class="card">
+
     <div class="card-body">
+        @if (Session::has('message'))
+            <div class="alert alert-success" role="alert">
+                <strong>Success!</strong> {!! Session::get('message') !!}
+            </div>
+        @endif
+        
         <div class="row">
             <div class="col-md-6">
 
@@ -31,15 +38,19 @@
 
                 <table class="table table-hover">
                     <tbody>
-                        @foreach($users_lists as $list)
-                        <tr>
-                            <th scope="row">{{ $list['name'] }}</th>
-                            <th scope="row ">
-                                    <a href="" class="btn-sm btn-danger pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                    <a href="" class="btn-sm btn-primary pull-right  mr-1"><i class="fa fa-search"></i> View </a>
-                            </th>
-                        </tr>
-                        @endforeach
+                        @if(isset($users_lists))
+                            @foreach($users_lists as $list)
+                            <tr>
+                                <th scope="row">{{ $list['name'] }}</th>
+                                <th scope="row ">
+                                    <a href="/build/delete/{{ $list['id'] }}" class="btn-sm btn-danger pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a href="/build/view/{{ $list['id'] }}" class="btn-sm btn-primary pull-right  mr-1"><i class="fa fa-search"></i> View </a>
+                                </th>
+                            </tr>
+                            @endforeach
+                        @else
+
+                        @endif
                     </tbody>
                 </table>
 

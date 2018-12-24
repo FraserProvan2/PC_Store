@@ -175,4 +175,37 @@ class BuildPcController extends Controller
         return $this->load();  
     }
 
+    public function view($id){
+        echo $id;
+    }
+
+    /**
+     * Deletes build
+     * @param request,id list id
+     * @return function loads build index
+     */
+    public function delete(Request $request, $id){
+        
+        //gets build data
+        $build_data = Build::where('id', $id)->first();
+
+        //if the signed in users id matches the list id
+        if(Auth::user()->id == $build_data['user_id']){
+
+            //if the deleted build id is the same as session
+            if(session('current_part_list') == $id){
+
+                //forget build id in session
+                $request->session()->forget("current_part_list");
+            }
+            
+            //delete by ID
+            Build::where('id', $id)->delete();
+        }
+
+        Session::flash('message', 'Build Deleted!');
+
+        return $this->index();
+    }
+
 }

@@ -40,7 +40,6 @@
             ?>
             @if(isset($cart_items))
                 @foreach($cart_items as $item)
-
                         <?php 
                             //Increase cart count
                             $cart_count++;
@@ -63,7 +62,6 @@
                             </td>
 
                         </tr>
-
                 @endforeach
             @endif
               
