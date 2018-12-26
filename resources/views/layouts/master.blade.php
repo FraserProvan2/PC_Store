@@ -86,9 +86,11 @@
                     //counts amount of cart items
                     $cart_items = Session::get('cart');
                 ?>
-
-                @if(count($cart_items) > 0)
-                    <span class="badge badge-primary">{{ count($cart_items) }}</span>
+                
+                @if(isset($cart_items))
+                    @if(count($cart_items) > 0)
+                        <span class="badge badge-primary">{{ count($cart_items) }}</span>
+                    @endif
                 @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right">
