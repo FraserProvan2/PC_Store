@@ -233,9 +233,9 @@ class BuildPcController extends Controller
     }
 
     /**
-     * 
-     * @param 
-     * @return 
+     * adds extra part
+     * @param type
+     * @return function load
      */
     public function add_extra($type){
 
@@ -257,9 +257,9 @@ class BuildPcController extends Controller
     }
 
     /**
-     * 
-     * @param 
-     * @return 
+     * reduce qty of extra part
+     * @param type
+     * @return load function
      */
     public function reduce_extra($type){
 

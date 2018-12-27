@@ -37,7 +37,6 @@
             <?php 
                 $add_card_amount = $list_data->add_card + 1;
                 $gpu_price = $add_card_amount * $gpu_data['price'];
-                echo $gpu_data['price'];
               
                 if(isset($gpu_data)){ 
                     $total_price += $gpu_price; 

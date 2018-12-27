@@ -56,7 +56,7 @@ switch($part) {
                 - {{ $part_data->name }} <small class="">
 
                     @if($list_data['add_card'] > 0 && $part_data->type == "gpu")
-                        <span class="text-primary bold"><u> x {{ $list_data['add_card'] }}</u></span>
+                        <span class="text-primary bold"><u> x {{ $list_data['add_card'] + 1 }}</u></span>
                     @endif
 
                     @if($part_data->type == "gpu") 
