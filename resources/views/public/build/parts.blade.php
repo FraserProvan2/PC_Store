@@ -7,7 +7,14 @@
 @section('content')
 
 <div class="row">
-
+    <div class="col-12 mt-2">
+        @if(session('compat_filter') == 'off')
+            <a href="/build/filter/on" class="btn-sm  btn-primary">Turn On Compatability Filter</a>
+        @else
+            <a href="/build/filter/off" class="btn-sm  btn-secondary">Turn Off Compatability Filter</a>
+        @endif
+    </div>
+    
     @foreach($part_data as $part)
     <div class="col-12 mt-2">
         <div class="card card-product card-product-list">

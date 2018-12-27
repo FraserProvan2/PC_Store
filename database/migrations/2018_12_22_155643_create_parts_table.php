@@ -18,6 +18,7 @@ class CreatePartsTable extends Migration
             $table->char('name', 100)->nullable();
             $table->enum('type', array('case', 'cooler', 'cpu', 'gpu', 'motherboard', 'powersupply', 'ram', 'storage'));
             $table->longText('specs');
+            $table->char('socket', 100);
             $table->integer('price');
             $table->integer('stock');
             $table->char('image', 100)->nullable();

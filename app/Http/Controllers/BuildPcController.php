@@ -55,8 +55,8 @@ class BuildPcController extends Controller
         $data['ram_data'] = Parts::where('id', $data['list_data']['ram_id'])->first();
         $data['storage_data'] = Parts::where('id', $data['list_data']['storage_id'])->first();
  
-        //checks compatability here
-        Session::flash('error', 'see below');
+        //checks compatability
+        $this->check_compatible();
 
         return view('public.build.part-list', $data);
     }
@@ -105,11 +105,41 @@ class BuildPcController extends Controller
      */
     public function list_part($part){
 
-        //gets part data for selected part
-        $part_data_object = Parts::where('type', $part)
-                                  ->where('stock', ">", 0)
-                                  ->get();
+        //part data for compatability check
+        $current_list_id = session('current_part_list');
+        $data['list_data'] = Build::where('id', $current_list_id)->first();
+        $cpu_data = Parts::where('id', $data['list_data']['cpu_id'])->first();
+        $mobo_data = Parts::where('id', $data['list_data']['mobo_id'])->first();
 
+        //if compatiblity is on
+        if(!Session::has('compat_filter') || session('compat_filter') == 'on'){
+            
+            //if part is cpi or mobo
+            if($part == 'cpu' || $part == 'motherboard'){
+
+                //if mobo socket is set
+                if(isset($mobo_data['socket'])){
+
+                    //only show compatable
+                    $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->where('socket', $mobo_data['socket'])->get();
+                } 
+                //if cpu socket is set
+                else if(isset($cpu_data['socket'])){
+
+                    //only show compatable
+                    $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->where('socket', $cpu_data['socket'])->get();
+                } 
+
+            } else {
+                //otherwise get all part data
+                $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->get();
+            }
+
+        } else {
+            //gets all part data
+            $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->get();
+        }
+                  
         $data['part_data'] = $this->convert_object($part_data_object);
 
         return view('public.build.parts', $data);
@@ -144,6 +174,40 @@ class BuildPcController extends Controller
         Session::flash('message', 'Part List Updated!');
 
         return $this->load();               
+    }
+
+    public function check_compatible(){
+     
+        //gets current list id from session
+        $list_id = session('current_part_list');
+
+        //gets part list data using id
+        $list_data = Build::where('id', $list_id)->first();     
+
+        //part information
+        $cpu_data = Parts::where('id', $list_data['cpu_id'])->first();
+        $mobo_data = Parts::where('id', $list_data['mobo_id'])->first();
+
+        //get socket types
+        $cpu_socket = $cpu_data['socket'];
+        $mobo_socket = $mobo_data['socket'];
+
+        //checks if mobo and cpu have same socket type
+        if(isset($cpu_data) && isset($mobo_socket) && $cpu_socket != $mobo_socket){
+            Session::flash('error', 'Motherboard and CPU are different socket types!');
+        }
+    }
+
+    public function filter($param){
+
+        if($param == 'on'){
+            session(['compat_filter' => 'on']);
+        } 
+        else if ($param == 'off'){
+            session(['compat_filter' => 'off']);
+        }
+        
+        return back();
     }
 
     /**

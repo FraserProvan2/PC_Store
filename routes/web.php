@@ -41,6 +41,7 @@ Route::get('/list/{part}', 'BuildPcController@list_part');
 Route::get('/add/{id}', 'BuildPcController@add_part');
 Route::get('/remove/{id}', 'BuildPcController@remove_part');
 
+Route::get('/build/filter/{param}', 'BuildPcController@filter');
 
 Route::get('/add-extra/{type}', 'BuildPcController@add_extra');
 Route::get('/reduce-extra/{type}', 'BuildPcController@reduce_extra');

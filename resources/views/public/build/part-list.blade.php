@@ -58,7 +58,7 @@
           </tbody>
         </table>
 
-        @if (1 + 1 == 3)
+        @if (Session::has('error'))
             <div class="alert alert-danger" role="alert">
                 <strong>Compatibility Error! Fix the errors add to Cart</strong>
                 <br><br>
