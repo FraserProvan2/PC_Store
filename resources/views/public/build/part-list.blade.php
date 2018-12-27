@@ -19,6 +19,7 @@
                 </div>
             @endif
 
+
           <tbody>
 
             <?php $total_price = 00.00; ?>
@@ -33,7 +34,15 @@
             <?php if(isset($cooler_data)){ $total_price += $cooler_data['price']; } ?>
 
             @include('public.build.parts.part-template', $part_type = ["gpu"])
-            <?php if(isset($gpu_data)){ $total_price += $gpu_data['price']; } ?>
+            <?php 
+                $add_card_amount = $list_data->add_card + 1;
+                $gpu_price = $add_card_amount * $gpu_data['price'];
+                echo $gpu_data['price'];
+              
+                if(isset($gpu_data)){ 
+                    $total_price += $gpu_price; 
+                } 
+            ?>
 
             @include('public.build.parts.part-template', $part_type = ["motherboard"])
             <?php if(isset($mobo_data)){ $total_price += $mobo_data['price']; } ?>

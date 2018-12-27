@@ -41,6 +41,10 @@ Route::get('/list/{part}', 'BuildPcController@list_part');
 Route::get('/add/{id}', 'BuildPcController@add_part');
 Route::get('/remove/{id}', 'BuildPcController@remove_part');
 
+
+Route::get('/add-extra/{type}', 'BuildPcController@add_extra');
+Route::get('/reduce-extra/{type}', 'BuildPcController@reduce_extra');
+
 /*------------------------------------------------------------------------
 | Cart
 |------------------------------------------------------------------------*/
@@ -48,4 +52,5 @@ Route::get('/remove/{id}', 'BuildPcController@remove_part');
 Route::post('/cart/add/part_list', 'CartController@add_partlist');
 Route::get('/cart/view', 'CartController@view');
 Route::get('/cart/remove/{id}', 'CartController@remove');
+
 

@@ -52,28 +52,45 @@ switch($part) {
 <tr>
     <td class="cart-title">
         <a class="h6 bold d-inline-block"><span class="text-primary"> {{ $part_title }} </span>
-
             @if($part_id != 0)
-                - {{ $part_data->name }} <small class="">(£{{ $part_data->price }})</small>
+                - {{ $part_data->name }} <small class="">
+
+                    @if($list_data['add_card'] > 0 && $part_data->type == "gpu")
+                        <span class="text-primary bold"><u> x {{ $list_data['add_card'] }}</u></span>
+                    @endif
+
+                    @if($part_data->type == "gpu") 
+                        <?php $add_extra_cpu = $list_data['add_card'] + 1; ?>
+                        (£{{$part_data->price * $add_extra_cpu }})
+                    @else
+                        (£{{$part_data->price}})
+                    @endif
+            </small>
             @endif
         </a>
-        
-        <br> 
 
-        @if($part_id != 0)
-            
-        @else
-            
-        
-        @endif
     </td>
     <td class="cart-price text-right">    
-        @if($part_id)   
+
+        @if($part_id)  
+            @if($list_data['gpu_id'] && $part_data->type == "gpu")
+
+                <!--Add more gpu-->
+                @if($list_data['add_card'] >= 0 && $list_data['add_card'] < 3)
+                    <a href="/add-extra/gpu" class="btn-sm btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add&nbsp;</a>
+                @endif
+
+                @if($list_data['add_card'] <= 3 && $list_data['add_card'] > 0)
+                    <a href="/reduce-extra/gpu" class="btn-sm btn-secondary"><i class="fa fa-minus" aria-hidden="true"></i>&nbsp;Reduce&nbsp;</a>
+                @endif
+
+            @endif 
+
             <a href="/list/{{ $part }}" class="btn-sm btn-secondary"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
             <a href="/remove/{{$part_data->id}}" class="btn-sm btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            
+
         @else
-            <a href="/list/{{ $part }}" class="btn btn-primary">&nbsp;Add <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;</a>
+            <a href="/list/{{ $part }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add&nbsp;</a>
             
         @endif
     </td>

@@ -232,4 +232,56 @@ class BuildPcController extends Controller
         return $this->index();
     }
 
+    /**
+     * 
+     * @param 
+     * @return 
+     */
+    public function add_extra($type){
+
+        //gets current list data
+        $current_list_id = session('current_part_list');
+        $data['list_data'] = Build::where('id', $current_list_id)->first();
+    
+        if($type == 'gpu' && $data['list_data']['add_card'] < 3){
+
+            //adds card int
+            Build::where('id', $current_list_id)->update([
+                'add_card' => $data['list_data']['add_card']+1,
+            ]);
+
+            Session::flash('message', 'GPU Updated!');
+        }
+
+        return $this->load();    
+    }
+
+    /**
+     * 
+     * @param 
+     * @return 
+     */
+    public function reduce_extra($type){
+
+        //gets current list data
+        $current_list_id = session('current_part_list');
+        $data['list_data'] = Build::where('id', $current_list_id)->first();
+
+        //current add card value
+        $curr_add_card = $data['list_data']['add_card'];
+
+        //gpu type (up to 3 extra gpus)
+        if($type == 'gpu' && $curr_add_card  <= 3 && $curr_add_card > 0){
+
+            //adds card int
+            Build::where('id', $current_list_id)->update([
+                'add_card' => $curr_add_card-1,
+            ]);
+
+            Session::flash('message', 'GPU removed!');
+        }
+
+        return $this->load();    
+    }
+
 }
