@@ -80,7 +80,7 @@
                 @if (Session::has('error') || !isset($list_checked))
                     <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
                     <br><br>
-                    <p class="text-primary">You must select all parts before adding the Build to Cart!</p>
+                    <p class="text-primary">Select all parts to add the Build to Cart!</p>
                 @else
                     <button type="submit" class="btn btn-primary">
                         Add to Cart <i data-feather="arrow-right"></i>
