@@ -77,8 +77,10 @@
                 <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
                 <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
-                @if (Session::has('error'))
+                @if (Session::has('error') || !isset($list_checked))
                     <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
+                    <br><br>
+                    <p class="text-primary">You must select all parts before adding the Build to Cart!</p>
                 @else
                     <button type="submit" class="btn btn-primary">
                         Add to Cart <i data-feather="arrow-right"></i>

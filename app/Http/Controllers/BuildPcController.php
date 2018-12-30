@@ -57,6 +57,15 @@ class BuildPcController extends Controller
  
         //checks compatability
         $this->check_compatible();
+        
+        //checks if all parts are filled out
+        if(isset($data['case_data']) && isset($data['cooler_data']) &&
+           isset($data['cpu_data']) && isset($data['gpu_data']) &&
+           isset($data['mobo_data']) && isset($data['powersupply_data']) &&
+           isset($data['ram_data']) && isset($data['storage_data'])) 
+        {
+            $data['list_checked'] = true; 
+        }
 
         return view('public.build.part-list', $data);
     }
