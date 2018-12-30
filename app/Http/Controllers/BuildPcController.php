@@ -108,35 +108,29 @@ class BuildPcController extends Controller
         //part data for compatability check
         $current_list_id = session('current_part_list');
         $data['list_data'] = Build::where('id', $current_list_id)->first();
+
         $cpu_data = Parts::where('id', $data['list_data']['cpu_id'])->first();
         $mobo_data = Parts::where('id', $data['list_data']['mobo_id'])->first();
 
-        //if compatiblity is on
-        if(!Session::has('compat_filter') || session('compat_filter') == 'on'){
-            
-            //if part is cpi or mobo
-            if($part == 'cpu' || $part == 'motherboard'){
+        //if part is cpi or mobo
+        if($part == 'cpu' || $part == 'motherboard'){
 
-                //if mobo socket is set
+            //if compatiblity is on
+            if(!Session::has('compat_filter') || session('compat_filter') == 'on'){
+                
+                //if mobo socket is set -> only show compatable
                 if(isset($mobo_data['socket'])){
-
-                    //only show compatable
                     $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->where('socket', $mobo_data['socket'])->get();
                 } 
-                //if cpu socket is set
+                //if cpu socket is set -> only show compatable
                 else if(isset($cpu_data['socket'])){
-
-                    //only show compatable
                     $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->where('socket', $cpu_data['socket'])->get();
                 } 
-
-            } else {
-                //otherwise get all part data
-                $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->get();
             }
+        } 
 
-        } else {
-            //gets all part data
+        //if $part_data_object not set, just get all part info
+        if(!isset($part_data_object)){
             $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->get();
         }
                   

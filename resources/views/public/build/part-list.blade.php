@@ -77,7 +77,7 @@
                 <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
                 <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
-                @if (1 + 1 == 3)
+                @if (Session::has('error'))
                     <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
                 @else
                     <button type="submit" class="btn btn-primary">
