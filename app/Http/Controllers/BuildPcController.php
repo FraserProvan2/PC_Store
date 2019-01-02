@@ -179,6 +179,10 @@ class BuildPcController extends Controller
         return $this->load();               
     }
 
+    /**
+     * Checks compatability of part list
+     * @return flash error if check failed
+     */
     public function check_compatible(){
      
         //gets current list id from session
@@ -201,6 +205,11 @@ class BuildPcController extends Controller
         }
     }
 
+    /**
+     * Turns filter on/off
+     * @param boolean on/off
+     * @return back returns user to previous view
+     */
     public function filter($param){
 
         if($param == 'on'){
