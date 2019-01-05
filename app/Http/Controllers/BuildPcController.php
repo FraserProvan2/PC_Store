@@ -19,9 +19,8 @@ class BuildPcController extends Controller
      */
     public function index(){
 
-        //gets current list data
-        $current_list_id = session('current_part_list');
-        $data['list_data'] = Build::where('id', $current_list_id)->first();
+        //gets current build data
+        $data['list_data'] = $this->get_current_build();
 
         if(Auth::user()){
             $user_id = Auth::user()->id;
@@ -38,12 +37,8 @@ class BuildPcController extends Controller
      */
     public function load(){
 
-        //gets current list id from session
-        $list_id = session('current_part_list');
-
-        //gets part list data using id
-        $list_data = Build::where('id', $list_id)->first();     
-        $data['list_data'] = $list_data;
+        //gets current build data
+        $data['list_data'] = $this->get_current_build();
 
         //part information
         $data['case_data'] = Parts::where('id', $data['list_data']['case_id'])->first();
@@ -68,6 +63,21 @@ class BuildPcController extends Controller
         }
 
         return view('public.build.part-list', $data);
+    }
+
+    /**
+     * Gets current build data from the session
+     * @return Array current build list
+     */
+    public function get_current_build(){
+
+        //gets id from session
+        $current_list_id = session('current_part_list');
+
+        //uses ID to fetch build data
+        $build_data = Build::where('id', $current_list_id)->first();
+
+        return $build_data;
     }
 
     /**
@@ -114,10 +124,10 @@ class BuildPcController extends Controller
      */
     public function list_part($part){
 
-        //part data for compatability check
-        $current_list_id = session('current_part_list');
-        $data['list_data'] = Build::where('id', $current_list_id)->first();
+        //gets current build data
+        $data['list_data'] = $this->get_current_build();
 
+        //part data for compatability check
         $cpu_data = Parts::where('id', $data['list_data']['cpu_id'])->first();
         $mobo_data = Parts::where('id', $data['list_data']['mobo_id'])->first();
 
@@ -154,9 +164,9 @@ class BuildPcController extends Controller
      * @return function loads part list
      */
     public function add_part($id){
-
-        //gets current list data
-        $current_list_id = session('current_part_list');
+        
+        //gets current build data
+        $current_list = $this->get_current_build();
         
         //gets data for part using ID
         $part_data_object = Parts::where('id', $id)->first();
@@ -170,7 +180,7 @@ class BuildPcController extends Controller
         }
 
         //adds part to part list using part ID and type
-        Build::where('id', $current_list_id)->update([
+        Build::where('id', $current_list['id'])->update([
             $type.'_id' => $id,
         ]);
 
@@ -179,17 +189,18 @@ class BuildPcController extends Controller
         return $this->load();               
     }
 
-    public function check_compatible(){
-     
-        //gets current list id from session
-        $list_id = session('current_part_list');
-
-        //gets part list data using id
-        $list_data = Build::where('id', $list_id)->first();     
+    /**
+     * Checks compatability of part list
+     * @return flash error if check failed
+     */
+    public function check_compatible(){ 
+        
+        //gets current build data
+        $current_list = $this->get_current_build();
 
         //part information
-        $cpu_data = Parts::where('id', $list_data['cpu_id'])->first();
-        $mobo_data = Parts::where('id', $list_data['mobo_id'])->first();
+        $cpu_data = Parts::where('id', $current_list['cpu_id'])->first();
+        $mobo_data = Parts::where('id', $current_list['mobo_id'])->first();
 
         //get socket types
         $cpu_socket = $cpu_data['socket'];
@@ -201,6 +212,11 @@ class BuildPcController extends Controller
         }
     }
 
+    /**
+     * Turns filter on/off
+     * @param boolean on/off
+     * @return back returns user to previous view
+     */
     public function filter($param){
 
         if($param == 'on'){
@@ -220,8 +236,8 @@ class BuildPcController extends Controller
      */
     public function remove_part($id){
 
-        //gets current list data
-        $current_list_id = session('current_part_list');
+        //gets current build data
+        $current_list = $this->get_current_build();
 
         //gets part type using ID
         $part_data_object = Parts::where('id', $id)->first();
@@ -233,7 +249,7 @@ class BuildPcController extends Controller
         } 
 
         //updates part type to NULL using type and id
-        Build::where('id', $current_list_id)->update([
+        Build::where('id', $current_list['id'])->update([
             $part_type.'_id' => NULL,
         ]);
 
@@ -251,8 +267,6 @@ class BuildPcController extends Controller
 
         //gets build data
         $build_data = Build::where('id', $id)->first();
-
-        //if the signed in users id matches the list id
 
         //if user id owns the part list
         if(Auth::user()->id == $build_data['user_id']){
@@ -306,15 +320,14 @@ class BuildPcController extends Controller
      */
     public function add_extra($type){
 
-        //gets current list data
-        $current_list_id = session('current_part_list');
-        $data['list_data'] = Build::where('id', $current_list_id)->first();
+        //gets current build data
+        $current_build = $this->get_current_build();
     
-        if($type == 'gpu' && $data['list_data']['add_card'] < 3){
+        if($type == 'gpu' && $current_build['add_card'] < 3){
 
             //adds card int
-            Build::where('id', $current_list_id)->update([
-                'add_card' => $data['list_data']['add_card']+1,
+            Build::where('id', $current_build['id'])->update([
+                'add_card' => $current_build['add_card']+1,
             ]);
 
             Session::flash('message', 'GPU Updated!');
@@ -330,18 +343,17 @@ class BuildPcController extends Controller
      */
     public function reduce_extra($type){
 
-        //gets current list data
-        $current_list_id = session('current_part_list');
-        $data['list_data'] = Build::where('id', $current_list_id)->first();
+        //gets current build data
+        $current_build = $this->get_current_build();
 
         //current add card value
-        $curr_add_card = $data['list_data']['add_card'];
+        $curr_add_card = $current_build['add_card'];
 
         //gpu type (up to 3 extra gpus)
         if($type == 'gpu' && $curr_add_card  <= 3 && $curr_add_card > 0){
 
             //adds card int
-            Build::where('id', $current_list_id)->update([
+            Build::where('id', $current_build['id'])->update([
                 'add_card' => $curr_add_card-1,
             ]);
 
