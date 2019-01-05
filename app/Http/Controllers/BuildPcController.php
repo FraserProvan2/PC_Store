@@ -253,6 +253,13 @@ class BuildPcController extends Controller
             $part_type.'_id' => NULL,
         ]);
 
+        //if GPU removed gpu amount reduced to 1
+        if($part_type == "gpu"){
+            Build::where('id', $current_list['id'])->update([
+                'add_card' => 0,
+            ]);
+        }
+
         Session::flash('message', 'Part Removed!');
 
         return $this->load();  
