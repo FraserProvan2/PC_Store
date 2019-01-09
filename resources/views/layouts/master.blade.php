@@ -146,7 +146,13 @@
     <!-- /Header -->
 
     <!-- Main Content -->
-    <div class="container mt-3">
+
+
+    @if($page == "home")
+        <div class="container">
+    @else
+        <div class="container mt-3">
+    @endif
 
     <body>
         @yield('content')
