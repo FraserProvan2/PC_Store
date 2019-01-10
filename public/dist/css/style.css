@@ -1929,7 +1929,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   width: 40px;
   height: calc(1.64844rem + 2px);
   padding: 0.25rem 0.5rem;
-  font-size: 0.76563rem;
+  font-size: 0.76562rem;
 }
 
 .spinner.spinner-sm .btn {
