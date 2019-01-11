@@ -12,6 +12,6 @@ class ShippingController extends Controller
      */
     public function index(){
 
-        return view('public.shipping');
+        return view('public.checkout.shipping');
     }
 }

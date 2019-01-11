@@ -12,6 +12,6 @@ class PaymentController extends Controller
      */
     public function index(){
 
-        return view('public.payment');
+        return view('public.checkout.payment');
     }
 }

@@ -17,7 +17,7 @@ class CartController extends Controller
      */
     public function view(){
 
-        return view('public/cart');
+        return view('public.checkout.cart');
     }
 
     /**
