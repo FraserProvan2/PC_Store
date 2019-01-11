@@ -24,7 +24,7 @@ class BuildPcController extends Controller
 
         if(Auth::user()){
             $user_id = Auth::user()->id;
-            $users_lists_object = Build::where('user_id', $user_id)->get();
+            $users_lists_object = Build::where('user_id', $user_id)->orderBy('id', 'DESC')->get();
             $data['users_lists']  = $this->convert_object($users_lists_object);
         }
         

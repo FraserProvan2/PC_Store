@@ -9,11 +9,8 @@
 <div class="card">
 
     <div class="card-body">
-        @if (Session::has('message'))
-            <div class="alert alert-success" role="alert">
-                <strong>Success!</strong> {!! Session::get('message') !!}
-            </div>
-        @endif
+
+        @include('layouts.alerts')
 
         <div class="row">
             <div class="col-md-6">

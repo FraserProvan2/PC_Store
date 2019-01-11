@@ -13,12 +13,7 @@
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
           <h3 class="bold text-center">{{ $list_data->name }}</h3>
 
-            @if (Session::has('message'))
-                <div class="alert alert-success" role="alert">
-                    <strong>Success!</strong> {!! Session::get('message') !!}
-                </div>
-            @endif
-
+          @include('layouts.alerts')
 
           <tbody>
 
