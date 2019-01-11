@@ -28,118 +28,118 @@
         <header>
             <div class="container">
         
-            <!-- Sidebar toggler -->
-            <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
-        
-            <!-- Logo -->
-            <a class="nav-link nav-logo" href="{{ url('/') }}"><img src="{{ asset('/img/logo.svg') }}" alt="Mimity"> <strong>PC Store</strong></a>
-        
-            <!-- Main navigation -->
-            <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
-                
-                <?php if(empty($page)){ $page = ""; } ?>
-                <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
-            </ul>
-            <!-- /Main navigation -->
-            <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
-
-                <li class="nav-item dropdown dropdown-hover dropdown-cart">
-                <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="{{ url('account') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="user"></i>
-                </a>   
-                    <div class="dropdown-menu dropdown-menu-right">
-                        
-                            @if(Auth::check())
-                                <!-- My Account -->
-                                <a href="{{ url('account/orders') }}" class="dropdown-item has-icon"><i data-feather="shopping-cart"></i>My Orders</a>
-                                <a href="{{ url('account') }}" class="dropdown-item has-icon"><i data-feather="settings"></i>My Account</a>
-                                <div class="dropdown-divider"></div>
-
-                                <!-- Log Out -->
-                                <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                    <i data-feather="log-out"></i>
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-
-                            @else
-                                <a href="{{ url('login') }}" class="dropdown-item has-icon"><i data-feather="user"></i>Login</a>
-                                <a href="{{ url('register') }}" class="dropdown-item has-icon"><i data-feather="user"></i>Register</a>
-                            @endif
-
-                    </div>
-                </li>
-                <!-- /My Account -->
-        
-                <!-- Cart dropdown -->
-                <li class="nav-item dropdown dropdown-hover dropdown-cart">
-                <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="{{ url('cart/view') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="shopping-cart"></i>
-
-                    <?php
-                        //counts amount of cart items
-                        $cart_items = Session::get('cart');
-                    ?>
+                <!-- Sidebar toggler -->
+                <a class="nav-link nav-icon ml-ni nav-toggler mr-3 d-flex d-lg-none" href="#" data-toggle="modal" data-target="#menuModal"><i data-feather="menu"></i></a>
+            
+                <!-- Logo -->
+                <a class="nav-link nav-logo" href="{{ url('/') }}"><img src="{{ asset('/img/logo.svg') }}" alt="Mimity"> <strong>PC Store</strong></a>
+            
+                <!-- Main navigation -->
+                <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
                     
-                    @if(isset($cart_items))
-                        @if(count($cart_items) > 0)
-                            <span class="badge badge-primary">{{ count($cart_items) }}</span>
-                        @endif
-                    @endif
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                    <?php if(empty($page)){ $page = ""; } ?>
+                    <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
+                </ul>
+                <!-- /Main navigation -->
+                <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
 
-                    <?php 
-                        //defines cart total
-                        $cart_total = 0; 
-                        
-                        //cart counter
-                        $cart_count = -1;
-                    ?>
-                @if(isset($cart_items))
-                    @foreach($cart_items as $item)
-                        <?php
-                            //Increase cart count
-                            $cart_count++;
-                        ?>
+                    <li class="nav-item dropdown dropdown-hover dropdown-cart">
+                    <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="{{ url('account') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="user"></i>
+                    </a>   
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                                @if(Auth::check())
+                                    <!-- My Account -->
+                                    <a href="{{ url('account/orders') }}" class="dropdown-item has-icon"><i data-feather="shopping-cart"></i>My Orders</a>
+                                    <a href="{{ url('account') }}" class="dropdown-item has-icon"><i data-feather="settings"></i>My Account</a>
+                                    <div class="dropdown-divider"></div>
 
-                        <div class="media">
-                            <div class="media-body">
+                                    <!-- Log Out -->
+                                    <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                        <i data-feather="log-out"></i>
+                                        {{ __('Logout') }}
+                                    </a>
 
-                                <a>{{ $item['partlist_name'] }}</a>
-                                <span class="price" style="margin:0px;">£{{ number_format($item['price']) }}</span>
-                                <a href="{{ url('cart/remove/' . $cart_count) }}" class="close" aria-label="Close"><i data-feather="x-circle"></i></a>
-                            </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                @else
+                                    <a href="{{ url('login') }}" class="dropdown-item has-icon"><i data-feather="user"></i>Login</a>
+                                    <a href="{{ url('register') }}" class="dropdown-item has-icon"><i data-feather="user"></i>Register</a>
+                                @endif
+
                         </div>
+                    </li>
+                    <!-- /My Account -->
+            
+                    <!-- Cart dropdown -->
+                    <li class="nav-item dropdown dropdown-hover dropdown-cart">
+                    <a class="nav-link nav-icon mr-nis dropdown-toggle forwardable ml-2" data-toggle="dropdown" href="{{ url('cart/view') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="shopping-cart"></i>
+
+                        <?php
+                            //counts amount of cart items
+                            $cart_items = Session::get('cart');
+                        ?>
+                        
+                        @if(isset($cart_items))
+                            @if(count($cart_items) > 0)
+                                <span class="badge badge-primary">{{ count($cart_items) }}</span>
+                            @endif
+                        @endif
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
 
                         <?php 
-                            //adds cart item price to total
-                            $cart_total += $item['price'];
+                            //defines cart total
+                            $cart_total = 0; 
+                            
+                            //cart counter
+                            $cart_count = -1;
                         ?>
-                
-                        @endforeach
-                    @endif
+                    @if(isset($cart_items))
+                        @foreach($cart_items as $item)
+                            <?php
+                                //Increase cart count
+                                $cart_count++;
+                            ?>
 
-                    <div class="d-flex justify-content-between pb-3 pt-2">
-                    <span>Total</span>
-                    <strong>£{{ number_format($cart_total) }}</strong>
+                            <div class="media">
+                                <div class="media-body">
+
+                                    <a>{{ $item['partlist_name'] }}</a>
+                                    <span class="price" style="margin:0px;">£{{ number_format($item['price']) }}</span>
+                                    <a href="{{ url('cart/remove/' . $cart_count) }}" class="close" aria-label="Close"><i data-feather="x-circle"></i></a>
+                                </div>
+                            </div>
+
+                            <?php 
+                                //adds cart item price to total
+                                $cart_total += $item['price'];
+                            ?>
+                    
+                            @endforeach
+                        @endif
+
+                        <div class="d-flex justify-content-between pb-3 pt-2">
+                        <span>Total</span>
+                        <strong>£{{ number_format($cart_total) }}</strong>
+                        </div>
+                        <div class="d-flex justify-content-between pb-2">
+                        <div class="w-100 ml-1">
+                            <a href="{{ url('cart/view') }}" class="btn btn-block btn-primary">Cart / Pay</a>
+                        </div>
+                        </div>
+                    
                     </div>
-                    <div class="d-flex justify-content-between pb-2">
-                    <div class="w-100 ml-1">
-                        <a href="{{ url('cart/view') }}" class="btn btn-block btn-primary">Cart / Pay</a>
-                    </div>
-                    </div>
-                
-                </div>
-                </li>
-                <!-- /Cart dropdown -->
-            </ul>
+                    </li>
+                    <!-- /Cart dropdown -->
+                </ul>
         
             </div><!-- /.container -->
         </header>
@@ -153,7 +153,7 @@
         
         <footer class="mt-3">
             <!-- Footer -->
-            <div class="copyright ">Fraser Provan 2019</div>
+            <div class="text-center">Fraser Provan 2019</div>
             <!-- /Footer -->
 
             <!--Menu Modal -->
