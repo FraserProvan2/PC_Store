@@ -9,9 +9,9 @@
 <div class="row">
     <div class="col-12 mt-2">
         @if(session('compat_filter') == 'off')
-            <a href="/build/filter/on" class="btn-sm  btn-primary">Turn On Compatability Filter</a>
+            <a href="{{ url('build/filter/on') }}" class="btn-sm  btn-primary">Turn On Compatability Filter</a>
         @else
-            <a href="/build/filter/off" class="btn-sm  btn-secondary">Turn Off Compatability Filter</a>
+            <a href="{{ url('build/filter/off') }}" class="btn-sm  btn-secondary">Turn Off Compatability Filter</a>
         @endif
     </div>
     
@@ -28,8 +28,8 @@
 
             <p class="d-none d-sm-block">{{$part['specs'] }}</p>
 
-            <a href="/add/{{ $part['id'] }}" class="btn btn-sm btn-primary">Add to Build <i class="fa fa-plus" aria-hidden="true"></i></a>
-            <a href="/build/load" class="btn btn-secondary btn-sm">Return <i class="fa fa-undo" aria-hidden="true"></i></a>
+            <a href="{{ url('add/' . $part['id']) }}" class="btn btn-sm btn-primary">Add to Build <i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="{{ url('build/load') }}" class="btn btn-secondary btn-sm">Return <i class="fa fa-undo" aria-hidden="true"></i></a>
 
             </div>
         </div>

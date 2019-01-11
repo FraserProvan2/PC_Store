@@ -25,7 +25,7 @@
         <div class="swiper-overlay right">
           <div class="text-center">
             <p class="display-4 animated" data-animate="fadeDown">Customise</p>
-            <a href="/build" class="btn btn-primary animated" data-animate="fadeUp" data-addclass-on-xs="btn-sm">Build Now</a>
+            <a href="{{ url('build') }}" class="btn btn-primary animated" data-animate="fadeUp" data-addclass-on-xs="btn-sm">Build Now</a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <h1 class="bg-white text-dark d-inline-block p-1 animated" data-animate="fadeDown">Shop Components</h1>
             {{-- <p class="display-4 animated" data-animate="fadeDown">30% - 70% OFF</p> --}}
             <br>
-            <a href="shop-grid.html" class="btn btn-warning animated" data-animate="fadeUp" data-addclass-on-xs="btn-sm">Shop Now</a>
+            <a href="" class="btn btn-warning animated" data-animate="fadeUp" data-addclass-on-xs="btn-sm">Shop Now</a>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
             <div class="card-2col-body">
             <h2 class="card-title">Build a PC</h2>
             {{-- <p class="text-center d-none d-lg-block"></p> --}}
-            <a href="/build" class="btn btn-primary" data-addclass-on-xs="btn-sm">Build Now</a>
+            <a href="{{ url('build') }}" class="btn btn-primary" data-addclass-on-xs="btn-sm">Build Now</a>
             </div>
             <div class="card-2col-img">
             <div data-cover="../img/categories/nzxt.png" data-xs-height="120px" data-sm-height="200px" data-md-height="175px" data-lg-height="225px" data-xl-height="250px"></div>
@@ -73,7 +73,7 @@
             <div class="card-2col-body">
             <h2 class="card-title">LAN Rental</h2>
             {{-- <p class="text-center d-none d-lg-block"></p> --}}
-            <a href="/lan-rental" class="btn btn-danger" data-addclass-on-xs="btn-sm">Rent Now</a>
+            <a href="{{ url('lan-rental') }}" class="btn btn-danger" data-addclass-on-xs="btn-sm">Rent Now</a>
             </div>
             <div class="card-2col-img">
             <div data-cover="../img/categories/rog.jpg" data-xs-height="120px" data-sm-height="200px" data-md-height="175px" data-lg-height="225px" data-xl-height="250px"></div>

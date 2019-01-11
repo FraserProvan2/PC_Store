@@ -28,7 +28,7 @@
                 </div>
             <?php } ?>
 
-            <form method="POST" action="/account/update/details">
+            <form method="POST" action="{{ url('account/update/details') }}">
                 <div class="form-row">
                     @csrf
                     <div class="form-group col-sm-6">
@@ -60,7 +60,7 @@
                     <strong>Error!</strong> <?php echo $error_password; ?>
                 </div>
             <?php } ?>
-            <form method="POST" action="/account/update/password">
+            <form method="POST" action="{{ url('account/update/password') }}">
                 <div class="form-row">
                     @csrf
 

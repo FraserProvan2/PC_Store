@@ -56,9 +56,8 @@
                             </td>
 
                             <td class="cart-price text-right">
-                                <a href="" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> View Specs </a>
-                                <a href="/cart/remove/{{ $cart_count }}" class="btn btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                
+                                <a href="" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> View </a>
+                                <a href="{{ url('cart/remove/' . $cart_count) }}" class="btn btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
 
                         </tr>
@@ -70,7 +69,7 @@
           <div class="text-center">
             <small class="counter">SUBTOTAL</small>
             <h3 class="roboto-condensed bold">${{ number_format($cart_total) }}</h3>
-            <a href="/shipping" class="btn btn-primary btn-lg">Shipping <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <a href="{{ url('shipping') }}" class="btn btn-primary btn-lg">Shipping <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
           </div>
         </div>
       </div>

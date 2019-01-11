@@ -70,7 +70,7 @@
             <small class="counter">TOTAL</small>
             <h3 class="roboto-condensed bold">£{{ number_format($total_price, 2) }}</h3>
             
-            <form action="/cart/add/part_list" method="POST">
+            <form action="{{ url('cart/add/part_list') }}" method="POST">
                 @csrf
 
                 <input type="hidden" name="price" value="{{ $total_price }}">

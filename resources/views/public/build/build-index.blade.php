@@ -19,13 +19,13 @@
             <div class="col-md-6">
 
                 @if(Session::has('current_part_list'))
-                    <a href="/build/load" class="btn btn-primary btn-lg" style="width: 100%">Resume "{{ $list_data->name }}"</a>
+                    <a href="{{ url('build/load') }}" class="btn btn-primary btn-lg" style="width: 100%">Resume "{{ $list_data->name }}"</a>
                     <br>
                     <hr>
                 @endif
 
                 <h5 class="bold">Create a New Build</h5>
-                <form action="/build/create" method="post">
+                <form action="{{ url('build/create') }}" method="post">
                     {{ csrf_field() }}
                     <input class="form-control form-control" type="text" placeholder="Name your build" name="build-name" required><br>
                     <button type="submit" class="btn btn-primary">Create New</button>
@@ -44,8 +44,8 @@
                             <tr>
                                 <th scope="row">{{ $list['name'] }}</th>
                                 <th scope="row ">
-                                    <a href="/build/delete/{{ $list['id'] }}" class="btn-sm btn-danger pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                    <a href="/build/view/{{ $list['id'] }}" class="btn-sm btn-primary pull-right  mr-1"><i class="fa fa-search"></i> View </a>
+                                    <a href="{{ url('build/delete/' . $list['id']) }}" class="btn-sm btn-danger pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a href="{{ url('build/view/' . $list['id']) }}" class="btn-sm btn-primary pull-right  mr-1"><i class="fa fa-search"></i> View </a>
                                 </th>
                             </tr>
                             @endforeach
@@ -56,7 +56,7 @@
                 </table>
 
                 @else
-                    <p><a href="/register" class="bold">Register</a> to save builds for later!</p>
+                    <p><a href="{{ url('register') }}" class="bold">Register</a> to save builds for later!</p>
                 @endif
             </div>
         </div>
