@@ -13,7 +13,7 @@
 
         </div>
         <div class="card-body pt-5 flex-center flex-column">
-        <form class="form-checkout form-style-1">
+        <form class="form-checkout">
             <div class="form-row">
             <div class="form-group col-6">
                 <label for="shippingFirstName">First Name</label>

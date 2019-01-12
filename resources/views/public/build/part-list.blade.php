@@ -11,7 +11,7 @@
       <div class="card-body px-1 px-md-5 pt-5">
 
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
-          <h3 class="bold text-center">{{ $list_data->name }}</h3>
+          <h2 class="bold text-center">{{ $list_data->name }}</h3>
 
           @include('layouts.alerts')
 
@@ -56,8 +56,8 @@
         @if (Session::has('error'))
             <div class="alert alert-danger" role="alert">
                 <strong>Compatibility Error! Fix the errors add to Cart</strong>
-                <br><br>
-                <p>{!! Session::get('error') !!}</p> 
+                <br>
+                <a>{!! Session::get('error') !!}</a> 
             </div>
         @endif
 
@@ -73,9 +73,9 @@
                 <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
                 @if (Session::has('error') || !isset($list_checked))
-                    <button class="btn btn-primary disabled" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
-                    <br><br>
-                    <p class="text-primary">Select all parts to add the Build to Cart!</p>
+                    <button class="btn btn-primary disabled mb-3" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
+                    <br>
+                    <p class="text-danger text-bold">Select all parts to add the Build to Cart!</p>
                 @else
                     <button type="submit" class="btn btn-primary">
                         Add to Cart <i data-feather="arrow-right"></i>

@@ -15,7 +15,7 @@
         <div class="card-body pt-4 flex-center flex-column">
         <h2 class="roboto-condensed">Payment</h2>
         {{-- <h6 class="text-muted mb-4">or checkout with <a href="javascript:void(0)"><strong>PayPal</strong></a></h6> --}}
-        <form class="form-checkout form-style-1" id="form-payment">
+        <form class="form-checkout" id="form-payment">
             <div class='card-wrapper mb-3'></div>
             <div class="form-group">
             <input type="text" name="number" class="form-control" placeholder="Card Number">

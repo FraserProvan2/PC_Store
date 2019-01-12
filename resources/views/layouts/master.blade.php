@@ -151,7 +151,7 @@
         </div>
         <!-- /Main Content -->
         
-        <footer class="mt-3">
+        <footer class="mt-3 mb-3">
             <!-- Footer -->
             <div class="text-center">Fraser Provan 2019</div>
             <!-- /Footer -->
@@ -174,6 +174,7 @@
                         
                         <li class="no-sub"><a href="{{ url('/') }}"><i data-feather="home"></i> Home</a></li>
                         <li class="no-sub"><a href="{{ url('/') }}"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
+                        
 
                         <hr>
 

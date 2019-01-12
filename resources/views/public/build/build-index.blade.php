@@ -13,21 +13,19 @@
         @include('layouts.alerts')
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
 
                 @if(Session::has('current_part_list'))
                     <a href="{{ url('build/load') }}" class="btn btn-primary btn-lg" style="width: 100%">Resume "{{ $list_data->name }}"</a>
-                    <br>
                     <hr>
                 @endif
 
                 <h5 class="bold">Create a New Build</h5>
                 <form action="{{ url('build/create') }}" method="post">
                     {{ csrf_field() }}
-                    <input class="form-control form-control" type="text" placeholder="Name your build" name="build-name" required><br>
+                    <input class="form-control-lg form-control mb-2" type="text" placeholder="Name your build" name="build-name" required>
                     <button type="submit" class="btn btn-primary">Create New</button>
                 <form>
-                <br><br>
             </div>
 
             <div class="col-md-6">
