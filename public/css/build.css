@@ -6,3 +6,7 @@
 .table-cart td {
     vertical-align: inherit!important;
 }
+
+.table-cart tr {
+    border-bottom: 1px solid #606ddd2e!important;
+}

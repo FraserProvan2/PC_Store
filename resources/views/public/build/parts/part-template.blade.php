@@ -49,12 +49,6 @@ switch($part) {
 
 ?>
 
-<style>
-.table-cart tr {
-    border-bottom: 1px solid #606ddd2e!important;
-}
-</style>
-
 <tr>
     <td class="cart-title">
         <a class="h6 bold d-inline-block mt-3"><span class="text-primary"> {{ $part_title }} </span>

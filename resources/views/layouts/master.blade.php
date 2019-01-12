@@ -153,7 +153,7 @@
         
         <footer class="mt-3 mb-3">
             <!-- Footer -->
-            <div class="text-center">Fraser Provan 2019</div>
+            <div class="text-center">Fraser Provan 2019 - <a href="{{ url('about') }}">About This Project</a></div>        
             <!-- /Footer -->
 
             <!--Menu Modal -->
@@ -175,7 +175,6 @@
                         <li class="no-sub"><a href="{{ url('/') }}"><i data-feather="home"></i> Home</a></li>
                         <li class="no-sub"><a href="{{ url('/') }}"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
                         
-
                         <hr>
 
                         @if(Auth::user())
