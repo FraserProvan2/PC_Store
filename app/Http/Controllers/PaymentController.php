@@ -14,6 +14,11 @@ class PaymentController extends Controller
      */
     public function index(){
 
+        //return to shipping if no shipping details
+        if(!Session::has('shipping')){
+            return redirect()->route('shipping');
+        }
+
         //gets shipping details for shipping method
         $shipping_details = session::get('shipping_details');
 

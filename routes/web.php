@@ -52,11 +52,11 @@ Route::get('/reduce-extra/{type}', 'BuildPcController@reduce_extra');
 
 //Cart
 Route::post('/cart/add/part_list', 'CartController@add_partlist');
-Route::get('/cart/view', 'CartController@view');
+Route::get('/cart/view', 'CartController@view')->name('cart');
 Route::get('/cart/remove/{id}', 'CartController@remove');
 
 //Shipping
-Route::get('/shipping', 'ShippingController@index');
+Route::get('/shipping', 'ShippingController@index')->name('shipping');
 Route::post('/shipping/address', 'ShippingController@store_address');
 
 //Payment

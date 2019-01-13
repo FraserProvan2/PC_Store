@@ -14,6 +14,11 @@ class ShippingController extends Controller
      */
     public function index(){
 
+        //return to cart if no cart items
+        if(!Session::has('cart')){
+            return redirect()->route('cart');
+        }
+
         //gets cart total
         $data['cart_total'] = $this->get_cart_total();
         $data['shipping_details'] = session::get('shipping_details');
