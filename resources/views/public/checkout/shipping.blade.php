@@ -11,18 +11,6 @@
         <!--Progress links-->
         @include('layouts.checkout-progress', $page = ['shipping'])
 
-        <?php
-    
-//   "email_address" => "FraserProvan2@gmail.com"
-//   "number" => "07533347929"
-//   "address" => "Flat 2, 656a High Road"
-//   "country" => "United Kingdom"
-//   "city" => "Barnet"
-//   "postcode" => "N12 0NL"
-//   "shipping_method" => "standard"
-// ]
-        ?>
-
         </div>
         <div class="card-body pt-5 flex-center flex-column">
         <form class="form-checkout" action="{{ url('/shipping/address') }}" method="POST">
