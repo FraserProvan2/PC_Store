@@ -72,27 +72,14 @@
         
         <div class="text-center">
             <small class="counter">TOTAL</small>
-            <h3 class="roboto-condensed bold">
-                <?php 
-                    $cart = Session::get('cart'); 
-
-                    $cart_total = 0;
-                    foreach($cart as $item){
-                        $cart_total += $item['price'];
-                    }
-
-                    if(!$cart){
-                        $cart = [0];
-                    }
-                ?>
-                £
+            <h3 class="roboto-condensed bold">£
                 <span id="total">
                     @if(isset($cart_total))
-                        {{ $cart_total }}
+                        {{number_format($cart_total, 2)}}
                     @else
                         0
                     @endif
-                <span>
+                </span>
            </h3>
             
             <input type="submit" href="payment.html" class="btn btn-primary btn-lg" value="Payment"/>

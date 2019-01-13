@@ -14,7 +14,10 @@ class ShippingController extends Controller
      */
     public function index(){
 
-        return view('public.checkout.shipping');
+        //gets cart total
+        $data['cart_total'] = $this->get_cart_total();
+
+        return view('public.checkout.shipping', $data);
     }
 
     /**

@@ -128,7 +128,7 @@
 
                         <div class="d-flex justify-content-between pb-3 pt-2">
                         <span>Total</span>
-                        <strong>£{{ number_format($cart_total) }}</strong>
+                        <strong>£{{ number_format($cart_total, 2) }}</strong>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
                         <div class="w-100 ml-1">

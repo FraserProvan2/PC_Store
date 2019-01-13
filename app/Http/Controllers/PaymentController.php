@@ -14,7 +14,20 @@ class PaymentController extends Controller
      */
     public function index(){
 
-        return view('public.checkout.payment');
+        //gets shipping details for shipping method
+        $shipping_details = session::get('shipping_details');
+
+        //gets cart total
+        $total = $this->get_cart_total();
+
+        //adds express price if seleted
+        if($shipping_details['shipping_method'] == 'express'){
+            $total += 25;
+        }
+        
+        $data['cart_total'] = $total;
+
+        return view('public.checkout.payment', $data);
     }
 
     /**

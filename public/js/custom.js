@@ -6,8 +6,10 @@ $(function () {
 })
     
 //for express shipping
-cart_total = $('#total').html();
-total = parseInt(cart_total);
+cart_total = $('#total').html().replace(',', '');
+total = parseFloat(cart_total);
+
+console.log(total);
 
 $(function(){
     $('#customRadioInline2').click(function(){

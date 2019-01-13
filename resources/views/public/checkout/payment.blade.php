@@ -34,25 +34,7 @@
         <div class="text-center">
             <small class="counter">TOTAL</small>
 
-            <?php 
-                $cart = Session::get('cart'); 
-
-                $cart_total = 0;
-                foreach($cart as $item){
-                    $cart_total += $item['price'];
-                }
-
-                $shipping_details = session::get('shipping_details');
-                if($shipping_details['shipping_method'] == 'express'){
-                    $cart_total += 25;
-                }
-
-                if(!$cart){
-                    $cart = [0];
-                }
-            ?>
-
-            <h3 class="roboto-condensed bold">£{{ number_format($cart_total) }}</h3>
+            <h3 class="roboto-condensed bold">£{{ number_format($cart_total, 2) }}</h3>
             <input type="submit" class="btn btn-primary btn-lg" value="Pay Now">
             </form>
         </div>

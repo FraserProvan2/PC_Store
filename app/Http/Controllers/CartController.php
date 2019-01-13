@@ -17,7 +17,10 @@ class CartController extends Controller
      */
     public function view(){
 
-        return view('public.checkout.cart');
+        //gets cart total
+        $data['cart_total'] = $this->get_cart_total();
+
+        return view('public.checkout.cart', $data);
     }
 
     /**

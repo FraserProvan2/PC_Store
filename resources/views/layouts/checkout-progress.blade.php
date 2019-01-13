@@ -5,9 +5,6 @@ $page = $page[0];
 $cart = Session::get('cart'); 
 
 $cart_total = 0;
-foreach($cart as $item){
-    $cart_total += $item['price'];
-}
 
 if(!$cart){
     $cart = [0];

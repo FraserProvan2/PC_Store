@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use Session;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -31,5 +33,22 @@ class Controller extends BaseController
         return $array;
     }
 
-    
+    public function get_cart_total(){
+
+        $cart = Session::get('cart');
+        
+        $cart_total = 0;
+
+        if(isset($cart)){
+            foreach($cart as $item){
+                $cart_total += $item['price'];
+            }
+        }
+
+        if(!$cart){
+            $cart = [0];
+        }
+
+        return $cart_total;
+    }
 }
