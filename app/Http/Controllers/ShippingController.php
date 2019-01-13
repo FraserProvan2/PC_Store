@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Redirect;
+use Redirect, Session;
 
 class ShippingController extends Controller
 {
@@ -16,6 +16,7 @@ class ShippingController extends Controller
 
         //gets cart total
         $data['cart_total'] = $this->get_cart_total();
+        $data['shipping_details'] = session::get('shipping_details');
 
         return view('public.checkout.shipping', $data);
     }
