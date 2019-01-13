@@ -35,13 +35,30 @@ class PaymentController extends Controller
      * 
      */
     public function place_order(Request $request){
-     
+        
         $cart = Session::get('cart'); 
         $shipping_details = session::get('shipping_details');
 
-        $request->number;
-        $request->name;
-        $request->expiry;
-        $request->cvc;
+        // $request->number;
+        // $request->name;
+        // $request->expiry;
+        // $request->cvc;
+        
+        echo "<pre>";
+
+        echo "Cart" . "<br>";
+        print_r($cart);
+        echo "<hr>";
+
+        echo "Shipping Info" . "<br>";
+        print_r($shipping_details);
+        echo "<hr>";
+
+        echo "Payment Info" . "<br>";
+        echo $request->number . "<br>";
+        echo $request->name . "<br>";
+        echo $request->expiry . "<br>";
+        echo $request->cvc . "<br>";
+        die;
     }
 }
