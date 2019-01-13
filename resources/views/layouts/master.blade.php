@@ -207,9 +207,9 @@
             <script src="{{ asset('/plugins/noty/noty.min.js') }}"></script>
             <script src="{{ asset('/plugins/jquery-countdown/jquery.countdown.min.js') }}"></script>
             <script src="{{ asset('plugins/card/jquery.card.min.js') }}"></script>
-
-            <!-- Mimity JS  -->
             <script src="{{ asset('/dist/js/script.min.js') }}"></script>
+
+            <script src="{{ asset('/js/custom.js') }}"></script>
 
             <script>
             $(function () {
@@ -226,14 +226,7 @@
                     $(this).text(event.strftime('%H:%M:%S'))
                 })
             })
-
-            //for card
-            $(function () {
-                $('#form-payment').card({
-                    container: '.card-wrapper'
-                })
-            })
-
+                
             </script>
         </footer>
     </body>

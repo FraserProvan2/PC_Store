@@ -1,7 +1,25 @@
-<?php $page = $page[0]; ?>
+<?php 
+
+$page = $page[0]; 
+
+$cart = Session::get('cart'); 
+
+$cart_total = 0;
+foreach($cart as $item){
+    $cart_total += $item['price'];
+}
+
+if(!$cart){
+    $cart = [0];
+}
+?>
 
 <div class="card-header bg-white border-bottom flex-center p-0">
     <ul class="nav nav-pills card-header-pills main-nav-pills" role="tablist">
+        <?php 
+            $cart = Session::get('cart'); 
+            $shipping_details = session::get('shipping_details');
+        ?>
         <li class="nav-item">
             <a class="nav-link <?php if($page == 'cart'){ echo "active"; } ?>" href="{{ url('cart/view') }}">CART</a>
         </li>

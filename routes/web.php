@@ -57,6 +57,8 @@ Route::get('/cart/remove/{id}', 'CartController@remove');
 
 //Shipping
 Route::get('/shipping', 'ShippingController@index');
+Route::post('/shipping/address', 'ShippingController@store_address');
 
 //Payment
-Route::get('/payment', 'PaymentController@index');
+Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::post('/payment/proceed', 'PaymentController@place_order');
