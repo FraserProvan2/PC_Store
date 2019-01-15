@@ -72,13 +72,9 @@
         
         <div class="text-center">
             <small class="counter">TOTAL</small>
-            <h3 class="roboto-condensed bold">£
+            <h3 class="roboto-condensed bold">
                 <span id="total">
-                    @if(isset($cart_total))
-                        {{number_format($cart_total, 2)}}
-                    @else
-                        0
-                    @endif
+                    £{{ number_format($cart_total, 2) }}
                 </span>
            </h3>
             
