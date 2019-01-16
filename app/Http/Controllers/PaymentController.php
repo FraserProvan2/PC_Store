@@ -15,7 +15,7 @@ class PaymentController extends Controller
     public function index(){
 
         //return to shipping if no shipping details
-        if(!Session::has('shipping_details')){
+        if(!Session::has('shipping_details') || !Session::has('cart')){
             return redirect()->route('shipping');
         }
 
