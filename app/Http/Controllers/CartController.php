@@ -37,6 +37,7 @@ class CartController extends Controller
         
         //prepare cart item
         $cart_item = [
+            'type' => 'build',
             'price' => $price,
             'partlist_id' => $partlist_id, 
             'partlist_name' => $partlist_name

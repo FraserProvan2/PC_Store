@@ -40,30 +40,38 @@ class PaymentController extends Controller
      * 
      */
     public function place_order(Request $request){
-        
-        $cart = Session::get('cart'); 
-        $shipping_details = session::get('shipping_details');
 
+        //shipping details
+        $shipping_details = session::get('shipping_details');
+        
+        // //card details input
         // $request->number;
         // $request->name;
         // $request->expiry;
         // $request->cvc;
+
+        //cart data
+        $cart = Session::get('cart'); 
         
-        echo "<pre>";
+        foreach ($cart as $item){
 
-        echo "Cart" . "<br>";
-        print_r($cart);
-        echo "<hr>";
+            //builds
+            if($item->type == 'build'){
 
-        echo "Shipping Info" . "<br>";
-        print_r($shipping_details);
-        echo "<hr>";
+                // [1] => Array
+                // (
+                //     [type] => build
+                //     [price] => 768
+                //     [partlist_id] => 55
+                //     [partlist_name] => new build
+                // )
+            }
 
-        echo "Payment Info" . "<br>";
-        echo $request->number . "<br>";
-        echo $request->name . "<br>";
-        echo $request->expiry . "<br>";
-        echo $request->cvc . "<br>";
-        die;
+             //components
+            elseif($item->type == 'component'){
+
+            }
+        }
     }
+    
 }
