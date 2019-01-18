@@ -72,7 +72,7 @@
                                 </button>
 
                                 <a href="{{ url('login') }}" class="btn btn-secondary pull-right">
-                                    Return to Login
+                                    Go to Login
                                 </a>
                             </div>
                         </div>
