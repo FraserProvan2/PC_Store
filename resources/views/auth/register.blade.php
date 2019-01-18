@@ -8,9 +8,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header h5 bold">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <h5 class="bold mx-auto d-block text-center">Register</h5>
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -69,6 +70,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                <a href="{{ url('login') }}" class="btn btn-secondary pull-right">
+                                    Return to Login
+                                </a>
                             </div>
                         </div>
                     </form>
