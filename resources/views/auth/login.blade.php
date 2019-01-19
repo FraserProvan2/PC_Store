@@ -64,15 +64,12 @@
                                     Register
                                 </a>
 
-                        
-
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link pull-right" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-
-                     
+                                
                             </div>
                         </div>
                     </form>

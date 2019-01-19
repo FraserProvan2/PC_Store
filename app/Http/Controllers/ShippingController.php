@@ -15,7 +15,7 @@ class ShippingController extends Controller
     public function index(){
 
         //return to cart if no cart items
-        if(!Session::has('cart')){
+        if(empty(session::get('cart')) > 0){
             return redirect()->route('cart');
         }
 

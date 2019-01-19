@@ -8,6 +8,7 @@ use Session;
 use Redirect;
 
 use App\Part_lists as Build;
+use App\Parts;
 
 class CartController extends Controller
 {
@@ -21,34 +22,6 @@ class CartController extends Controller
         $data['cart_total'] = $this->get_cart_total();
 
         return view('public.checkout.cart', $data);
-    }
-
-    /**
-     * Adds part list to cart
-     * @param request cart item details
-     * @return redirect to build list
-     */
-    public function add_partlist(Request $request){
-
-        //hidden inputs of list data
-        $partlist_id = $request['partlist_id'];
-        $partlist_name = $request['partlist_name'];
-        $price = $request['price'];
-        
-        //prepare cart item
-        $cart_item = [
-            'type' => 'build',
-            'price' => $price,
-            'partlist_id' => $partlist_id, 
-            'partlist_name' => $partlist_name
-        ];
-
-        //push to session array
-        Session::push('cart', $cart_item);
-
-        Session::flash('message', 'Added to Cart!');
-
-        return redirect('/build/load');
     }
 
     /**
@@ -81,6 +54,59 @@ class CartController extends Controller
             
             return back();
         }
+    }
+
+    /**
+     * Adds part list to cart
+     * @param request cart item details
+     * @return redirect to build list
+     */
+    public function add_partlist(Request $request){
+
+        //hidden inputs of list data
+        $partlist_id = $request['partlist_id'];
+        $partlist_name = $request['partlist_name'];
+        $price = $request['price'];
+        
+        //prepare cart item
+        $cart_item = [
+            'type' => 'build',
+            'price' => $price,
+            'partlist_id' => $partlist_id, 
+            'partlist_name' => $partlist_name
+        ];
+
+        //push to session array
+        Session::push('cart', $cart_item);
+
+        Session::flash('message', 'Added to Cart!');
+
+        return redirect('/build/load');
+    }
+
+    /**
+     * Adds component to cart
+     * @param id of part
+     * @return redirect back
+     */
+    public function add_component($id){
+
+        $part = Parts::where('id', $id)->first();
+
+        //prepare cart item
+        $cart_item = [
+            'type' => 'component',
+            'price' => $part->price,
+            'part_id' => $part->id, 
+            'partlist_name' => $part->name
+        ];
+
+        //push to session array
+        Session::push('cart', $cart_item);
+
+        Session::flash('message', 'Added to Cart!');
+
+        return back();
     }
 
 }

@@ -40,6 +40,7 @@
                     <?php if(empty($page)){ $page = ""; } ?>
                     <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if($page == "component"){ echo "active"; }?>" href="{{ url('components') }}">Components</a></li>
                 </ul>
                 <!-- /Main navigation -->
                 <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
@@ -113,7 +114,7 @@
                                 <div class="media-body">
 
                                     <a>{{ $item['partlist_name'] }}</a>
-                                    <span class="price" style="margin:0px;">£{{ number_format($item['price']) }}</span>
+                                    <span class="price" style="margin:0px;">£{{ number_format($item['price'], 2) }}</span>
                                     <a href="{{ url('cart/remove/' . $cart_count) }}" class="close" aria-label="Close"><i data-feather="x-circle"></i></a>
                                 </div>
                             </div>

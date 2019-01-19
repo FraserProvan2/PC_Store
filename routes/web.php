@@ -47,11 +47,19 @@ Route::get('/add-extra/{type}', 'BuildPcController@add_extra');
 Route::get('/reduce-extra/{type}', 'BuildPcController@reduce_extra');
 
 /*------------------------------------------------------------------------
+| components
+|------------------------------------------------------------------------*/
+
+Route::get('/components', 'ComponentController@index');
+Route::get('/components/{type}', 'ComponentController@filter');
+
+/*------------------------------------------------------------------------
 | Cart/Shipping/Payment
 |------------------------------------------------------------------------*/
 
 //Cart
 Route::post('/cart/add/part_list', 'CartController@add_partlist');
+Route::get('/cart/add/component/{id}', 'CartController@add_component');
 Route::get('/cart/view', 'CartController@view')->name('cart');
 Route::get('/cart/remove/{id}', 'CartController@remove');
 
