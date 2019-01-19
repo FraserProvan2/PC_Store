@@ -15,32 +15,36 @@
     max-width:150px;
     max-height: 200px;
 }
-</style>
 
+.filters-comp{
+    padding: 2px;
+    padding-left: 15px;
+}
+</style>
 
 <div class="row gutters-3">
 
         <!-- Shop Filters -->
         <div class="col-lg-3 col-md-4">
           <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
+            
             <div class="card">
               <div id="filter-categories" style="">
-                
                 <div class="card-body p-2">
                     <h5 class="ml-3 mt-2">Filter</h5>
                     <ul class="list-unstyled">
-                        <li><a href="{{ url('components') }}" class="btn" id="cpu">None</a></li>
-                        <li><a href="{{ url('components/cpu') }}" class="btn" id="cpu">Processors</a></li>
-                        <li><a href="{{ url('components/gpu') }}" class="btn">Graphics Cards</a></li>
-                        <li><a href="{{ url('components/motherboard') }}" class="btn">Motherboards</a></li>
-                        <li><a href="{{ url('components/ram') }}" class="btn">RAM</a></li>
-                        <li><a href="{{ url('components/case') }}" class="btn">Cases</a></li>
-                        <li><a href="{{ url('components/powersupply') }}" class="btn">Power Supplies</a></li>
+                        <li><a href="{{ url('components') }}" class="btn filters-comp" id="cpu">None</a></li>
+                        <li><a href="{{ url('components/gpu') }}" class="btn filters-comp">Graphics Cards</a></li>
+                        <li><a href="{{ url('components/cpu') }}" class="btn filters-comp" id="cpu">Processors</a></li>
+                        <li><a href="{{ url('components/motherboard') }}" class="btn filters-comp">Motherboards</a></li>
+                        <li><a href="{{ url('components/ram') }}" class="btn filters-comp">RAM</a></li>
+                        <li><a href="{{ url('components/case') }}" class="btn filters-comp">Cases</a></li>
+                        <li><a href="{{ url('components/powersupply') }}" class="btn filters-comp">Power Supplies</a></li>
                     </ul>
                 </div>
-
               </div>
             </div>
+            
           </div>
         </div>
         <!-- /Shop Filters -->
@@ -68,7 +72,6 @@
 
           </div>
           <!-- /Shop Grid -->
-
         </div>
 </div>
 
