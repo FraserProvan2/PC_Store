@@ -9,7 +9,7 @@ use App\Parts;
 class ComponentController extends Controller
 {
     /**
-     * Loafd index
+     * Loasd index
      * @return view of componeents
      */
     public function index(){
@@ -22,7 +22,7 @@ class ComponentController extends Controller
     /**
      * filters components
      * @param type of part
-     * @return redirect back
+     * @return view with filtered parts
      */
     public function filter($type){
 
