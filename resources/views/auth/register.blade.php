@@ -6,11 +6,11 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
 
                 <div class="card-body">
-                    <h5 class="bold mx-auto d-block text-center">Register</h5>
+                    <h5 class="bold mx-auto d-block text-center mb-3">Register</h5>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -71,7 +71,7 @@
                                     {{ __('Register') }}
                                 </button>
 
-                                <a href="{{ url('login') }}" class="btn btn-secondary pull-right">
+                                <a href="{{ url('login') }}" class="btn pull-right side-button">
                                     Go to Login
                                 </a>
                             </div>

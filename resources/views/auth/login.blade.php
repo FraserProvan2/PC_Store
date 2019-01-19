@@ -5,11 +5,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
 
                 <div class="card-body">
-                    <h5 class="bold mx-auto d-block text-center">Login</h5>
+                    <h5 class="bold mx-auto d-block text-center mb-3">Login</h5>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -60,15 +60,19 @@
                                     {{ __('Login') }}
                                 </button>
 
+                                <a href="{{ url('register') }}" class="btn btn-secondary">
+                                    Register
+                                </a>
+
+                        
+
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link pull-right" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
 
-                                <a href="{{ url('register') }}" class="btn btn-secondary pull-right">
-                                    Create an Account
-                                </a>
+                     
                             </div>
                         </div>
                     </form>

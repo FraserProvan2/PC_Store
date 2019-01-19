@@ -19,3 +19,8 @@
     color: #adb5bd;
     font-family: 'Roboto Condensed',sans-serif;
 }
+
+.side-button{
+    padding-right: 0px;
+    margin-right: 0px;
+}

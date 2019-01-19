@@ -67,11 +67,11 @@ class PaymentController extends Controller
                 // )
             }
 
-             //components
+            //components
             elseif($item->type == 'component'){
 
             }
         }
     }
-    
+
 }
