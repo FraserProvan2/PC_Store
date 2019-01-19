@@ -20,6 +20,7 @@
         <!-- Custom Styles  -->
         <link rel="stylesheet" href="{{ asset('/css/build.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/component.css') }}">
 
         <title>PC Store - @yield('title')</title>
     </head>

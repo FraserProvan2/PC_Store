@@ -1,0 +1,18 @@
+.card-comp{
+    max-width:278px;
+}
+
+.image-comp{
+    width:auto;
+    max-height : 140px;
+}
+
+.filters-comp{
+    padding: 2px;
+    padding-left: 15px;
+}
+.div-yay{
+    position: absolute;
+   bottom: 0;
+   right: 0;
+}

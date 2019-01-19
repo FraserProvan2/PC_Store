@@ -6,34 +6,22 @@
 
 @section('content')
 
-<style>
-.card-comp{
-    max-width:278px;
-}
-
-.image-comp{
-    max-width:150px;
-    max-height: 200px;
-}
-
-.filters-comp{
-    padding: 2px;
-    padding-left: 15px;
-}
-</style>
-
 <div class="row gutters-3">
 
         <!-- Shop Filters -->
         <div class="col-lg-3 col-md-4">
           <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
-            
+
             <div class="card">
               <div id="filter-categories" style="">
                 <div class="card-body p-2">
-                    <h5 class="ml-3 mt-2">Filter</h5>
+                    @if(Request::url() != 'components')
+                        <h5 class="ml-3 mt-2">Sort</h5>
+                    @endif
+                    <hr>
+
                     <ul class="list-unstyled">
-                        <li><a href="{{ url('components') }}" class="btn filters-comp" id="cpu">None</a></li>
+                        <li><a href="{{ url('components') }}" class="btn filters-comp" id="cpu">All</a></li>
                         <li><a href="{{ url('components/gpu') }}" class="btn filters-comp">Graphics Cards</a></li>
                         <li><a href="{{ url('components/cpu') }}" class="btn filters-comp" id="cpu">Processors</a></li>
                         <li><a href="{{ url('components/motherboard') }}" class="btn filters-comp">Motherboards</a></li>
@@ -57,7 +45,7 @@
           <div class="card-deck card-deck-product with-sidebar" id="components">
 
             @foreach($parts as $part)
-                <div class="card card-product card-comp">
+                <div class="card card-product card-comp align-text-bottom">
                     <div class="card-body">
                         <img class="card-img-top image-comp" src="../img/part-img/{{ $part['image'] }}" alt="Card image cap">
                         <a class="card-title">{{ $part->name }}</a>
