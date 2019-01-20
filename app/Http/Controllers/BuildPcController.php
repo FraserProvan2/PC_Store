@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
-use Session;
+use Session, Auth;
 
 use App\Part_lists as Build;
 use App\Parts;

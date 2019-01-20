@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Session;
+use Session, Auth;
+
+use App\Part_lists as Build;
+use App\Parts;
+use App\Orders;
 
 class PaymentController extends Controller
 {
@@ -41,37 +45,71 @@ class PaymentController extends Controller
      */
     public function place_order(Request $request){
 
-        //shipping details
-        $shipping_details = session::get('shipping_details');
+        //gets required data for order
+        $shipping_details = session::get('shipping_details'); //shipping data
+        $cart = session('cart'); //cart data
+        $user = Auth::user('id'); //user data
+        $user_id = $user['id']; //users id
+        $total = 0; //declares total
         
-        // //card details input
-        // $request->number;
-        // $request->name;
-        // $request->expiry;
-        // $request->cvc;
+        //proccess payment
+        $payment = $this->make_payment();
 
-        //cart data
-        $cart = Session::get('cart'); 
-        
-        foreach ($cart as $item){
+        //if payment successful
+        if($payment == true){
 
-            //builds
-            if($item->type == 'build'){
+            //processes cart items
+            foreach ($cart as $key => $item){
+                if($item['type'] == 'build'){
 
-                // [1] => Array
-                // (
-                //     [type] => build
-                //     [price] => 768
-                //     [partlist_id] => 55
-                //     [partlist_name] => new build
-                // )
+                    //gets cart item build data
+                    $current_build = Build::where('id', $item['partlist_id'])->first();
+
+                    //reduces stock & adds price to total
+                    $this->reduce_stock('build', $current_build);
+                    $total += $item['price'];
+                }
+                elseif($item['type'] == 'component'){
+
+                    //reduces stock & adds price to total
+                    $this->reduce_stock('component', $item['id']);
+                    $total += $item['price'];
+                }
             }
 
-            //components
-            elseif($item->type == 'component'){
-
+            //if express shipping add 25
+            if($shipping_details['shipping_method'] == 'express'){
+                $total += 25;
             }
+
+            //places order
+            $order = new Orders([
+                'user_id'=> $user_id,
+                'cart'=> json_encode($cart, true),
+                'ship_method' => $shipping_details['shipping_method'],
+                'price' => $total,
+                'status' => 'in-progress'
+            ]);
+            $order->save();
+
+        } 
+        //else payment failed
+        else {
+
         }
+    }
+
+    public function reduce_stock($type, $data){
+        if($type == 'build'){
+
+        }
+        elseif($type == 'component'){
+
+        }
+    }
+
+    public function make_payment(){
+        return true;
     }
 
 }
