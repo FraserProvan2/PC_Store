@@ -73,7 +73,7 @@ class CartController extends Controller
             'type' => 'build',
             'price' => $price,
             'partlist_id' => $partlist_id, 
-            'partlist_name' => $partlist_name
+            'partlist_name' => 'Custom Build: ' . $partlist_name
         ];
 
         //push to session array

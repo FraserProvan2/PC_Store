@@ -10,7 +10,7 @@
 
         <!-- Shop Filters -->
         <div class="col-lg-3 col-md-4">
-          <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
+          <div class="accordion accordion-caret accordion-sidebar mb-2">
 
             <div class="card">
               <div id="filter-categories" style="">
