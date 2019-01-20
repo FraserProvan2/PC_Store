@@ -40,8 +40,9 @@ class PaymentController extends Controller
     }
 
     /**
-     * Pays and saves order
-     * 
+     * Places order
+     * @param request payment data
+     * @return view payment success view or order failed view
      */
     public function place_order(Request $request){
 
@@ -72,7 +73,7 @@ class PaymentController extends Controller
                 elseif($item['type'] == 'component'){
 
                     //reduces stock & adds price to total
-                    $this->reduce_stock('component', $item['id']);
+                    $this->reduce_stock('component', $item['part_id']);
                     $total += $item['price'];
                 }
             }
@@ -86,12 +87,13 @@ class PaymentController extends Controller
             $order = new Orders([
                 'user_id'=> $user_id,
                 'cart'=> json_encode($cart, true),
-                'ship_method' => $shipping_details['shipping_method'],
+                'shipping' => json_encode($shipping_details, true),
                 'price' => $total,
                 'status' => 'in-progress'
             ]);
             $order->save();
 
+            echo 'order placed page here';
         } 
         //else payment failed
         else {
@@ -99,15 +101,58 @@ class PaymentController extends Controller
         }
     }
 
+    /**
+     * reduces stock of items after order
+     * @param type,data build or component, data for part (id)
+     * @return view payment success view or order failed view
+     */
     public function reduce_stock($type, $data){
         if($type == 'build'){
 
+            //case
+            $case = Parts::where('id', $data->case_id)->first();
+            Parts::where('id', $data->case_id)->update(['stock' => $case->stock - 1]);
+
+            //cooler
+            $cooler = Parts::where('id', $data->cooler_id)->first();
+            Parts::where('id', $data->cooler_id)->update(['stock' => $cooler->stock - 1]);
+
+            //cpu
+            $cpu = Parts::where('id', $data->cpu_id)->first();
+            Parts::where('id', $data->cpu_id)->update(['stock' => $cpu->stock - 1]);
+            
+            //motherboard
+            $mobo = Parts::where('id', $data->mobo_id)->first();
+            Parts::where('id', $data->mobo_id)->update(['stock' => $mobo->stock - 1]);
+                        
+            //supply
+            $psu = Parts::where('id', $data->powersupply_id)->first();
+            Parts::where('id', $data->powersupply_id)->update(['stock' => $psu->stock - 1]);
+      
+            //ram
+            $ram = Parts::where('id', $data->ram_id)->first();
+            Parts::where('id', $data->ram_id)->update(['stock' => $ram->stock - 1]);
+
+            //storage
+            $storage = Parts::where('id', $data->storage_id)->first();
+            Parts::where('id', $data->storage_id)->update(['stock' => $storage->stock - 1]);
+
+            //gpu
+            $gpu_amount = $data->add_card + 1; //all cards in build
+            $gpu = Parts::where('id', $data->gpu_id)->first();
+            Parts::where('id', $data->gpu_id)->update(['stock' => $gpu->stock - $gpu_amount]);
         }
         elseif($type == 'component'){
 
+            //component
+            $part_data = Parts::where('id', $data)->first();
+            Parts::where('id', $data)->update(['stock' => $part_data->stock - 1]);
         }
     }
 
+    /**
+     * Makes payment
+     */
     public function make_payment(){
         return true;
     }
