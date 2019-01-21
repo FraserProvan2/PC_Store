@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->longText('cart');
             $table->longText('shipping');
             $table->float('price');
-            $table->enum('type', array('in-progress', 'shipped', 'complete'));
+            $table->enum('status', array('in-progress', 'shipped', 'complete'));
             $table->timestamps();
         });
     }
