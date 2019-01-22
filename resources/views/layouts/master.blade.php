@@ -114,7 +114,13 @@
                             <div class="media">
                                 <div class="media-body">
 
-                                    <a>{{ $item['partlist_name'] }}</a>
+                                    @if($item['type'] == 'build')
+                                        <a>{{ $item['partlist_name'] }}</a>
+                                    @else
+                                        <a>{{ $item['part_name'] }}</a>
+                                    @endif
+
+                                    
                                     <span class="price" style="margin:0px;">£{{ number_format($item['price'], 2) }}</span>
                                     <a href="{{ url('cart/remove/' . $cart_count) }}" class="close" aria-label="Close"><i data-feather="x-circle"></i></a>
                                 </div>

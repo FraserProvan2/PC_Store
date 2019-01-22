@@ -93,7 +93,15 @@ class PaymentController extends Controller
             ]);
             $order->save();
 
-            echo 'order placed page here';
+            //gets most recent order
+            $orders = Orders::latest()->first();
+
+            $data['cart'] = $this->convert_object(json_decode($orders->cart));
+            $data['shipping'] = json_decode($orders->shipping);
+            $data['card'] = substr($request->number, -4);
+            $data['order_data'] = $orders;
+            
+            return view('public.checkout.order-success', $data);
         } 
         //else payment failed
         else {

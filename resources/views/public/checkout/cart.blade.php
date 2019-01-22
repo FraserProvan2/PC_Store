@@ -25,7 +25,11 @@
                             <?php $cart_count++ ?>
                             <tr>
                                 <td class="cart-title">
-                                    <a class="h6 bold d-inline-block">{{ $item['partlist_name'] }}</a>
+                                    @if($item['type'] == 'build')
+                                        <a class="h6 bold d-inline-block">{{ $item['partlist_name'] }}</a>
+                                    @else
+                                        <a class="h6 bold d-inline-block">{{ $item['part_name'] }}</a>
+                                    @endif
                                 <br>
                                     <span class="roboto-condensed bold">£{{ number_format($item['price'], 2) }}</span>
                                 </td>

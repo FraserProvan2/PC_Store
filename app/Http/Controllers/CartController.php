@@ -98,7 +98,7 @@ class CartController extends Controller
             'type' => 'component',
             'price' => $part->price,
             'part_id' => $part->id, 
-            'partlist_name' => $part->name
+            'part_name' => $part->name
         ];
 
         //push to session array
