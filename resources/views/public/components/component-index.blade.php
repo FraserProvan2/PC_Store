@@ -45,7 +45,7 @@
           <div class="card-deck card-deck-product with-sidebar" id="components">
 
             @foreach($parts as $part)
-                <div class="card card-product card-comp align-text-bottom">
+                <div class="card card-product align-text-bottom">
                     <div class="card-body">
                         <img class="card-img-top image-comp" src="../img/part-img/{{ $part['image'] }}" alt="Card image cap">
                         <a class="card-title">{{ $part->name }}</a>
