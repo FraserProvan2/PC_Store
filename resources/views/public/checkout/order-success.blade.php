@@ -8,13 +8,14 @@
     <div class="card-body">
       <h2 class="bold text-center mb-4">Payment Success!</h2>
       <div class="row">
-          <div class="col-md-12 text-center mb-2">
-                <h5 class="bold">Cart Items</h5>
+          <div class="col-md-2"></div>
+          <div class="col-md-4 text-center mb-2">
+                <h4 class="bold">Cart Items</h4>
 
                 @foreach($cart as $key=>$item)
-                    <div class="mb-2 h6">
+                    <div class="mb-2 p">
                         @if($item['type'] == 'build')
-                            {{ $item['partlist_name'] }} 
+                            <a href="{{ url('build/view/' . $item['partlist_id']) }}" target="blank"> {{ $item['partlist_name'] }} </a>
                         @elseif($item['type'] == 'component')
                             {{ $item['part_name'] }} 
                         @endif
@@ -23,7 +24,7 @@
                     </div>
                 @endforeach
 
-                <div class="mb-3 h5">
+                <div class="mb-3 p">
                     Shipping: 
                     @if($shipping->shipping_method == 'express')
                         <span class="bold text-primary">£25</span>
@@ -33,10 +34,11 @@
                 </div>
 
                 <h4 class="mt-2 bold">Total: <span class="text-primary">£{{ number_format($order_data->price, 2) }}</span></h4>
+
           </div>
-          <div class="col-md-12 text-center">
-                <p>
-                    <h5 class="bold">Card Used</h5>
+          <div class="col-md-4 text-center mb-2">
+                    <h4 class="bold">Details</h4>
+                    Card Used: 
                     <span>**** **** **** 
                         <span class="text-primary">{{ $card }}</span>
                     </span>
@@ -47,7 +49,6 @@
                     {{ $shipping->number }}<br>
                     {{ $shipping->address }}, {{ $shipping->postcode }}<br>
                     {{ $shipping->country }}, {{ $shipping->city }}<br><br>
-                </p>
           </div>
       </div>
     </div>

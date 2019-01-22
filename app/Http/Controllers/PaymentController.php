@@ -96,6 +96,7 @@ class PaymentController extends Controller
             //gets most recent order
             $orders = Orders::latest()->first();
 
+            //data for the view
             $data['cart'] = $this->convert_object(json_decode($orders->cart));
             $data['shipping'] = json_decode($orders->shipping);
             $data['card'] = substr($request->number, -4);
