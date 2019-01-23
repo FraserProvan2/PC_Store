@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h2 class="bold text-center mb-4">Payment Success! <i class="fa fa-check text-primary" aria-hidden="true"></i></h2>
+<h2 class="bold text-center mb-4 mt-4">Payment Success! <i class="fa fa-check text-primary" aria-hidden="true"></i></h2>
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-4">
@@ -44,6 +44,8 @@
         <div class="card">
             <div class="card-header bold h4">Order Details</div>
             <div class="card-body">
+                    
+                    Order Number: #{{ $order_data->id }}<br>
                     Card Used: 
                     <span>**** **** **** 
                         <span class="text-primary">{{ $card }}</span>
