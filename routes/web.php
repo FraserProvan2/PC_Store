@@ -22,7 +22,9 @@ Route::get('/account', 'AccountProfileController@index');
 Route::post('/account/update/details', 'AccountProfileController@update_details');
 Route::post('/account/update/password', 'AccountProfileController@update_password');
 
+//orders
 Route::get('/account/orders', 'AccountOrdersController@index');
+Route::get('/account/order/{id}', 'AccountOrdersController@view_order');
 
 /*------------------------------------------------------------------------
 | Build a PC

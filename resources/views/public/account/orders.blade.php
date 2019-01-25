@@ -24,36 +24,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row"><a href="javascript:void(0)">ORD556789</a></th>
-                        <td>Dec 19, 2017</td>
-                        <td class="text-right">$74.00</td>
-                        <td class="text-center"><span class="badge badge-warning rounded">In Progress</span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="javascript:void(0)">ORD456789</a></th>
-                        <td>Dec 10, 2017</td>
-                        <td class="text-right">$100.00</td>
-                        <td class="text-center"><span class="badge badge-danger rounded">Canceled</span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="javascript:void(0)">ORD356789</a></th>
-                        <td>Dec 01, 2017</td>
-                        <td class="text-right">$20.00</td>
-                        <td class="text-center"><span class="badge badge-success rounded">Finished</span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="javascript:void(0)">ORD256789</a></th>
-                        <td>Nov 19, 2017</td>
-                        <td class="text-right">$74.00</td>
-                        <td class="text-center"><span class="badge badge-success rounded">Finished</span></td>
-                        </tr>
-                        <tr>
-                        <th scope="row"><a href="javascript:void(0)">ORD156789</a></th>
-                        <td>Nov 10, 2017</td>
-                        <td class="text-right">$100.00</td>
-                        <td class="text-center"><span class="badge badge-success rounded">Finished</span></td>
-                        </tr>
+                        @foreach($orders as $order)
+                            <tr>
+                                <th scope="row"><a href="{{ url('account/order/' . $order->id) }}">#{{ $order->id }}</a></th>
+                                <td>{{ $order->created_at }}</td>
+                                <td class="text-right">£{{ number_format($order->price, 2) }}</td>
+                                <td class="text-center">
+                                    @if($order->status == 'in-progress')
+                                        <span class="badge badge-warning rounded">In Progress</span>
+                                    @elseif($order->status == 'shipped')
+                                        <span class="badge badge-warning rounded">Shipped</span>
+                                    @elseif($order->status == 'complete')
+                                        <span class="badge badge-success rounded">Complete</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                     </table>
                 </div>

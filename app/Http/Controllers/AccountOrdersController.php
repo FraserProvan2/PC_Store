@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\User;
+use App\Orders;
 
 class AccountOrdersController extends Controller
 {
@@ -32,8 +33,19 @@ class AccountOrdersController extends Controller
         $user_info_preconvert = User::where('id', $user_id)->first();
         $user_info = $this->convert_object($user_info_preconvert);
 
+        $data['orders'] = Orders::where('user_id',  $user_id)->orderBy('id', 'desc')->get();
+
         $data['user_data'] = $user_info;
 
         return view('public.account.orders', $data);
+    }
+
+    /**
+     * view an order
+     * @param orderID
+     * @return view order
+     */
+    public function view_order(){
+
     }
 }
