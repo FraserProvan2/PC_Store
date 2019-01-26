@@ -97,12 +97,13 @@ class PaymentController extends Controller
             $orders = Orders::latest()->first();
 
             //data for the view
+            $data['page'] = 'success';
             $data['cart'] = $this->convert_object(json_decode($orders->cart));
             $data['shipping'] = json_decode($orders->shipping);
             $data['card'] = substr($request->number, -4);
             $data['order_data'] = $orders;
             
-            return view('public.checkout.order-success', $data);
+            return view('public.checkout.order-view', $data);
         } 
         //else payment failed
         else {

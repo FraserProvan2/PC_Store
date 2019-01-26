@@ -17,7 +17,7 @@
                     <table class="table table-hover" data-addclass-on-xs="table-sm">
                     <thead class="thead-light">
                         <tr>
-                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Number</th>
                         <th scope="col">Date</th>
                         <th scope="col" class="text-right">Total</th>
                         <th scope="col" class="text-center">Status</th>

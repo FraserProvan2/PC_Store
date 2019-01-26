@@ -39,6 +39,11 @@ class BuildPcController extends Controller
         //gets current build data
         $data['list_data'] = $this->get_current_build();
 
+        //checks user is the auther
+        if($data['list_data']['user_id'] != Auth::user()->id){
+            return $this->index();
+        }
+
         //part information
         $data['case_data'] = Parts::where('id', $data['list_data']['case_id'])->first();
         $data['cooler_data'] = Parts::where('id', $data['list_data']['cooler_id'])->first();

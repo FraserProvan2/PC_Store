@@ -4,7 +4,19 @@
 
 @section('content')
 
-<h2 class="bold text-center mb-4 mt-4">Payment Success! <i class="fa fa-check text-primary" aria-hidden="true"></i></h2>
+@if($page == 'success')
+    <h2 class="bold text-center mb-4 mt-4">Payment Success! <i class="fa fa-check text-primary" aria-hidden="true"></i></h2>
+@elseif($page == 'view')
+    <h2 class="bold text-center mt-4"> Order #{{ $order_data->id }}</h2>
+  
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 mb-2">
+            <a href="{{ url('account/orders') }}" class="btn-sm btn-primary">Back to Orders</a>
+        </div>
+    </div>
+@endif
+
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-4">
@@ -44,14 +56,28 @@
         <div class="card">
             <div class="card-header bold h4">Order Details</div>
             <div class="card-body">
-                    
-                    Order Number: #{{ $order_data->id }}<br>
-                    Card Used: 
-                    <span>**** **** **** 
-                        <span class="text-primary">{{ $card }}</span>
-                    </span>
-                    
-                    <h5 class="bold mt-4">Shipping Address</h5>
+                    @if($page == 'success')
+                        <p>
+                            Order Number: #{{ $order_data->id }}<br>
+                            Card Used: 
+                            <span>**** **** **** 
+                                <span class="text-primary">{{ $card }}</span>
+                            </span>
+                        </p>
+                    @elseif($page == 'view')
+                        <p>
+                            Status: 
+                            @if($order_data->status == 'in-progress')
+                                <span class="badge badge badge-warning rounded">In Progress</span>
+                            @elseif($order_data->status == 'shipped')
+                                <span class="badge badge badge-warning rounded">Shipped</span>
+                            @elseif($order_data->status == 'complete')
+                                <span class="badge badge badge-success rounded">Complete</span>
+                            @endif
+                        </p>
+                    @endif
+                   
+                    <h5 class="bold">Shipping Address</h5>
                     {{ $shipping->first_name }} {{ $shipping->last_name }}<br>
                     {{ $shipping->email_address }}<br>
                     {{ $shipping->number }}<br>

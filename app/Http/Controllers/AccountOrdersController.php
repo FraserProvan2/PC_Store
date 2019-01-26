@@ -45,7 +45,20 @@ class AccountOrdersController extends Controller
      * @param orderID
      * @return view order
      */
-    public function view_order(){
+    public function view_order($id){
 
+        $orders = Orders::where('id', $id)->first();
+
+        //checks user is the auther
+        if($orders->user_id != Auth::user()->id){
+            return $this->index();
+        }
+
+        $data['page'] = 'view';
+        $data['cart'] = $this->convert_object(json_decode($orders->cart));
+        $data['shipping'] = json_decode($orders->shipping);
+        $data['order_data'] = $orders;
+
+        return view('public.checkout.order-view', $data);
     }
 }
