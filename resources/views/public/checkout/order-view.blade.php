@@ -27,7 +27,7 @@
                 @foreach($cart as $key=>$item)
                     <div class="mb-2 p">
                         @if($item['type'] == 'build')
-                            <a href="{{ url('build/view/' . $item['partlist_id']) }}" target="blank"> {{ $item['partlist_name'] }} </a>
+                            <a href="{{ url('build/view/' . $item['partlist_id']) }}" target="_blank"> {{ $item['partlist_name'] }} </a>
                         @elseif($item['type'] == 'component')
                             {{ $item['part_name'] }} 
                         @endif

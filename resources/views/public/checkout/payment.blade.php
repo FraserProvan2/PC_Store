@@ -18,17 +18,17 @@
             @csrf
             <div class='card-wrapper mb-3'></div>
                 <div class="form-group">
-                    <input type="text" name="number" class="form-control" placeholder="Card Number" required>
+                    <input type="text" name="number" class="form-control" placeholder="Card Number" value="4242 4242 4242 4242" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" value="test payment" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" name="expiry" class="form-control" placeholder="Expiry Date" required>
+                        <input type="text" name="expiry" class="form-control" placeholder="Expiry Date" value="10 / 19" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="text" name="cvc" class="form-control" placeholder="CVC Code" required>
+                        <input type="text" name="cvc" class="form-control" placeholder="CVC Code" value="123" required>
                     </div>
                 </div>
         <div class="text-center">

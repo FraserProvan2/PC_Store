@@ -13,6 +13,12 @@
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
           <h2 class="bold text-center">{{ $list_data->name }}</h3>
 
+            @if($list_data['purchased'])
+                <div class="alert alert-success text-center" role="alert">
+                    You purchased this on <strong>{{ $list_data['purchase_date'] }}</strong>
+                </div>
+            @endif
+
           @include('layouts.alerts')
 
           <tbody>
@@ -72,14 +78,16 @@
                 <input type="hidden" name="partlist_id" value="{{ $list_data['id'] }}">
                 <input type="hidden" name="partlist_name" value="{{ $list_data->name }}">
 
-                @if (Session::has('error') || !isset($list_checked))
-                    <button class="btn btn-primary disabled mb-3" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
-                    <br>
-                    <p class="text-danger text-bold">Select all parts to add the Build to Cart!</p>
-                @else
-                    <button type="submit" class="btn btn-primary">
-                        Add to Cart <i data-feather="arrow-right"></i>
-                    </button>
+                @if($list_data['purchased'] == false)
+                    @if (Session::has('error') || !isset($list_checked))
+                        <button class="btn btn-primary disabled mb-3" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
+                        <br>
+                        <p class="text-danger text-bold">Select all parts to add the Build to Cart!</p>
+                    @else
+                        <button type="submit" class="btn btn-primary">
+                            Add to Cart <i data-feather="arrow-right"></i>
+                        </button>
+                    @endif
                 @endif
             </form>
         

@@ -27,6 +27,8 @@ class CreatePartListsTable extends Migration
             $table->integer('ram_id')->default(0)->nullable();
             $table->integer('storage_id')->default(0)->nullable();
             $table->integer('total')->default(0);
+            $table->boolean('purchased')->default(0);
+            $table->timestamp('purchase_date')->default(0)->nullable();
             $table->timestamps();
         });
     }

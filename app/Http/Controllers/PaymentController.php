@@ -63,6 +63,9 @@ class PaymentController extends Controller
             foreach ($cart as $key => $item){
                 if($item['type'] == 'build'){
 
+                    //turn build to purchased
+                    Build::where('id', $item['partlist_id'])->update(['purchased' => 1, 'purchase_date' => now()]);
+
                     //gets cart item build data
                     $current_build = Build::where('id', $item['partlist_id'])->first();
 
@@ -102,6 +105,10 @@ class PaymentController extends Controller
             $data['shipping'] = json_decode($orders->shipping);
             $data['card'] = substr($request->number, -4);
             $data['order_data'] = $orders;
+
+            //removes session items
+            Session::forget('cart');
+            Session::forget('current_part_list');
             
             return view('public.checkout.order-view', $data);
         } 

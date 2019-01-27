@@ -23,7 +23,7 @@ class BuildPcController extends Controller
 
         if(Auth::user()){
             $user_id = Auth::user()->id;
-            $users_lists_object = Build::where('user_id', $user_id)->orderBy('id', 'DESC')->get();
+            $users_lists_object = Build::where('user_id', $user_id)->where('purchased', 0)->orderBy('id', 'DESC')->get();
             $data['users_lists']  = $this->convert_object($users_lists_object);
         }
         
@@ -130,6 +130,10 @@ class BuildPcController extends Controller
 
         //gets current build data
         $data['list_data'] = $this->get_current_build();
+
+        if($data['list_data']['user_id'] != Auth::user('id')){
+            return redirect('build');
+        }
 
         //part data for compatability check
         $cpu_data = Parts::where('id', $data['list_data']['cpu_id'])->first();
