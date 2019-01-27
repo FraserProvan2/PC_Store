@@ -131,7 +131,7 @@ class BuildPcController extends Controller
         //gets current build data
         $data['list_data'] = $this->get_current_build();
 
-        if($data['list_data']['user_id'] != Auth::user('id')){
+        if($data['list_data']['user_id'] != Auth::user()->id){
             return redirect('build');
         }
 
