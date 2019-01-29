@@ -107,9 +107,9 @@ class PaymentController extends Controller
             $data['order_data'] = $orders;
 
             //removes session items
-            Session::forget('cart');
             Session::forget('current_part_list');
-            
+            Session::forget('cart');
+          
             return view('public.checkout.order-view', $data);
         } 
         //else payment failed
