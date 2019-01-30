@@ -40,8 +40,10 @@ class BuildPcController extends Controller
         $data['list_data'] = $this->get_current_build();
 
         //checks user is the auther
-        if($data['list_data']['user_id'] != Auth::user()->id){
-            return $this->index();
+        if(Auth::user()){
+            if($data['list_data']['user_id'] != Auth::user()->id){
+                return $this->index();
+            }
         }
 
         //part information
@@ -131,8 +133,10 @@ class BuildPcController extends Controller
         //gets current build data
         $data['list_data'] = $this->get_current_build();
 
-        if($data['list_data']['user_id'] != Auth::user()->id){
-            return redirect('build');
+        if(Auth::user()){
+            if($data['list_data']['user_id'] != Auth::user()->id){
+                return $this->index();
+            }
         }
 
         //part data for compatability check
