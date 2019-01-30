@@ -72,3 +72,9 @@ Route::post('/shipping/address', 'ShippingController@store_address');
 //Payment
 Route::get('/payment', 'PaymentController@index')->name('payment');
 Route::post('/payment/proceed', 'PaymentController@place_order');
+
+/*------------------------------------------------------------------------
+| Admin
+|------------------------------------------------------------------------*/
+
+Route::get('/admin', 'Admin\AdminController@index')->name('dashboard');

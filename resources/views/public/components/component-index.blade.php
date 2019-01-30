@@ -2,7 +2,7 @@
 
 @extends('layouts.master')
 
-@section('title', 'Build PC')
+@section('title', 'Components')
 
 @section('content')
 
