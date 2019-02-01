@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreShippingDetails;
 
 use Redirect, Session;
 
@@ -31,19 +32,22 @@ class ShippingController extends Controller
      * @param Request shipping detials input
      * @return view index
      */
-    public function store_address(Request $request){
+    public function store_address(StoreShippingDetails $request){
+        
+        //validates form input
+        $validated = $request->validated();
 
         //saves shipping details to session
         session(['shipping_details' => [
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email_address' => $request->email_address,
-            'number' => $request->number,
-            'address' => $request->address,
-            'country' => $request->country,
-            'city' => $request->city,
-            'postcode' => $request->postcode,
-            'shipping_method' => $request->shipping_method
+            'first_name' => $validated['first_name'],
+            'last_name' => $validated['last_name'],
+            'email_address' => $validated['email_address'],
+            'number' => $validated['number'],
+            'address' => $validated['address'],
+            'country' => $validated['country'],
+            'city' => $validated['city'],
+            'postcode' => $validated['postcode'],
+            'shipping_method' => $validated['shipping_method']
             ]
         ]);
 

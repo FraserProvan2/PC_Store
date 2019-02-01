@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidatePayment;
 
 use Session, Auth;
 
@@ -44,7 +45,10 @@ class PaymentController extends Controller
      * @param request payment data
      * @return view payment success view or order failed view
      */
-    public function place_order(Request $request){
+    public function place_order(ValidatePayment $request){
+
+        //validates form input
+        $validated = $request->validated();
 
         //gets required data for order
         $shipping_details = session::get('shipping_details'); //shipping data
