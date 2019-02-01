@@ -48,7 +48,7 @@ class AccountProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-        ]);
+            ]);
 
         if($validator->fails()) {
             return redirect('account')->withErrors($validator);
@@ -98,15 +98,6 @@ class AccountProfileController extends Controller
      * @return function profile index w/ message
      */
     public function update_password(Request $request){
-
-        $validator = Validator::make($request->all(), [
-            'password' => 'required',
-            'password_confirmation' => 'required',
-        ]);
-
-        if($validator->fails()) {
-            return redirect('account')->withErrors($validator);
-        }
 
         //inputs
         $pass = $request['password'];
