@@ -13,6 +13,8 @@
         <div class="card">
         <div class="card-body">
             <h3>My Profile</h3><hr>
+
+            @include('layouts.alerts')
             
             <!--Success Message-->
             <?php if(isset($message_details)){ ?>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 
-use Auth;
+use Auth, Validator;
 use App\User;
 
 class AccountProfileController extends Controller
@@ -44,6 +44,15 @@ class AccountProfileController extends Controller
      * @return function profile index w/ message
      */
     public function update_details(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        if($validator->fails()) {
+            return redirect('account')->withErrors($validator);
+        }
         
         //inputs
         $name = $request['name'];
@@ -89,6 +98,15 @@ class AccountProfileController extends Controller
      * @return function profile index w/ message
      */
     public function update_password(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'password' => 'required',
+            'password_confirmation' => 'required',
+        ]);
+
+        if($validator->fails()) {
+            return redirect('account')->withErrors($validator);
+        }
 
         //inputs
         $pass = $request['password'];
