@@ -95,8 +95,10 @@ class BuildPcController extends Controller
      */
     public function create(Request $request){
         
-        //inputs
-        $build_name = $request['build-name'];
+        //validates data
+        $validatedData = $request->validate([
+            'build_name' => 'required',
+        ]);
 
         //if user signed in add user_id to list
         if(Auth::user()){
@@ -110,7 +112,7 @@ class BuildPcController extends Controller
 
         //saves new build list
         $newbuild = new Build([
-            'name'=>$build_name,
+            'name'=>$validatedData['build_name'],
             'user_id'=>$user_id
         ]);
         $newbuild->save();

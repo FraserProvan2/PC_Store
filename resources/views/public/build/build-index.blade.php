@@ -22,7 +22,7 @@
                 <h5 class="bold">Create a New Build</h5>
                 <form action="{{ url('build/create') }}" method="post">
                     {{ csrf_field() }}
-                    <input class="form-control-lg form-control mb-2" type="text" placeholder="Name your build" name="build-name" required>
+                    <input class="form-control-lg form-control mb-2" type="text" placeholder="Name your build" name="build_name" required>
                     <button type="submit" class="btn btn-primary">Create New</button>
                 <form>
             </div>
