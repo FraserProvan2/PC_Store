@@ -14,8 +14,7 @@
 
         <div class="row">
             <div class="col-md-6 mb-3">
-
-                @if(Session::has('current_part_list'))
+                @if($list_data && $list_data['purchased'] != 1)
                     <a href="{{ url('build/load') }}" class="btn btn-primary btn-lg" style="width: 100%">Resume "{{ $list_data->name }}"</a>
                     <hr>
                 @endif

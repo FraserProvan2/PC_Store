@@ -33,10 +33,9 @@ Route::get('/account/order/{id}', 'AccountOrdersController@view_order');
 Route::get('/build', 'BuildPcController@index');
 Route::post('/build/create', 'BuildPcController@create');
 Route::get('/build/load', 'BuildPcController@load');
-
-Route::get('/build/load', 'BuildPcController@load');
 Route::get('/build/view/{id}', 'BuildPcController@view');
 Route::get('/build/delete/{id}', 'BuildPcController@delete');
+Route::post('/build/updatename', 'BuildPcController@change_name');
 
 //choose part
 Route::get('/list/{part}', 'BuildPcController@list_part');

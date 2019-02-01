@@ -11,7 +11,15 @@
       <div class="card-body px-1 px-md-5 pt-5">
 
         <table class="table table-borderless table-cart" data-addclass-on-smdown="table-sm">
-          <h2 class="bold text-center">{{ $list_data->name }}</h3>
+          <h2 class="bold text-center">
+            {{ $list_data->name }}
+
+            @if($list_data->purchased != 1)
+                <button type="button" class="btn btn-lg text-primary pl-0" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            @endif
+        </h3>
 
             @if($list_data['purchased'])
                 <div class="alert alert-success text-center" role="alert">
@@ -22,7 +30,6 @@
           @include('layouts.alerts')
 
           <tbody>
-
             <?php $total_price = 00.00; ?>
 
             @include('public.build.parts.part-template', $part_type = ["case"])
@@ -94,6 +101,31 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+      
+    @if($list_data->purchased != 1)
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Build Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="{{ url('build/updatename') }}">
+                @csrf
+                <div class="modal-body">
+                    <input class="form-control form-control-lg mb-2" type="text" value="{{ $list_data->name }}" name='new_title' required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    @endif
 
 @endsection

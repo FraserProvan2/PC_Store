@@ -21,6 +21,8 @@ class BuildPcController extends Controller
         //gets current build data
         $data['list_data'] = $this->get_current_build();
 
+
+
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $users_lists_object = Build::where('user_id', $user_id)->where('purchased', 0)->orderBy('id', 'DESC')->get();
@@ -380,6 +382,31 @@ class BuildPcController extends Controller
         }
 
         return $this->load();    
+    }
+
+    /**
+     * Update name of the build
+     * @param request
+     * @return load function
+     */
+    public function change_name(Request $request){
+
+        //gets current build data
+        $current_build = $this->get_current_build();
+
+        //validates data
+        $validatedData = $request->validate([
+            'new_title' => 'required',
+        ]);
+
+        //updates partlist name
+        Build::where('id', $current_build['id'])->update([
+            'name' => $validatedData['new_title']
+        ]);
+
+        Session::flash('message', 'Name Updated!');
+        
+        return $this->load();   
     }
 
 }
