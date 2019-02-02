@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 
-use Auth, Validator;
+use Auth, Validator, Session;
 use App\User;
 
 class AccountProfileController extends Controller
@@ -71,11 +71,9 @@ class AccountProfileController extends Controller
         
         //if email exists and is not the current accounts ID
         if($check_email && $check_email['id'] != $user_info['id']){
-            
-            $data['error_details'] = "Email already registered!";
-        } 
-        //else update
-        else {
+            Session::flash('error', 'Email already registered!');
+        
+        }  else {
 
             //current user
             $user_id = Auth::user()->id;
@@ -87,10 +85,10 @@ class AccountProfileController extends Controller
                     'email' => $email
                 ]);
 
-            $data['message_details'] = "Your Details have been Updated!";
+            Session::flash('message', 'Your Details have been Updated!');
         }
 
-        return $this->index()->with($data);
+        return $this->index();
     }
 
     /**
@@ -105,13 +103,11 @@ class AccountProfileController extends Controller
 
         //if passwords dont match
         if($pass != $pass_confirm){
-
-            $data['error_details'] = "Passwords dont match!";
+            Session::flash('error', 'Passwords dont match!');
         }
         //if password is less than 6 characters
         else if(strlen($pass) < 6){
-
-            $data['error_details'] = "Password is too short!";
+            Session::flash('error', 'Password is too short!');
         }
         //update password
         else {
@@ -125,9 +121,9 @@ class AccountProfileController extends Controller
                 'password' => Hash::make($pass)
             ]);
 
-            $data['message_password'] = "Your password has been updated!";
+            Session::flash('message', 'Your password has been updated!');
         }
         
-        return $this->index()->with($data);
+        return $this->index();
     }
 }
