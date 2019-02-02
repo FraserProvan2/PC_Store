@@ -23,6 +23,7 @@
    <link rel="stylesheet" href="{{ asset('admin_site/vendor/animo.js/animate-animo.css') }}">
    <link rel="stylesheet" href="{{ asset('admin_site/vendor/whirl/dist/whirl.css') }}">
    <link rel="stylesheet" href="{{ asset('admin_site/app/css/app.css') }}">
+   <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
    <script src="{{ asset('admin_site/vendor/modernizr/modernizr.custom.js') }}" type="application/javascript"></script>
    <script src="{{ asset('admin_site/vendor/fastclick/lib/fastclick.js') }}" type="application/javascript"></script>
 </head>
@@ -35,11 +36,13 @@
          <!-- START navbar header-->
          <div class="navbar-header">
             <a href="dashboard.v1.html" class="navbar-brand">
-               <div class="brand-logo">
-                  <img src="{{ asset('admin_site/app/img/logo.png') }}" alt="App Logo" class="img-responsive">
+               <div class="brand-logo pull-left admin-logo" >
+                  {{-- <img src="{{ asset('admin_site/app/img/logo.png') }}" alt="App Logo" class="img-responsive"> --}}
+                  <img src="{{ asset('/img/logo.svg') }}"> <strong>PC Store</strong>
                </div>
-               <div class="brand-logo-collapsed">
-                  <img src="{{ asset('admin_site/app/img/logo-single.png') }}" alt="App Logo" class="img-responsive">
+               <div class="brand-logo-collapsed admin-logo-responsive">
+                  {{-- <img src="{{ asset('admin_site/app/img/logo-single.png') }}" alt="App Logo" class="img-responsive"> --}}
+                  <img src="{{ asset('/img/logo.svg') }}">
                </div>
             </a>
          </div>
@@ -77,23 +80,6 @@
       <aside class="aside">
          <!-- START Sidebar (left)-->
          <nav class="sidebar">
-            <!-- START user info-->
-            <div class="item user-block">
-               <!-- User picture-->
-               <div class="user-block-picture">
-                  <div class="user-block-status">
-                     <img src="{{ asset('admin_site/app/img/user/02.jpg') }}" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
-                     <div class="circle circle-success circle-lg"></div>
-                  </div>
-                  <!-- Status when collapsed-->
-               </div>
-               <!-- Name and Role-->
-               <div class="user-block-info">
-                  <span class="user-block-name item-text">Welcome User</span>
-                  <span class="user-block-role">UX-Dev</span>
-               </div>
-            </div>
-            <!-- END user info-->
             <ul class="nav">
 
                 <li>

@@ -446,5 +446,5 @@
                <!-- END dashboard sidebar-->
             </div>
     </div> --}}
-dashboard
+   
 @endsection

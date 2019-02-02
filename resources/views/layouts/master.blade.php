@@ -161,7 +161,7 @@
         
         <footer class="mt-3 mb-3">
             <!-- Footer -->
-            <div class="text-center">Fraser Provan 2019 - <a href="{{ url('about') }}">About This Project</a></div>        
+            <div class="text-center">Fraser Provan 2019 - <a href="{{ url('https://github.com/FraserProvan2/PC_Store#readme') }}" target="_blank">About This Project</a></div>        
             <!-- /Footer -->
 
             <!--Menu Modal -->
