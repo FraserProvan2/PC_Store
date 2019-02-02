@@ -15,4 +15,5 @@ yarn-error.log
 .phpunit.result.cache
 
 resources/template/
+resources/admin_template/
 public/node_modules

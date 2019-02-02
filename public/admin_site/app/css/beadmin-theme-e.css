@@ -1,0 +1,147 @@
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+body,
+.wrapper > section {
+  background-color: #e8eef2;
+}
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+.navbar-top .navbar-header {
+  background-color: #1c75bf;
+}
+.navbar-top .navbar-nav > li > a,
+.navbar-top .navbar-nav > .open > a {
+  color: #909090;
+}
+.navbar-top .navbar-nav > li > a:hover,
+.navbar-top .navbar-nav > .open > a:hover,
+.navbar-top .navbar-nav > li > a:focus,
+.navbar-top .navbar-nav > .open > a:focus {
+  color: #2a2a2a;
+}
+.navbar-top .navbar-nav > .active > a,
+.navbar-top .navbar-nav > .open > a,
+.navbar-top .navbar-nav > .active > a:hover,
+.navbar-top .navbar-nav > .open > a:hover,
+.navbar-top .navbar-nav > .active > a:focus,
+.navbar-top .navbar-nav > .open > a:focus {
+  background-color: transparent;
+}
+.navbar-top .navbar-nav > li > [data-toggle='navbar-search'] {
+  color: #fff;
+}
+.navbar-top .navbar-nav > li > [data-toggle='navbar-search']:hover,
+.navbar-top .navbar-nav > li > [data-toggle='navbar-search']:focus {
+  color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-top {
+    background-color: #fff;
+  }
+  .navbar-top .navbar-nav > .open > a,
+  .navbar-top .navbar-nav > .open > a:hover,
+  .navbar-top .navbar-nav > .open > a:focus {
+    box-shadow: 0 -3px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  .navbar-top .navbar-nav > li > a,
+  .navbar-top .navbar-nav > .open > a {
+    color: #909090;
+  }
+  .navbar-top .navbar-nav > li > a:hover,
+  .navbar-top .navbar-nav > .open > a:hover,
+  .navbar-top .navbar-nav > li > a:focus,
+  .navbar-top .navbar-nav > .open > a:focus {
+    color: #444444;
+  }
+  .navbar-top .navbar-nav > li > [data-toggle='navbar-search'] {
+    color: #909090;
+  }
+  .navbar-top .navbar-nav > li > [data-toggle='navbar-search']:hover,
+  .navbar-top .navbar-nav > li > [data-toggle='navbar-search']:focus {
+    color: #444444;
+  }
+  .nav-wrapper {
+    background-color: #fff;
+  }
+}
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+.sidebar {
+  background-color: #1D2933;
+  border-right-color: #000000;
+}
+.sidebar .nav-heading {
+  color: #54738A;
+}
+.sidebar .nav-labels > .nav-labels-item > a {
+  color: #638399;
+}
+.sidebar .nav > li > a,
+.sidebar .nav > li > .nav-item {
+  color: #638399;
+}
+.sidebar .nav > li > a:focus,
+.sidebar .nav > li > .nav-item:focus {
+  color: #b0c0cc;
+}
+.sidebar .nav > li > a > em,
+.sidebar .nav > li > .nav-item > em {
+  color: inherit;
+}
+.sidebar .nav > li.active,
+.sidebar .nav > li:hover,
+.sidebar .nav > li.active > a,
+.sidebar .nav > li:hover > a,
+.sidebar .nav > li.active > a > .item-text,
+.sidebar .nav > li:hover > a > .item-text,
+.sidebar .nav > li.active .nav,
+.sidebar .nav > li:hover .nav {
+  background-color: #19242c;
+  color: #b0c0cc;
+}
+.sidebar .nav > li.active > a > em,
+.sidebar .nav > li:hover > a > em {
+  color: #1c75bf;
+}
+.sidebar .nav > li.active {
+  border-left-color: #1c75bf;
+}
+.sidebar .nav .nav {
+  background-color: #1D2933;
+}
+.sidebar .nav .nav > li > a:focus,
+.sidebar .nav .nav > li > .nav-item:focus,
+.sidebar .nav .nav > li > a:hover,
+.sidebar .nav .nav > li > .nav-item:hover {
+  color: #b0c0cc;
+}
+.sidebar .nav .nav > li > a:after,
+.sidebar .nav .nav > li > .nav-item:after {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+.sidebar .nav .nav > li.active > a,
+.sidebar .nav .nav > li.active > .nav-item {
+  color: #b0c0cc;
+}
+.sidebar .nav .nav > li.active > a:after,
+.sidebar .nav .nav > li.active > .nav-item:after {
+  border-color: #1c75bf;
+  background-color: #1c75bf;
+}
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+.offsidebar {
+  border-left: 1px solid #000000;
+  background-color: #1D2933;
+  color: #dde6e9;
+}
+.offsidebar a {
+  color: #f1f2f3;
+}
+.offsidebar .text-muted {
+  color: #d1d2d3;
+}
