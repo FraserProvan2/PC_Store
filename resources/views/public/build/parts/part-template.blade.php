@@ -70,7 +70,7 @@ switch($part) {
         </a>
 
     </td>
-    <td class="cart-price text-right">    
+    <td class=" text-right">    
         @if($list_data['purchased'] == false)
             @if($part_id)  
                 @if($list_data['gpu_id'] && $part_data->type == "gpu")

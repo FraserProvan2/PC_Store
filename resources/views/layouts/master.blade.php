@@ -181,7 +181,9 @@
                     <ul class="menu" id="menu">
                         
                         <li class="no-sub"><a href="{{ url('/') }}"><i data-feather="home"></i> Home</a></li>
-                        <li class="no-sub"><a href="{{ url('/') }}"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
+                        <li class="no-sub"><a href="{{ url('/build') }}"><i class="fa fa-wrench side-m" aria-hidden="true"></i> Build a PC</a></li>
+                        <li class="no-sub"><a href="{{ url('/components') }}"><i class="fa fa-hdd-o side-m" aria-hidden="true"></i> Components</a></li>
+                        <li class="no-sub"><a href="{{ url('cart/view') }}"><i data-feather="shopping-cart"></i> Cart / Pay</a></li>
                         
                         <hr>
 
@@ -195,7 +197,7 @@
                         @else
                             <li class="no-sub"><a href="{{ url('login') }}"><i data-feather="user"></i> Sign In</a></li>
                             <li class="no-sub"><a href="{{ url('register') }}"><i data-feather="user"></i> Register</a></li>
-                        @endif
+                        @endif          
 
                     </ul>
                 </div>
