@@ -91,12 +91,26 @@
                         <span class="item-text">Customers</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('admin/orders') }}" title="Widgets" data-toggle="" class="no-submenu">
-                        <em class="fa fa-truck"></em>
-                        <span class="item-text">Orders</span>
-                    </a>
-                </li>
+                <li class="active">
+                        <a href="{{ url('admin/orders') }}" title="Tables" data-toggle="collapse-next" class="has-submenu">
+                           <em class="fa fa-truck"></em>
+                           <span class="item-text">Orders</span>
+                        </a>
+                        <!-- START SubMenu item-->
+                        <ul class="nav collapse" aria-expanded="false" style="height: 0px;">
+                           <li class="active">
+                              <a href="{{ url('admin/orders') }}" title="Standard" data-toggle="" class="no-submenu">
+                                 <span class="item-text">Active</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="{{ url('admin/orders/completed') }}" title="Extended" data-toggle="" class="no-submenu">
+                                 <span class="item-text">Completed</span>
+                              </a>
+                           </li>
+                        </ul>
+                        <!-- END SubMenu item-->
+                     </li>
                 <li>
                     <a href="{{ url('admin/inventory') }}" title="Widgets" data-toggle="" class="no-submenu">
                         <em class="fa fa-list"></em>
