@@ -35,7 +35,7 @@
       <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
          <!-- START navbar header-->
          <div class="navbar-header">
-            <a href="dashboard.v1.html" class="navbar-brand">
+            <a href="{{ url('admin') }}" class="navbar-brand">
                <div class="brand-logo pull-left admin-logo" >
                   {{-- <img src="{{ asset('admin_site/app/img/logo.png') }}" alt="App Logo" class="img-responsive"> --}}
                   <img src="{{ asset('/img/logo.svg') }}"> <strong>PC Store</strong>
@@ -52,10 +52,6 @@
             <!-- START Left navbar-->
             <ul class="nav navbar-nav">
                <li>
-                  <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                  <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
-                     <em class="fa fa-navicon"></em>
-                  </a>
                   <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
                   <a href="#" data-toggle-state="aside-toggled" class="visible-xs">
                      <em class="fa fa-navicon"></em>
@@ -67,6 +63,7 @@
                   <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
                   <a href="#" data-toggle-state="aside-user">
                      <em class="fa fa-user"></em>
+                     &nbsp;Fraser
                   </a>
                </li>
                <!-- END User avatar toggle-->
@@ -83,25 +80,25 @@
             <ul class="nav">
 
                 <li>
-                    <a href="widgets.html" title="Widgets" data-toggle="" class="no-submenu">
+                    <a href="{{ url('/admin') }}" title="Widgets" data-toggle="" class="no-submenu">
                         <em class="fa fa-home"></em>
                         <span class="item-text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="widgets.html" title="Widgets" data-toggle="" class="no-submenu">
+                    <a href="{{ url('admin/customers') }}" title="Widgets" data-toggle="" class="no-submenu">
                         <em class="fa fa-users"></em>
                         <span class="item-text">Customers</span>
                     </a>
                 </li>
                 <li>
-                    <a href="widgets.html" title="Widgets" data-toggle="" class="no-submenu">
+                    <a href="{{ url('admin/orders') }}" title="Widgets" data-toggle="" class="no-submenu">
                         <em class="fa fa-truck"></em>
                         <span class="item-text">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="widgets.html" title="Widgets" data-toggle="" class="no-submenu">
+                    <a href="{{ url('admin/inventory') }}" title="Widgets" data-toggle="" class="no-submenu">
                         <em class="fa fa-list"></em>
                         <span class="item-text">Inventory</span>
                     </a>

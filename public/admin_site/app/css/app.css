@@ -209,7 +209,7 @@ fieldset .form-group {
   border: 0;
 }
 .nav.nav-pills .active > a {
-  background-color: #1c75bf;
+  background-color: #606ddd;
 }
 .dropdown-menu {
   border-radius: 3px;
@@ -441,7 +441,7 @@ body {
 }
 .navbar-top .navbar-header {
   position: relative;
-  background-color: #1c75bf;
+  background-color: #606ddd;
   z-index: 11;
 }
 .navbar-top .navbar-header .navbar-brand {
@@ -497,7 +497,7 @@ body {
 }
 .nav-wrapper {
   padding: 0 15px;
-  background-color: #1c75bf;
+  background-color: #606ddd;
 }
 .nav-wrapper .nav.navbar-nav {
   float: left;
@@ -567,7 +567,7 @@ body {
     left: 0;
     right: 0;
     border: 0;
-    background-color: #1c75bf;
+    background-color: #606ddd;
   }
   .navbar-top .navbar-nav > a {
     box-shadow: 0 0 0 #000 inset;
@@ -578,7 +578,7 @@ body {
   .navbar-top .navbar-nav > .open > a,
   .navbar-top .navbar-nav > .open > a:hover,
   .navbar-top .navbar-nav > .open > a:focus {
-    box-shadow: 0 -3px 0 #1c75bf inset;
+    box-shadow: 0 -3px 0 #606ddd inset;
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
@@ -711,10 +711,10 @@ body {
 }
 .sidebar .nav > li.active > a > em,
 .sidebar .nav > li:hover > a > em {
-  color: #1c75bf;
+  color: #606ddd;
 }
 .sidebar .nav > li.active {
-  border-left-color: #1c75bf;
+  border-left-color: #606ddd;
 }
 .sidebar .nav .nav {
   padding-left: 55px;
@@ -739,12 +739,12 @@ body {
 }
 .sidebar .nav .nav > li.active > a,
 .sidebar .nav .nav > li.active > .nav-item {
-  color: #1c75bf;
+  color: #606ddd;
 }
 .sidebar .nav .nav > li.active > a:after,
 .sidebar .nav .nav > li.active > .nav-item:after {
-  border-color: #1c75bf;
-  background-color: #1c75bf;
+  border-color: #606ddd;
+  background-color: #606ddd;
 }
 @media only screen and (min-width: 768px) {
   .aside-collapsed .sidebar {
@@ -1108,7 +1108,7 @@ fieldset[disabled] .btn-pink.focus {
 .btn-outline:hover,
 .btn-outline:focus {
   background-color: #fff;
-  color: #1c75bf;
+  color: #606ddd;
 }
 .btn-flat {
   border-bottom-width: 1px;
@@ -1493,130 +1493,130 @@ fieldset[disabled] .btn-pink.focus {
   line-height: 56px;
 }
 .radial-bar.radial-bar-0 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(90deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(90deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-5 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(108deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(108deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-10 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(126deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(126deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-15 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(144deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(144deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-20 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(162deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(162deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-25 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(180deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(180deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-30 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(198deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(198deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-35 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(216deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(216deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-40 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(234deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(234deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-45 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(252deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(252deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-50 {
-  background-image: linear-gradient(270deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(270deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-55 {
-  background-image: linear-gradient(288deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(288deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-60 {
-  background-image: linear-gradient(306deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(306deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-65 {
-  background-image: linear-gradient(324deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(324deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-70 {
-  background-image: linear-gradient(342deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(342deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-75 {
-  background-image: linear-gradient(360deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(360deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-80 {
-  background-image: linear-gradient(378deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(378deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-85 {
-  background-image: linear-gradient(396deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(396deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-90 {
-  background-image: linear-gradient(414deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(414deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-95 {
-  background-image: linear-gradient(432deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(432deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar.radial-bar-100 {
-  background-image: linear-gradient(450deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(450deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-0 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(90deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(90deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-5 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(108deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(108deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-10 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(126deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(126deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-15 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(144deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(144deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-20 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(162deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(162deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-25 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(180deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(180deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-30 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(198deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(198deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-35 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(216deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(216deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-40 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(234deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(234deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-45 {
-  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(252deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(252deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-50 {
-  background-image: linear-gradient(270deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(270deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-55 {
-  background-image: linear-gradient(288deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(288deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-60 {
-  background-image: linear-gradient(306deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(306deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-65 {
-  background-image: linear-gradient(324deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(324deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-70 {
-  background-image: linear-gradient(342deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(342deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-75 {
-  background-image: linear-gradient(360deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(360deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-80 {
-  background-image: linear-gradient(378deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(378deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-85 {
-  background-image: linear-gradient(396deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(396deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-90 {
-  background-image: linear-gradient(414deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(414deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-95 {
-  background-image: linear-gradient(432deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(432deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-primary.radial-bar-100 {
-  background-image: linear-gradient(450deg, #1c75bf 50%, transparent 50%, transparent), linear-gradient(270deg, #1c75bf 50%, #fafafa 50%, #fafafa);
+  background-image: linear-gradient(450deg, #606ddd 50%, transparent 50%, transparent), linear-gradient(270deg, #606ddd 50%, #fafafa 50%, #fafafa);
 }
 .radial-bar-success.radial-bar-0 {
   background-image: linear-gradient(90deg, #fafafa 50%, transparent 50%, transparent), linear-gradient(90deg, #27c24c 50%, #fafafa 50%, #fafafa);
@@ -2007,7 +2007,7 @@ x:-o-prefocus,
   margin-right: 0;
 }
 .circle-primary {
-  background-color: #1c75bf;
+  background-color: #606ddd;
 }
 .circle-success {
   background-color: #27c24c;
@@ -2049,7 +2049,7 @@ x:-o-prefocus,
   background-color: transparent;
 }
 .circle-outline.circle-primary {
-  border: 1px solid #1c75bf;
+  border: 1px solid #606ddd;
 }
 .circle-outline.circle-success {
   border: 1px solid #27c24c;
@@ -2151,7 +2151,7 @@ x:-o-prefocus,
   z-index: 100;
 }
 .timeline > li > .timeline-badge.primary {
-  background-color: #1c75bf;
+  background-color: #606ddd;
 }
 .timeline > li > .timeline-badge.success {
   background-color: #27c24c;
@@ -3618,7 +3618,7 @@ x:-o-prefocus,
 }
 .c-checkbox:hover span,
 .c-radio:hover span {
-  border-color: #1c75bf;
+  border-color: #606ddd;
 }
 .form-inline .c-checkbox span,
 .form-inline .c-radio span {
@@ -3657,15 +3657,15 @@ input[type=radio]:checked + span:before {
 }
 input[type=checkbox]:checked + span,
 input[type=radio]:checked + span {
-  border-color: #1c75bf;
-  background-color: #1c75bf;
+  border-color: #606ddd;
+  background-color: #606ddd;
 }
 /* override for radio */
 input[type=radio]:checked + span {
   background-color: #fff;
 }
 input[type=radio]:checked + span:before {
-  color: #1c75bf;
+  color: #606ddd;
 }
 /* Disable state */
 input[type=checkbox]:disabled + span,
@@ -3716,8 +3716,8 @@ input[type=radio]:disabled + span:before {
   -webkit-transition: all .2s;
 }
 .switch input:checked + span {
-  background-color: #1c75bf;
-  border-color: #1c75bf;
+  background-color: #606ddd;
+  border-color: #606ddd;
   transition: all .5s;
 }
 .switch input:checked + span:after {
@@ -3918,17 +3918,17 @@ textarea.bootstrap-tagsinput {
   cursor: default;
 }
 .wizard > .steps .current a {
-  background: #1c75bf;
+  background: #606ddd;
   color: #fff;
   cursor: default;
 }
 .wizard > .steps .current a:hover {
-  background: #1c75bf;
+  background: #606ddd;
   color: #fff;
   cursor: default;
 }
 .wizard > .steps .current a:active {
-  background: #1c75bf;
+  background: #606ddd;
   color: #fff;
   cursor: default;
 }
@@ -4052,7 +4052,7 @@ textarea.bootstrap-tagsinput {
   width: 100%;
 }
 .wizard > .actions a {
-  background: #1c75bf;
+  background: #606ddd;
   border-radius: 2px;
   color: #fff;
   display: block;
@@ -4060,7 +4060,7 @@ textarea.bootstrap-tagsinput {
   text-decoration: none;
 }
 .wizard > .actions a:hover {
-  background: #1c75bf;
+  background: #606ddd;
   border-radius: 2px;
   color: #fff;
   display: block;
@@ -4068,7 +4068,7 @@ textarea.bootstrap-tagsinput {
   text-decoration: none;
 }
 .wizard > .actions a:active {
-  background: #1c75bf;
+  background: #606ddd;
   border-radius: 2px;
   color: #fff;
   display: block;
@@ -4495,15 +4495,15 @@ ul.ColVis_collection > li > label input[type=radio]:checked + span {
 }
 .slider-handle {
   background-color: #fff;
-  border: 1px solid #1c75bf;
+  border: 1px solid #606ddd;
   opacity: 1;
 }
 .slider-track {
   background-color: #fff;
-  border: 1px solid #1c75bf;
+  border: 1px solid #606ddd;
 }
 .slider-selection {
-  background-color: #1c75bf;
+  background-color: #606ddd;
 }
 .slider .tooltip.top .tooltip-arrow {
   border-top-color: #2c3037;
@@ -4698,7 +4698,7 @@ textarea.chosen-container-active.chosen-with-drop .chosen-single {
 }
 .bootstrap-datetimepicker-widget td.active,
 .bootstrap-datetimepicker-widget td.active:hover {
-  background-color: #1c75bf;
+  background-color: #606ddd;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -4710,7 +4710,7 @@ textarea.chosen-container-active.chosen-with-drop .chosen-single {
   background: #edf1f2;
 }
 .bootstrap-datetimepicker-widget td span.active {
-  background-color: #1c75bf;
+  background-color: #606ddd;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -5038,7 +5038,7 @@ fieldset[disabled] .fc-button.focus {
   background-color: #C0D0D3;
 }
 .mb-boxes .nav > li.active > a {
-  background-color: #1c75bf !important;
+  background-color: #606ddd !important;
   color: #fff;
 }
 @media only screen and (min-width: 1200px) {
@@ -5441,7 +5441,7 @@ fieldset[disabled] .fc-button.focus {
   overflow: hidden;
 }
 .bg-primary {
-  background-color: #1c75bf;
+  background-color: #606ddd;
   color: #fff !important;
 }
 .bg-primary .text-muted {

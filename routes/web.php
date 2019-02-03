@@ -77,3 +77,9 @@ Route::post('/payment/proceed', 'PaymentController@place_order');
 |------------------------------------------------------------------------*/
 
 Route::get('/admin', 'Admin\AdminController@index')->name('dashboard');
+
+Route::get('/admin/customers', 'Admin\CustomersController@index');
+
+Route::get('/admin/orders', 'Admin\OrdersController@index');
+
+Route::get('/admin/inventory', 'Admin\InventoryController@index');
