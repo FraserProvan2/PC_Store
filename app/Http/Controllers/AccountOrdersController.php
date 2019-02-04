@@ -50,7 +50,7 @@ class AccountOrdersController extends Controller
         $orders = Orders::where('id', $id)->first();
 
         //checks user is the auther
-        if($orders->user_id != Auth::user()->id){
+        if($orders->user_id != Auth::user()->id && Auth::user()->is_admin != 1){
             return $this->index();
         }
 

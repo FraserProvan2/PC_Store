@@ -8,20 +8,21 @@
     <div class="content-wrapper">
         <h3>Orders ({{ $type }})</h3>
 
-
         <!-- START row-->
         <div class="row">
             <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="">
                         <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th>Date</th>
+                                @if($type == 'Active')
+                                    <th>Status</th>
+                                @endif
+                                <th>Date/Time</th>
                                 <th>Total</th>
-                                <th>Username</th>
+                                <th>Name</th>
                                 <th>View</th>
                             </tr>
                         </thead>
@@ -30,10 +31,21 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <td>#{{ $order->id }}</td>
-                                    <td>{{ $order->created_at }}</td>
+                                    @if($type == 'Active')
+                                        <th>
+                                            @if($order->status == 'in-progress')
+                                                <span class="text-primary">In Progress</span>
+                                            @elseif($order->status == 'shipped')
+                                                <span class="text-primary">Shipped</span>
+                                            @endif
+                                        </th>
+                                    @endif
+                                    <td width="22.5%">{{ $order->created_at }}</td>
                                     <td>£{{ $order->price }}</td>
-                                    <td>Username</td>
-                                    <td><button type="button" class="btn btn-default">View</button></td>
+                                    <td>{{ $order->name }}</td>
+                                    <td><a href="{{ url('admin/orders/' . $order->id) }}" class="btn-sm btn-primary">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button></td>
                                 </tr>
                             @endforeach
 

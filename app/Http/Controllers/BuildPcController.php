@@ -42,7 +42,7 @@ class BuildPcController extends Controller
         $data['list_data'] = $this->get_current_build();
 
         //checks user is the auther
-        if(Auth::user()){
+        if(Auth::user() && Auth::user()->is_admin != 1){
             if($data['list_data']['user_id'] != Auth::user()->id){
                 return $this->index();
             }
@@ -292,7 +292,7 @@ class BuildPcController extends Controller
         $build_data = Build::where('id', $id)->first();
 
         //if user id owns the part list
-        if(isset(Auth::user()->id) && Auth::user()->id == $build_data['user_id'] || $build_data['user_id'] == NULL){
+        if(isset(Auth::user()->id) && Auth::user()->id == $build_data['user_id'] || Auth::user()->is_admin == 1){
 
             //put build id to session
             session(['current_part_list' => $id]);

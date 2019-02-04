@@ -14,14 +14,14 @@
           <h2 class="bold text-center">
             {{ $list_data->name }}
 
-            @if($list_data->purchased != 1)
+            @if($list_data->purchased != 1 && Auth::user()->id == $list_data->user_id)
                 <button type="button" class="btn btn-lg text-primary pl-0" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
             @endif
         </h3>
 
-            @if($list_data['purchased'])
+            @if($list_data['purchased'] && Auth::user()->id == $list_data->user_id)
                 <div class="alert alert-success text-center" role="alert">
                     You purchased this on <strong>{{ $list_data['purchase_date'] }}</strong>
                 </div>

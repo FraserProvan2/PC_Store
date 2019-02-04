@@ -82,5 +82,7 @@ Route::get('/admin/customers', 'Admin\CustomersController@index');
 
 Route::get('/admin/orders', 'Admin\OrdersController@orders');
 Route::get('/admin/orders/completed', 'Admin\OrdersController@completed_orders');
+Route::get('/admin/orders/{id}', 'Admin\OrdersController@view');
+
 
 Route::get('/admin/inventory', 'Admin\InventoryController@index');
