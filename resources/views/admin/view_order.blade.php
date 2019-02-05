@@ -8,6 +8,7 @@
     <div class="content-wrapper">
         
     <h3>Order #{{ $order_data->id }}</h3>
+    @include('layouts.alerts')
     <a href="{{ url('admin/orders') }}" class="btn btn-xs btn-primary"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Return to Orders</a> 
 
         <!-- START row-->
@@ -64,7 +65,7 @@
                             <div class="col-lg-5">
                                 <h4>Status: 
                                     @if($order_data->status == 'in-progress')
-                                        <span class="text-primary p-2">In Progress</span>
+                                        <span class="text-primary">In Progress</span>
                                     @elseif($order_data->status == 'shipped')
                                         <span class="text-primary">Shipped</span>
                                     @elseif($order_data->status == 'complete')

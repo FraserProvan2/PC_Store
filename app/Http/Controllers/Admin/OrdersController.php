@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Orders;
 use App\User;
 
-use DB, Redirect;
+use DB, Redirect, Session;
 
 class OrdersController extends Controller
 {
@@ -87,6 +87,8 @@ class OrdersController extends Controller
 
         //update
         Orders::where('id', $id)->update(['status' => $status]);
+
+        Session::flash('message', 'Order Updated');
 
         return redirect('admin/orders/' . $id);
     }
