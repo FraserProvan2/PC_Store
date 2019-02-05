@@ -45,7 +45,7 @@
                                     <td>{{ $order->name }}</td>
                                     <td><a href="{{ url('admin/orders/' . $order->id) }}" class="btn-sm btn-primary">
                                         <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button></td>
+                                    </a></td>
                                 </tr>
                             @endforeach
 

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Orders;
 use App\User;
 
-use DB;
+use DB, Redirect;
 
 class OrdersController extends Controller
 {
@@ -61,5 +61,33 @@ class OrdersController extends Controller
         $data['shipping'] = json_decode($data['order_data']->shipping);
 
         return view('admin.view_order', $data);
+    }
+
+    /**
+     * changes order status
+     * @param type current status
+     * @return view order data
+     */
+    public function edit_status($id){
+
+        //gets order info
+        $orders = Orders::where('id', $id)->first();
+
+        //updates status depending on current status
+        if($orders->status == 'in-progress'){
+           $status = 'shipped';
+        } 
+        elseif($orders->status == 'shipped'){
+            $status = 'complete';
+        }
+        else {
+            // catch complete
+            return back();
+        }
+
+        //update
+        Orders::where('id', $id)->update(['status' => $status]);
+
+        return redirect('admin/orders/' . $id);
     }
 }
