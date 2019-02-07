@@ -42,6 +42,10 @@
                     <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
                     <li class="nav-item"><a class="nav-link <?php if($page == "component"){ echo "active"; }?>" href="{{ url('components') }}">Components</a></li>
+                    
+                    @if(Auth::user() && Auth::user()->is_admin == 1)
+                        <li class="nav-item"><a class="nav-link text-primary" href="{{ url('admin') }}">Admin</a></li>
+                    @endif
                 </ul>
                 <!-- /Main navigation -->
                 <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
@@ -194,6 +198,11 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                 Logout
                             </li>
+
+                            @if(Auth::user()->is_admin == 1)
+                                <hr>
+                                <li class="no-sub"><a class="nav-link text-primary" href="{{ url('admin') }}"><i data-feather="user"></i> Admin</a></li>
+                            @endif
                         @else
                             <li class="no-sub"><a href="{{ url('login') }}"><i data-feather="user"></i> Sign In</a></li>
                             <li class="no-sub"><a href="{{ url('register') }}"><i data-feather="user"></i> Register</a></li>

@@ -81,7 +81,7 @@
 
                 <li>
                     <a href="{{ url('/admin') }}" title="Widgets" data-toggle="" class="no-submenu">
-                        <em class="fa fa-home"></em>
+                        <em class="fa fa-line-chart" aria-hidden="true"></em>
                         <span class="item-text">Dashboard</span>
                     </a>
                 </li>
@@ -117,7 +117,12 @@
                         <span class="item-text">Inventory</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="{{ url('/') }}" title="Widgets" data-toggle="" class="no-submenu">
+                        <em class="fa fa-television" aria-hidden="true"></em>
+                        <span class="item-text">Public</span>
+                    </a>
+                </li>
             </ul>
          </nav>
          <!-- END Sidebar (left)-->

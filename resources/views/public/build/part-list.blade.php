@@ -19,7 +19,7 @@
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
             @endif
-        </h3>
+            </h2>
 
             @if($list_data['purchased'] && Auth::user() && Auth::user()->id == $list_data->user_id)
                 <div class="alert alert-success text-center" role="alert">
