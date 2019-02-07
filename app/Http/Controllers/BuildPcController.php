@@ -292,7 +292,7 @@ class BuildPcController extends Controller
         $build_data = Build::where('id', $id)->first();
 
         //if user id owns the part list
-        if(isset(Auth::user()->id) && Auth::user()->id == $build_data['user_id'] || Auth::user()->is_admin == 1){
+        if(isset(Auth::user()->id) && Auth::user()->id == $build_data['user_id'] || isset(Auth::user()->id) && Auth::user()->is_admin == 1){
 
             //put build id to session
             session(['current_part_list' => $id]);
