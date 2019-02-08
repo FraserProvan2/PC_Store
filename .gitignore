@@ -17,3 +17,5 @@ yarn-error.log
 resources/template/
 resources/admin_template/
 public/node_modules
+phploy  
+phploy.ini
