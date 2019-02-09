@@ -10,3 +10,7 @@
 .table-cart tr {
     border-bottom: 1px solid #606ddd2e!important;
 }
+
+.edit-button {
+    background-color:white;
+}

@@ -77,11 +77,11 @@ switch($part) {
 
                     <!--Add more gpu-->
                     @if($list_data['add_card'] >= 0 && $list_data['add_card'] < 3)
-                        <a href="{{ url('add-extra/gpu') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add&nbsp;</a>
+                        <a href="{{ url('add-extra/gpu') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a>
                     @endif
 
                     @if($list_data['add_card'] <= 3 && $list_data['add_card'] > 0)
-                        <a href="{{ url('reduce-extra/gpu') }}" class="btn btn-secondary"><i class="fa fa-minus" aria-hidden="true"></i>&nbsp;Reduce&nbsp;</a>
+                        <a href="{{ url('reduce-extra/gpu') }}" class="btn btn-secondary"><i class="fa fa-minus" aria-hidden="true"></i></a>
                     @endif
 
                 @endif 
@@ -90,7 +90,7 @@ switch($part) {
                 <a href="{{ url('remove/' . $part_data->id) }}" class="btn btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
             @else
-                <a href="{{ url('list/' . $part) }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add&nbsp;</a>
+                <a href="{{ url('list/' . $part) }}" class="btn btn-primary"><i class="fa fa-plus" aria-hibdden="true"></i>&nbsp;Add&nbsp;</a>
                 
             @endif
         @endif

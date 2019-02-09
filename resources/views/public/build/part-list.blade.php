@@ -15,7 +15,7 @@
             {{ $list_data->name }}
 
             @if($list_data->purchased != 1 && Auth::user() && Auth::user()->id == $list_data->user_id || $list_data->user_id == 0)
-                <button type="button" class="btn btn-lg text-primary pl-0" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-lg text-primary pl-0 edit-button" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
             @endif
@@ -87,9 +87,16 @@
 
                 @if($list_data['purchased'] == false)
                     @if (Session::has('error') || !isset($list_checked))
+
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            You must select <strong>All Components</strong> to add to Cart.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="text-danger text-bold"></p>
+
                         <button class="btn btn-primary disabled mb-3" disabled="disabled">Add to Cart <i data-feather="arrow-right"></i></button>
-                        <br>
-                        <p class="text-danger text-bold">Select all parts to add the Build to Cart!</p>
                     @else
                         <button type="submit" class="btn btn-primary">
                             Add to Cart <i data-feather="arrow-right"></i>
