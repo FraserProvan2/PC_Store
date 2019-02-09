@@ -8,7 +8,7 @@
     <div class="content-wrapper">
         
     <h3>Order #{{ $order_data->id }}</h3>
-    @include('layouts.alerts')
+    @include('layouts.admin-alerts')
     <a href="{{ url('admin/orders') }}" class="btn btn-xs btn-primary"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Return to Orders</a> 
 
         <!-- START row-->

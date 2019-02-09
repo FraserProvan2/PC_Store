@@ -92,4 +92,8 @@ Route::group(['middleware' => ['auth', 'admin']], function()
 
     //inventory
     Route::get('/admin/inventory', 'Admin\InventoryController@index');
+    Route::get('/admin/inventory/{id}', 'Admin\InventoryController@view');
+    Route::post('/admin/inventory/edit/{id}', 'Admin\InventoryController@update');
+    Route::post('/admin/inventory/edit-image/{id}', 'Admin\InventoryController@update_image');
+    Route::post('/admin/inventory/add', 'Admin\InventoryController@create');
 });

@@ -18,7 +18,7 @@
     @foreach($part_data as $part)
     <div class="col-12 mt-2">
         <div class="card card-product card-product-list">
-            <a><img class="card-img-top part-img-" src="../img/part-img/{{ $part['image'] }}" style="max-width:70%;"></a>
+            <a><img class="card-img-top part-img-" src="{{ asset('/img/part-img/' . $part['image']) }}" style="max-width:70%;"></a>
             <div class="card-body">
             <a  class="card-title">{{ $part['name'] }}</a>
             <div class="attr">

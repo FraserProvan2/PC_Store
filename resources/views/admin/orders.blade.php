@@ -43,9 +43,11 @@
                                         <td width="22.5%">{{ $order->created_at }}</td>
                                         <td>£{{ $order->price }}</td>
                                         <td>{{ $order->name }}</td>
-                                        <td><a href="{{ url('admin/orders/' . $order->id) }}" class="btn-sm btn-primary">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </a></td>
+                                        <td>
+                                            <a href="{{ url('admin/orders/' . $order->id) }}" class="btn-sm btn-default">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
 
