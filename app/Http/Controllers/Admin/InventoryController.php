@@ -70,7 +70,7 @@ class InventoryController extends Controller
 
         Session::flash('message', 'Part Updated');
 
-        return redirect()->back();
+        return redirect('admin/inventory/')->back();
     }
 
     /**
@@ -95,7 +95,7 @@ class InventoryController extends Controller
             //updates im part name
             Parts::where('id', $id)->update(['image' => $name]);
     
-            return back()->with('success','Image Updated');
+            return back()->with('message','Image Updated');
         } 
     }
 
@@ -119,6 +119,19 @@ class InventoryController extends Controller
         //gets id of recent entry
         $part_data = Parts::orderby('id', 'DESC')->first();
 
-        return $this->view($part_data->id);
+        return $this->index();
+    }
+
+    /**
+     * deletes part
+     * @param id part id
+     * @return view inventory
+     */
+    public function delete($id){
+        
+        //deletes part
+        Parts::where('id', $id)->delete();
+
+        return $this->index()->with('message','Part Deleted');
     }
 }

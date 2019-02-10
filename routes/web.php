@@ -96,4 +96,5 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     Route::post('/admin/inventory/edit/{id}', 'Admin\InventoryController@update');
     Route::post('/admin/inventory/edit-image/{id}', 'Admin\InventoryController@update_image');
     Route::post('/admin/inventory/add', 'Admin\InventoryController@create');
+    Route::get('/admin/inventory/delete/{id}', 'Admin\InventoryController@delete');
 });

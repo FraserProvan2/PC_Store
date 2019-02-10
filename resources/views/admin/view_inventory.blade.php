@@ -2,6 +2,21 @@
 
 @section('title', 'Inventory')
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style=" z-index: 100000 !important;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Are you sure you want to Delete {{ $part_data->name }}?</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <a href="{{ url('admin/inventory/delete/' . $part_data->id) }}" class="btn btn-danger">Delete Part</a>
+        </div>
+        </div>
+    </div>
+</div>
+
 @section('content')
 
     <!-- START Page content-->
@@ -65,9 +80,12 @@
                             </div>
                         </div>
                         <input class="btn btn-primary" type="submit" value="Update">
+                        </form>
+                        <button type="button" class="btn btn-danger btn" data-toggle="modal" data-target="#myModal">
+                            Delete
+                        </button>
                     </div>
                 </div>
-                </form>
             </div>
             <div class="col-lg-4">
                 <div class="panel panel-default">
