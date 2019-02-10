@@ -22,6 +22,7 @@ class CreatePartsTable extends Migration
             $table->float('price')->nullable();
             $table->integer('stock')->nullable();
             $table->char('image', 100)->nullable();
+            $table->integer('archived')->default(0);
             $table->timestamps();
         });
     }

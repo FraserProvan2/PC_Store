@@ -21,8 +21,6 @@ class BuildPcController extends Controller
         //gets current build data
         $data['list_data'] = $this->get_current_build();
 
-
-
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $users_lists_object = Build::where('user_id', $user_id)->where('purchased', 0)->orderBy('id', 'DESC')->get();
@@ -166,7 +164,7 @@ class BuildPcController extends Controller
 
         //if $part_data_object not set, just get all part info
         if(!isset($part_data_object)){
-            $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->get();
+            $part_data_object = Parts::where('type', $part)->where('stock', ">", 0)->where('archived', 0)->get();
         }
                   
         $data['part_data'] = $this->convert_object($part_data_object);

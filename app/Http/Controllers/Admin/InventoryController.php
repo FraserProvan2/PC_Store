@@ -18,7 +18,7 @@ class InventoryController extends Controller
     public function index(){
 
         //gets parts
-        $data['parts'] = DB::table('parts')->orderby('stock', 'ASC')->paginate(15);
+        $data['parts'] = DB::table('parts')->where('archived', 0)->orderby('stock', 'ASC')->paginate(15);
         
         return view('admin.inventory', $data);
     }
@@ -47,7 +47,6 @@ class InventoryController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'type' => 'required',
-            'specs' => 'required',
             'stock' => 'required',
             'price' => 'required',
         ]);
@@ -70,7 +69,7 @@ class InventoryController extends Controller
 
         Session::flash('message', 'Part Updated');
 
-        return redirect('admin/inventory/')->back();
+        return redirect('admin/inventory/');
     }
 
     /**
@@ -129,8 +128,8 @@ class InventoryController extends Controller
      */
     public function delete($id){
         
-        //deletes part
-        Parts::where('id', $id)->delete();
+        //archived part
+        Parts::where('id', $id)->update(['archived' => 1]);
 
         return $this->index()->with('message','Part Deleted');
     }

@@ -14,7 +14,7 @@ class ComponentController extends Controller
      */
     public function index(){
 
-        $data['parts'] = Parts::where('type', '!=', 'storage')->where('stock', '>', 0)->get();
+        $data['parts'] = Parts::where('type', '!=', 'storage')->where('stock', '>', 0)->where('archived', 0)->get();
         
         return view('public.components.component-index', $data);
     }
