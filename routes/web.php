@@ -83,7 +83,8 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     
     //customers
     Route::get('/admin/customers', 'Admin\CustomersController@index');
-
+    Route::get('/admin/customers/{id}', 'Admin\CustomersController@view');
+    
     //orders
     Route::get('/admin/orders', 'Admin\OrdersController@orders');
     Route::get('/admin/orders/completed', 'Admin\OrdersController@completed_orders');
