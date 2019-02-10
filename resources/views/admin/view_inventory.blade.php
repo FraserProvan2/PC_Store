@@ -73,7 +73,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="row text-center ">
-                            <img class="" src="{{ asset('/img/part-img/' . $part_data->image) }}" style="max-height:200px;max-width:100;">
+                            @if($part_data->imag)
+                                <img class="" src="{{ asset('/img/part-img/' . $part_data->image) }}" style="max-height:200px;max-width:100;">
+                            @endif
                                 <form method="POST" action="{{ url('/admin/inventory/edit-image/' . $part_data->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group file-chooser">

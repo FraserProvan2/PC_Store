@@ -9,19 +9,19 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
-        <div class="modal-body">
-            <form method="POST" action="{{ url('admin/inventory/add') }}">
-              @csrf
+        <form method="POST" action="{{ url('admin/inventory/add') }}">
+            @csrf
+            <div class="modal-body">
               <label for="">Part Name</label>
               <input type="text" class="form-control" name='part_name'>
               <br>
-              <input class="btn btn-primary" type="submit" value="Save">
-            </form>
-        </div>
+              {{-- <input class="btn btn-primary" type="submit" value="Save"> --}}
+            </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add New</button>
+            <input type="submit" class="btn btn-primary" value="Add Part"/>
         </div>
+        </form>
         </div>
     </div>
 </div>
@@ -31,6 +31,8 @@
     <!-- START Page content-->
     <div class="content-wrapper">
         <h3>Inventory</h3>
+
+        @include('layouts.admin-alerts')
 
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
             Create New
