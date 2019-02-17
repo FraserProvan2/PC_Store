@@ -10,7 +10,7 @@
 
 <!-- Home slider -->
 <div class="swiper-container swiper-container-horizontal" id="home-slider">
-    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-5724px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" data-cover="../img/slider/3.jpg" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="2" style="background-image: url(&quot;../img/slider/3.jpg&quot;); height: 460px; width: 1431px;">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-5724px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" data-cover="" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="2" style="height: 460px; width: 1431px;">
         {{-- <div class="swiper-overlay right">
           <div class="text-center">
             <h1 class="bg-white text-dark d-inline-block p-1 animated" data-animate="fadeDown">Brand New</h1>
@@ -21,7 +21,7 @@
       </div>
 
       <!--Build-->
-      <div class="swiper-slide swiper-slide-duplicate-active" data-cover="../img/slider/pc-header.jpg" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="0" style="background-image: url(&quot;../img/slider/1.jpg&quot;); height: 460px; width: 1431px; ">
+      <div class="swiper-slide swiper-slide-duplicate-active" data-cover="../img/slider/pc-header.jpg" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="0" style="height: 460px; width: 1431px; ">
         <div class="swiper-overlay right">
           <div class="text-center">
             <p class="display-4 animated" data-animate="fadeDown">Customise</p>
@@ -31,7 +31,7 @@
       </div>
       <!--/Build-->
 
-      <div class="swiper-slide" data-cover="../img/slider/nvidia-gpu.jpg" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="1" style="background-image: url(&quot;../img/slider/2.jpg&quot;); height: 460px; width: 1431px;">
+      <div class="swiper-slide" data-cover="../img/slider/nvidia-gpu.jpg" data-xs-height="220px" data-sm-height="350px" data-md-height="400px" data-lg-height="430px" data-xl-height="460px" data-swiper-slide-index="1" style="height: 460px; width: 1431px;">
         <div class="swiper-overlay left">
           <div class="text-center">
             <h1 class="bg-white text-dark d-inline-block p-1 animated" data-animate="fadeDown">Shop Components</h1>
@@ -56,7 +56,7 @@
                     <div class="col-sm-6 col-md-4">
                       <a href="{{ url('build') }}">
                         <div class="card zoom-hover">
-                          <div data-cover="{{ asset('img/nzxt.png') }}" data-xs-height="150px" data-sm-height="272px" data-md-height="246px" data-lg-height="324px" data-xl-height="400px" style="background-image: url(&quot;../img/discover/1.jpeg&quot;); height: 324px;"></div>
+                          <div data-cover="{{ asset('img/nzxt.png') }}" data-xs-height="150px" data-sm-height="272px" data-md-height="246px" data-lg-height="324px" data-xl-height="400px" style="height: 324px;"></div>
                           <div class="card-img-overlay card-img-overlay-transparent">
                             <h2 class="card-title bold">Build a Custom Gaming PC</h2>
                           </div>
@@ -69,7 +69,7 @@
                         <div class="col-6 col-sm-12 mt-3 mt-sm-0">
                           <a href="{{ url('components/gpu') }}">
                             <div class="card zoom-hover">
-                              <div data-cover="{{ asset('img/part-img/gpu-2080ti.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="background-image: url(&quot;../img/discover/2.jpeg&quot;); height: 154px;"></div>
+                              <div data-cover="{{ asset('img/part-img/gpu-2080ti.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="height: 154px;"></div>
                               <div class="card-img-overlay card-img-overlay-transparent">
                                 <h3 class="card-title text-center">Graphics Cards</h3>
                               </div>
@@ -79,7 +79,7 @@
                         <div class="col-6 col-sm-12 mt-3">
                           <a href="{{ url('components/case') }}">
                             <div class="card zoom-hover">
-                              <div data-cover="{{ asset('img/part-img/case-dukase.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="background-image: url(&quot;../img/discover/3.jpeg&quot;); height: 154px;"></div>
+                              <div data-cover="{{ asset('img/part-img/case-dukase.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="height: 154px;"></div>
                               <div class="card-img-overlay card-img-overlay-transparent">
                                 <h3 class="card-title text-center">Cases</h3>
                               </div>
