@@ -94,7 +94,7 @@
                         <div class="col-6 col-md-12 mt-3 mt-md-0">
                           <a href="{{ url('components/cpu') }}">
                             <div class="card zoom-hover">
-                              <div data-cover="{{ asset('img/part-img/cpu-i5.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="background-image: url(&quot;../img/discover/4.jpeg&quot;); height: 154px;"></div>
+                              <div data-cover="{{ asset('img/part-img/cpu-i5.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="height: 154px;"></div>
                               <div class="card-img-overlay card-img-overlay-transparent">
                                 <h2 class="card-title text-center">Processors</h2>
                               </div>
@@ -104,7 +104,7 @@
                         <div class="col-6 col-md-12 mt-3">
                           <a href="{{ url('components/motherboard') }}">
                             <div class="card zoom-hover">
-                              <div data-cover="{{ asset('img/part-img/mobo-strix.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="background-image: url(&quot;../img/discover/5.jpeg&quot;); height: 154px;"></div>
+                              <div data-cover="{{ asset('img/part-img/mobo-strix.jpg') }}" data-xs-height="100px" data-sm-height="128px" data-md-height="115px" data-lg-height="154px" data-xl-height="192px" style="height: 154px;"></div>
                               <div class="card-img-overlay card-img-overlay-transparent">
                                 <h2 class="card-title text-center">Motherboards</h2>
                               </div>
