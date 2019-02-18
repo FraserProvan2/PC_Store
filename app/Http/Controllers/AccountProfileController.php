@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 
-use Auth, Validator, Session;
 use App\User;
+
+use Auth, Validator, Session;
 
 class AccountProfileController extends Controller
 {
