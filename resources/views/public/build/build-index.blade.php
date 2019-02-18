@@ -5,12 +5,14 @@
 @section('title', 'Build PC')
 
 @section('content')
+<img src="../img/header.jpg" alt="Blog" class="img-fluid my-3">
 
 <div class="card">
 
     <div class="card-body">
 
         @include('layouts.alerts')
+
 
         <div class="row">
             <div class="col-md-6 mb-3">

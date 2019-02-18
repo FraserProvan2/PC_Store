@@ -61,9 +61,9 @@
                <!-- START User avatar toggle-->
                <li>
                   <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                  <a href="#" data-toggle-state="aside-user">
-                     <em class="fa fa-user"></em>
-                     &nbsp;Fraser
+                <a href="{{ url('account') }}">
+                    <em class="fa fa-user"></em>
+                    &nbsp; {{ Auth::user()->name }}
                   </a>
                </li>
                <!-- END User avatar toggle-->
