@@ -39,13 +39,12 @@
                 <ul class="nav nav-main d-none d-lg-flex m-auto"> <!-- hidden on md -->
                     
                     <?php if(empty($page)){ $page = ""; } ?>
-                    <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
-                    <li class="nav-item"><a class="nav-link <?php if($page == "component"){ echo "active"; }?>" href="{{ url('components') }}">Components</a></li>
-                    
                     @if(Auth::user() && Auth::user()->is_admin == 1)
                         <li class="nav-item"><a class="nav-link text-primary" href="{{ url('admin') }}">Admin</a></li>
                     @endif
+                    <li class="nav-item"><a class="nav-link <?php if($page == "home"){ echo "active"; }?>" href="{{ url('/') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if($page == "build"){ echo "active"; }?>" href="{{ url('build') }}">Build a PC</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if($page == "component"){ echo "active"; }?>" href="{{ url('components') }}">Components</a></li>
                 </ul>
                 <!-- /Main navigation -->
                 <ul class="nav ml-auto mr-auto mr-sm-0 ml-sm-0">
