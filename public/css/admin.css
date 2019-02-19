@@ -20,3 +20,8 @@
 .file-chooser{
     padding:0px 15px 0px 15px !important;
 }
+
+.image_part{
+    max-height:300px;
+    max-width:250px;
+}

@@ -24,7 +24,7 @@ class OrdersController extends Controller
         $data['orders'] = DB::table('orders')
             ->select('orders.*', 'users.name')
             ->where('orders.status', '!=', 'complete')
-            ->Join('users', 'orders.user_id', '=', 'users.id')
+            ->Join('users', 'orders.user_id', '=', 'users.id', 'left outer')
             ->paginate(10);
 
         return view('admin.orders', $data);

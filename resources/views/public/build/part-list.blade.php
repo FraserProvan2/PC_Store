@@ -14,7 +14,7 @@
           <h2 class="bold text-center">
             {{ $list_data->name }}
 
-            @if($list_data->purchased != 1 && Auth::user() && Auth::user()->id == $list_data->user_id || $list_data->user_id == 0)
+            @if($list_data->purchased != 1 && Auth::user() && Auth::user()->id == $list_data->user_id ||$list_data->purchased != 1 && $list_data->user_id == 0)
                 <button type="button" class="btn btn-lg text-primary pl-0 edit-button" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
