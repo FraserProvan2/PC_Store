@@ -46,7 +46,7 @@ class AdminController extends Controller
             
             //gets orders for day of counter ($day)
             $order = Orders::where('created_at', '<', today()->subDays($day-1))->
-                             where('created_at', '>', today()->subDays($day+1))->get();
+                             where('created_at', '>', today()->subDays($day))->get();
             
             //pushs current day to array
             array_push($last_30_days, count($order));
